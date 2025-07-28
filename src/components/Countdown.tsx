@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Countdown = () => {
+  const { t } = useLanguage()
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -41,7 +43,7 @@ const Countdown = () => {
         transition={{ duration: 0.8 }}
         className="max-w-md mx-auto text-center"
       >
-        <h2 className="text-3xl font-serif text-gray-800 mb-8">Count Down</h2>
+        <h2 className="text-3xl font-serif text-gray-800 mb-8">{t.countdownTitle}</h2>
         
         {/* Days */}
         <div className="mb-6">
@@ -54,7 +56,7 @@ const Countdown = () => {
           >
             {timeLeft.days}
           </motion.div>
-          <div className="text-lg text-gray-600 font-serif">days</div>
+          <div className="text-lg text-gray-600 font-serif">{t.days}</div>
         </div>
 
         {/* Time */}
@@ -82,11 +84,11 @@ const Countdown = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg text-gray-600 font-serif"
         >
-          to our Wedding
+          {t.toOurWedding}
         </motion.div>
         
         <div className="mt-4 text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          2025.10.12
+          {t.weddingDate}
         </div>
       </motion.div>
     </section>

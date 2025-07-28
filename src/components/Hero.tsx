@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
+  const { t } = useLanguage()
+
   return (
     <section className="relative pt-20 pb-12 px-4 text-center min-h-screen flex items-center">
       <motion.div
@@ -28,7 +31,7 @@ const Hero = () => {
           className="text-5xl md:text-8xl font-script text-dusty-rose mb-6"
           style={{ fontFamily: 'Dancing Script, cursive' }}
         >
-          Rezi & Miho
+          {t.coupleNames}
         </motion.h1>
 
         {/* Date */}
@@ -39,7 +42,7 @@ const Hero = () => {
           className="text-3xl md:text-4xl font-script text-dusty-rose mb-8"
           style={{ fontFamily: 'Dancing Script, cursive' }}
         >
-          2025.10.12
+          {t.weddingDate}
         </motion.div>
 
         {/* Subtitle */}
@@ -49,7 +52,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-lg md:text-xl text-gray-700 mb-8 font-serif"
         >
-          Together with their families
+          {t.subtitle}
         </motion.p>
 
         {/* Main message */}
@@ -60,10 +63,10 @@ const Hero = () => {
           className="text-base md:text-lg text-gray-600 leading-relaxed font-serif max-w-2xl mx-auto"
         >
           <p className="mb-4">
-            request the pleasure of your company
+            {t.requestPleasure}
           </p>
           <p className="mb-4">
-            at the celebration of their marriage
+            {t.celebrationOfMarriage}
           </p>
         </motion.div>
 

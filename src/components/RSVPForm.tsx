@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Heart, Mail, Phone, User } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const RSVPForm = () => {
+  const { t, currentLanguage } = useLanguage()
   const [formData, setFormData] = useState({
     ceremonyAttendance: '',
     receptionAttendance: '',
@@ -36,11 +38,11 @@ const RSVPForm = () => {
         <div className="text-center mb-12">
           <Heart className="w-8 h-8 text-rose-gold mx-auto mb-4" />
           <h2 className="text-4xl font-script text-dusty-rose mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
-            R S V P
+            {t.rsvpTitle}
           </h2>
-          <p className="text-gray-600 font-serif mb-4">御出欠について</p>
+          <p className="text-gray-600 font-serif mb-4">{t.rsvpSubtitle}</p>
           <p className="text-gray-600 leading-relaxed">
-            Please respond by <span className="font-semibold text-dusty-rose">September 15th, 2025</span>
+            {t.respondBy}
           </p>
         </div>
 
@@ -53,7 +55,7 @@ const RSVPForm = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
-            <h3 className="text-lg font-serif text-gray-800 mb-3">Ceremony 挙式</h3>
+            <h3 className="text-lg font-serif text-gray-800 mb-3">{t.ceremonyTitle}</h3>
             <div className="grid grid-cols-3 gap-2">
               {['attend', 'decline', 'pending'].map((option) => (
                 <label key={option} className="cursor-pointer">
@@ -70,10 +72,13 @@ const RSVPForm = () => {
                       : 'border-gray-200 hover:border-dusty-rose/50'
                   }`}>
                     <div className="text-sm font-semibold">
-                      {option === 'attend' ? 'Attend' : option === 'decline' ? 'Decline' : 'Hold'}
+                      {option === 'attend' ? t.attend : option === 'decline' ? t.decline : t.hold}
                     </div>
                     <div className="text-xs text-gray-500">
-                      {option === 'attend' ? 'ご出席' : option === 'decline' ? 'ご欠席' : '保留'}
+                      {currentLanguage === 'en' 
+                        ? (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
+                        : (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
+                      }
                     </div>
                   </div>
                 </label>
@@ -89,7 +94,7 @@ const RSVPForm = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mb-6"
           >
-            <h3 className="text-lg font-serif text-gray-800 mb-3">Reception 披露宴</h3>
+            <h3 className="text-lg font-serif text-gray-800 mb-3">{t.receptionTitle}</h3>
             <div className="grid grid-cols-3 gap-2">
               {['attend', 'decline', 'pending'].map((option) => (
                 <label key={option} className="cursor-pointer">
@@ -106,10 +111,13 @@ const RSVPForm = () => {
                       : 'border-gray-200 hover:border-dusty-rose/50'
                   }`}>
                     <div className="text-sm font-semibold">
-                      {option === 'attend' ? 'Attend' : option === 'decline' ? 'Decline' : 'Hold'}
+                      {option === 'attend' ? t.attend : option === 'decline' ? t.decline : t.hold}
                     </div>
                     <div className="text-xs text-gray-500">
-                      {option === 'attend' ? 'ご出席' : option === 'decline' ? 'ご欠席' : '保留'}
+                      {currentLanguage === 'en' 
+                        ? (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
+                        : (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
+                      }
                     </div>
                   </div>
                 </label>
@@ -128,7 +136,7 @@ const RSVPForm = () => {
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
-              Guest of <span className="text-red-500">*</span>
+              {t.guestOf} <span className="text-red-500">{t.required}</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
               {['groom', 'bride'].map((type) => (
@@ -145,7 +153,7 @@ const RSVPForm = () => {
                       ? 'border-dusty-rose bg-dusty-rose/10 text-dusty-rose'
                       : 'border-gray-200 hover:border-dusty-rose/50'
                   }`}>
-                    {type === 'groom' ? 'Groom Guest' : 'Bride Guest'}
+                    {type === 'groom' ? t.groomGuest : t.brideGuest}
                   </div>
                 </label>
               ))}
@@ -162,13 +170,13 @@ const RSVPForm = () => {
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
               <User className="w-4 h-4 inline mr-1" />
-              Name <span className="text-red-500">*</span>
+              {t.name} <span className="text-red-500">{t.required}</span>
             </label>
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="text"
                 name="firstName"
-                placeholder="First Name"
+                placeholder={t.firstName}
                 value={formData.firstName}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
@@ -176,7 +184,7 @@ const RSVPForm = () => {
               <input
                 type="text"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder={t.lastName}
                 value={formData.lastName}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
@@ -194,7 +202,7 @@ const RSVPForm = () => {
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
               <Mail className="w-4 h-4 inline mr-1" />
-              Email <span className="text-red-500">*</span>
+              {t.email} <span className="text-red-500">{t.required}</span>
             </label>
             <input
               type="email"
@@ -216,7 +224,7 @@ const RSVPForm = () => {
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
               <Phone className="w-4 h-4 inline mr-1" />
-              Phone Number
+              {t.phoneNumber}
             </label>
             <input
               type="tel"
@@ -237,11 +245,11 @@ const RSVPForm = () => {
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
-              Dietary Requirements アレルギーについて
+              {t.dietaryRequirements}
             </label>
             <textarea
               name="dietary"
-              placeholder="Please let us know about any allergies or dietary restrictions..."
+              placeholder={t.dietaryPlaceholder}
               value={formData.dietary}
               onChange={handleInputChange}
               rows={3}
@@ -258,11 +266,11 @@ const RSVPForm = () => {
             className="mb-8"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
-              Message メッセージ
+              {t.messageLabel}
             </label>
             <textarea
               name="message"
-              placeholder="Share your excitement or any special message..."
+              placeholder={t.messagePlaceholder}
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
@@ -282,10 +290,10 @@ const RSVPForm = () => {
               type="button"
               className="w-full bg-gradient-to-r from-dusty-rose to-rose-gold text-white font-serif py-4 px-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
-              Send RSVP 確認画面へ
+              {t.sendRsvp}
             </button>
             <p className="text-xs text-gray-500 mt-2">
-              ※This is a preview - responses are not actually sent
+              {t.previewNote}
             </p>
           </motion.div>
         </div>
@@ -299,7 +307,7 @@ const RSVPForm = () => {
           className="mt-8 text-center"
         >
           <p className="text-gray-600 font-serif mb-4">
-            If plans change, please contact us directly:
+            {t.contactDirectly}
           </p>
           <div className="space-y-2">
             <a

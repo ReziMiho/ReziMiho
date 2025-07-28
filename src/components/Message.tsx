@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Message = () => {
+  const { t } = useLanguage()
+
   return (
     <section id="message" className="py-16 px-4">
       <motion.div
@@ -10,7 +13,7 @@ const Message = () => {
         transition={{ duration: 0.8 }}
         className="max-w-2xl mx-auto text-center"
       >
-        <h2 className="text-3xl font-serif text-gray-800 mb-8">Message</h2>
+        <h2 className="text-3xl font-serif text-gray-800 mb-8">{t.messageTitle}</h2>
         
         <div className="bg-white/70 rounded-2xl p-8 shadow-sm">
           <motion.p
@@ -20,7 +23,7 @@ const Message = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-gray-700 leading-relaxed font-serif text-lg mb-6"
           >
-            Dear friends and family,
+            {t.messageParagraph1}
           </motion.p>
           
           <motion.p
@@ -30,8 +33,7 @@ const Message = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-gray-700 leading-relaxed font-serif mb-6"
           >
-            We are delighted to invite you to celebrate our wedding day with us. 
-            Your presence would make our special day even more meaningful and joyful.
+            {t.messageParagraph2}
           </motion.p>
           
           <motion.p
@@ -41,8 +43,7 @@ const Message = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-gray-700 leading-relaxed font-serif mb-6"
           >
-            We look forward to sharing this wonderful moment with the people we love most, 
-            creating memories that will last a lifetime.
+            {t.messageParagraph3}
           </motion.p>
           
           <motion.p
@@ -52,7 +53,7 @@ const Message = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="text-gray-700 leading-relaxed font-serif"
           >
-            Thank you for being such an important part of our journey together.
+            {t.messageParagraph4}
           </motion.p>
         </div>
         

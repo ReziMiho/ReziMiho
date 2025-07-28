@@ -1,10 +1,13 @@
+import { LanguageProvider } from './contexts/LanguageContext'
 import WeddingInvitation from './components/WeddingInvitation'
 
 function App() {
   return (
-    <div className="App">
-      <WeddingInvitation />
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <WeddingInvitation />
+      </div>
+    </LanguageProvider>
   )
 }
 

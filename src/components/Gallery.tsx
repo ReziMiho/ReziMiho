@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Gallery = () => {
+  const { t } = useLanguage()
+  
   // Placeholder photos - you can replace with real images
   const photos = [
     { id: 1, emoji: '💑', alt: 'Couple photo 1' },
@@ -22,7 +25,7 @@ const Gallery = () => {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-serif text-gray-800 mb-12 text-center">Album</h2>
+        <h2 className="text-3xl font-serif text-gray-800 mb-12 text-center">{t.galleryTitle}</h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {photos.map((photo, index) => (
@@ -49,7 +52,7 @@ const Gallery = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center text-gray-600 font-serif mt-8 italic"
         >
-          More photos will be shared after our special day! 📸
+          {t.morePhotos}
         </motion.p>
       </motion.div>
     </section>

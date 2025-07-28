@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Profile = () => {
+  const { t } = useLanguage()
+
   return (
     <section id="profile" className="py-16 px-4 bg-white/50 backdrop-blur-sm">
       <motion.div
@@ -10,7 +13,7 @@ const Profile = () => {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-serif text-gray-800 mb-12 text-center">Profile</h2>
+        <h2 className="text-3xl font-serif text-gray-800 mb-12 text-center">{t.profileTitle}</h2>
         
         <div className="grid md:grid-cols-2 gap-8">
           {/* Groom Profile */}
@@ -26,16 +29,14 @@ const Profile = () => {
             </div>
             
             <div className="mb-4">
-              <span className="text-sm text-gray-500 font-serif block mb-1">Groom</span>
+              <span className="text-sm text-gray-500 font-serif block mb-1">{t.groom}</span>
               <h3 className="text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
-                Rezi
+                {t.groomName}
               </h3>
             </div>
             
             <p className="text-gray-600 leading-relaxed font-serif">
-              Thank you all for being such wonderful friends and family. 
-              I'm excited to share this special day with everyone! 
-              Looking forward to celebrating with delicious food and great company.
+              {t.groomMessage}
             </p>
           </motion.div>
 
@@ -52,16 +53,14 @@ const Profile = () => {
             </div>
             
             <div className="mb-4">
-              <span className="text-sm text-gray-500 font-serif block mb-1">Bride</span>
+              <span className="text-sm text-gray-500 font-serif block mb-1">{t.bride}</span>
               <h3 className="text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
-                Miho
+                {t.brideName}
               </h3>
             </div>
             
             <p className="text-gray-600 leading-relaxed font-serif">
-              Thank you for always supporting us and being there for us! 
-              We're so grateful to have you in our lives. 
-              We look forward to continuing this journey together as a married couple.
+              {t.brideMessage}
             </p>
           </motion.div>
         </div>

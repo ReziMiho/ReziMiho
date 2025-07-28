@@ -1,0 +1,312 @@
+export type Language = 'en' | 'ja'
+
+export interface Translations {
+  // Navigation
+  menu: string
+  countdown: string
+  message: string
+  profile: string
+  gallery: string
+  partyInfo: string
+  rsvp: string
+
+  // Hero Section
+  coupleNames: string
+  subtitle: string
+  requestPleasure: string
+  celebrationOfMarriage: string
+
+  // Countdown Section
+  countdownTitle: string
+  days: string
+  hours: string
+  minutes: string
+  seconds: string
+  toOurWedding: string
+  weddingDate: string
+
+  // Message Section
+  messageTitle: string
+  messageParagraph1: string
+  messageParagraph2: string
+  messageParagraph3: string
+  messageParagraph4: string
+
+  // Profile Section
+  profileTitle: string
+  groom: string
+  bride: string
+  groomName: string
+  brideName: string
+  groomMessage: string
+  brideMessage: string
+
+  // Gallery Section
+  galleryTitle: string
+  morePhotos: string
+
+  // Party Info Section
+  partyInfoTitle: string
+  partyInfoSubtitle: string
+  date: string
+  dateValue: string
+  ceremony: string
+  reception: string
+  startTime: string
+  receptionTime: string
+  endTime: string
+  venueInfo: string
+  venueName: string
+  venueAddress: string
+  tel: string
+
+  // RSVP Section
+  rsvpTitle: string
+  rsvpSubtitle: string
+  respondBy: string
+  ceremonyTitle: string
+  receptionTitle: string
+  attend: string
+  decline: string
+  hold: string
+  attendJa: string
+  declineJa: string
+  holdJa: string
+  guestOf: string
+  required: string
+  groomGuest: string
+  brideGuest: string
+  name: string
+  firstName: string
+  lastName: string
+  email: string
+  phoneNumber: string
+  dietaryRequirements: string
+  dietaryPlaceholder: string
+  messageLabel: string
+  messagePlaceholder: string
+  sendRsvp: string
+  previewNote: string
+  contactDirectly: string
+
+  // Footer
+  thankYou: string
+  footerMessage: string
+  withLove: string
+  dateReminder: string
+
+  // Common
+  loading: string
+  submit: string
+  cancel: string
+  close: string
+  language: string
+}
+
+export const translations: Record<Language, Translations> = {
+  en: {
+    // Navigation
+    menu: 'Menu',
+    countdown: 'Countdown',
+    message: 'Message',
+    profile: 'Profile',
+    gallery: 'Gallery',
+    partyInfo: 'Party Info',
+    rsvp: 'RSVP',
+
+    // Hero Section
+    coupleNames: 'Rezi & Miho',
+    subtitle: 'Together with their families',
+    requestPleasure: 'request the pleasure of your company',
+    celebrationOfMarriage: 'at the celebration of their marriage',
+
+    // Countdown Section
+    countdownTitle: 'Count Down',
+    days: 'days',
+    hours: 'hours',
+    minutes: 'minutes',
+    seconds: 'seconds',
+    toOurWedding: 'to our Wedding',
+    weddingDate: '2025.10.12',
+
+    // Message Section
+    messageTitle: 'Message',
+    messageParagraph1: 'Dear friends and family,',
+    messageParagraph2: 'We are delighted to invite you to celebrate our wedding day with us. Your presence would make our special day even more meaningful and joyful.',
+    messageParagraph3: 'We look forward to sharing this wonderful moment with the people we love most, creating memories that will last a lifetime.',
+    messageParagraph4: 'Thank you for being such an important part of our journey together.',
+
+    // Profile Section
+    profileTitle: 'Profile',
+    groom: 'Groom',
+    bride: 'Bride',
+    groomName: 'Rezi',
+    brideName: 'Miho',
+    groomMessage: 'Thank you all for being such wonderful friends and family. I\'m excited to share this special day with everyone! Looking forward to celebrating with delicious food and great company.',
+    brideMessage: 'Thank you for always supporting us and being there for us! We\'re so grateful to have you in our lives. We look forward to continuing this journey together as a married couple.',
+
+    // Gallery Section
+    galleryTitle: 'Album',
+    morePhotos: 'More photos will be shared after our special day! 📸',
+
+    // Party Info Section
+    partyInfoTitle: 'Party Information',
+    partyInfoSubtitle: 'パーティーのご案内',
+    date: 'Date',
+    dateValue: 'October 12th, 2025 Sunday',
+    ceremony: 'Ceremony',
+    reception: 'Reception',
+    startTime: 'Start Time',
+    receptionTime: 'Reception',
+    endTime: 'End',
+    venueInfo: 'Venue Information',
+    venueName: 'Garden Grove Estate',
+    venueAddress: '123 Rose Garden Lane\nRomantic City, RC 12345',
+    tel: 'TEL: (555) 123-4567',
+
+    // RSVP Section
+    rsvpTitle: 'R S V P',
+    rsvpSubtitle: '御出欠について',
+    respondBy: 'Please respond by September 15th, 2025',
+    ceremonyTitle: 'Ceremony',
+    receptionTitle: 'Reception',
+    attend: 'Attend',
+    decline: 'Decline',
+    hold: 'Hold',
+    attendJa: 'ご出席',
+    declineJa: 'ご欠席',
+    holdJa: '保留',
+    guestOf: 'Guest of',
+    required: '*',
+    groomGuest: 'Groom Guest',
+    brideGuest: 'Bride Guest',
+    name: 'Name',
+    firstName: 'First Name',
+    lastName: 'Last Name',
+    email: 'Email',
+    phoneNumber: 'Phone Number',
+    dietaryRequirements: 'Dietary Requirements',
+    dietaryPlaceholder: 'Please let us know about any allergies or dietary restrictions...',
+    messageLabel: 'Message',
+    messagePlaceholder: 'Share your excitement or any special message...',
+    sendRsvp: 'Send RSVP',
+    previewNote: '※This is a preview - responses are not actually sent',
+    contactDirectly: 'If plans change, please contact us directly:',
+
+    // Footer
+    thankYou: 'Thank You',
+    footerMessage: 'Your presence is the greatest gift we could ask for. We look forward to celebrating love, laughter, and happily ever after with you.',
+    withLove: 'With love,',
+    dateReminder: 'October 12th, 2025 • Garden Grove Estate',
+
+    // Common
+    loading: 'Loading...',
+    submit: 'Submit',
+    cancel: 'Cancel',
+    close: 'Close',
+    language: 'Language',
+  },
+
+  ja: {
+    // Navigation
+    menu: 'メニュー',
+    countdown: 'カウントダウン',
+    message: 'ご挨拶',
+    profile: '新郎新婦',
+    gallery: 'アルバム',
+    partyInfo: 'パーティーのご案内',
+    rsvp: '御出欠について',
+
+    // Hero Section
+    coupleNames: 'レジ & ミホ',
+    subtitle: 'ご家族とともに',
+    requestPleasure: 'ご招待申し上げます',
+    celebrationOfMarriage: '結婚式のお祝いに',
+
+    // Countdown Section
+    countdownTitle: 'カウントダウン',
+    days: '日',
+    hours: '時間',
+    minutes: '分',
+    seconds: '秒',
+    toOurWedding: '結婚式まで',
+    weddingDate: '2025年10月12日',
+
+    // Message Section
+    messageTitle: 'ご挨拶',
+    messageParagraph1: '親愛なる友人・ご家族の皆様へ',
+    messageParagraph2: '私たちの結婚式にご参加いただき、この特別な日を一緒にお祝いしていただけることを心より嬉しく思います。皆様のご参加により、この日がより意味深く、喜びに満ちたものになります。',
+    messageParagraph3: '最も大切な人たちとこの素晴らしい瞬間を共有し、一生の思い出を作ることを楽しみにしています。',
+    messageParagraph4: '私たちの人生の旅路において、このように大切な存在でいてくださり、ありがとうございます。',
+
+    // Profile Section
+    profileTitle: '新郎新婦',
+    groom: '新郎',
+    bride: '新婦',
+    groomName: 'レジ',
+    brideName: 'ミホ',
+    groomMessage: 'いつも素晴らしい友人・家族でいてくださり、ありがとうございます。皆様とこの特別な日を共有できることを楽しみにしています！美味しい料理と素晴らしい仲間とのお祝いを心待ちにしています。',
+    brideMessage: 'いつも私たちを支えてくださり、そばにいてくださって本当にありがとうございます！皆様が私たちの人生にいてくださることに心から感謝しています。夫婦として共にこの旅路を続けていくことを楽しみにしています。',
+
+    // Gallery Section
+    galleryTitle: 'アルバム',
+    morePhotos: '特別な日の後に、より多くの写真を共有させていただきます！📸',
+
+    // Party Info Section
+    partyInfoTitle: 'パーティーのご案内',
+    partyInfoSubtitle: 'Party Information',
+    date: '開催日',
+    dateValue: '2025年10月12日 日曜日',
+    ceremony: '挙式',
+    reception: '披露宴',
+    startTime: '開始時刻',
+    receptionTime: '受付',
+    endTime: '終了予定',
+    venueInfo: '会場情報',
+    venueName: 'ガーデン グローブ エステート',
+    venueAddress: '〒123-4567\n123 Rose Garden Lane\nRomantic City, RC 12345',
+    tel: 'TEL: (555) 123-4567',
+
+    // RSVP Section
+    rsvpTitle: 'R S V P',
+    rsvpSubtitle: '御出欠について',
+    respondBy: '2025年9月15日までにご返答をお願いいたします',
+    ceremonyTitle: '挙式',
+    receptionTitle: '披露宴',
+    attend: 'ご出席',
+    decline: 'ご欠席',
+    hold: '保留',
+    attendJa: 'Attend',
+    declineJa: 'Decline',
+    holdJa: 'Hold',
+    guestOf: 'いずれかをお選びください',
+    required: '*は必須項目です',
+    groomGuest: '新郎ゲスト',
+    brideGuest: '新婦ゲスト',
+    name: 'お名前',
+    firstName: '姓',
+    lastName: '名',
+    email: 'メールアドレス',
+    phoneNumber: '電話番号',
+    dietaryRequirements: 'アレルギーについて',
+    dietaryPlaceholder: 'アレルギーや食事制限がございましたらお知らせください...',
+    messageLabel: 'メッセージ',
+    messagePlaceholder: 'お祝いのメッセージやご感想をお聞かせください...',
+    sendRsvp: '確認画面へ',
+    previewNote: '※プレビューのため入力内容の送信はできません',
+    contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',
+
+    // Footer
+    thankYou: 'ありがとうございます',
+    footerMessage: '皆様のご参加が私たちにとって最高の贈り物です。愛と笑い、そして永遠の幸せを皆様と分かち合えることを楽しみにしています。',
+    withLove: '愛を込めて',
+    dateReminder: '2025年10月12日 • ガーデン グローブ エステート',
+
+    // Common
+    loading: '読み込み中...',
+    submit: '送信',
+    cancel: 'キャンセル',
+    close: '閉じる',
+    language: '言語',
+  },
+} 

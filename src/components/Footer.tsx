@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Footer = () => {
+  const { t } = useLanguage()
+
   return (
     <footer className="py-12 text-center">
       <motion.div
@@ -20,20 +23,19 @@ const Footer = () => {
 
         {/* Thank you message */}
         <h3 className="text-2xl font-script text-dusty-rose mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          Thank You
+          {t.thankYou}
         </h3>
         
         <p className="text-gray-600 leading-relaxed font-serif mb-8">
-          Your presence is the greatest gift we could ask for. We look forward to celebrating 
-          love, laughter, and happily ever after with you.
+          {t.footerMessage}
         </p>
 
         {/* Couple names */}
         <p className="text-lg font-script text-gray-700" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          With love,
+          {t.withLove}
         </p>
         <p className="text-xl font-script text-dusty-rose mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          Rezi & Miho
+          {t.coupleNames}
         </p>
 
         {/* Divider */}
@@ -41,7 +43,7 @@ const Footer = () => {
         
         {/* Date reminder */}
         <p className="text-sm text-gray-500 font-serif">
-          October 12th, 2025 • Garden Grove Estate
+          {t.dateReminder}
         </p>
       </motion.div>
     </footer>

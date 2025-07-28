@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { t, currentLanguage, toggleLanguage } = useLanguage()
 
   const navItems = [
-    { name: 'Countdown', href: '#countdown' },
-    { name: 'Message', href: '#message' },
-    { name: 'Profile', href: '#profile' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Party Info', href: '#party-info' },
-    { name: 'RSVP', href: '#rsvp' },
+    { name: t.countdown, href: '#countdown' },
+    { name: t.message, href: '#message' },
+    { name: t.profile, href: '#profile' },
+    { name: t.gallery, href: '#gallery' },
+    { name: t.partyInfo, href: '#party-info' },
+    { name: t.rsvp, href: '#rsvp' },
   ]
 
   const scrollToSection = (href: string) => {
@@ -33,15 +35,27 @@ const Navigation = () => {
             className="text-lg font-script text-dusty-rose"
             style={{ fontFamily: 'Dancing Script, cursive' }}
           >
-            Rezi & Miho
+            {t.coupleNames}
           </motion.div>
           
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-dusty-rose hover:bg-dusty-rose/10 rounded-lg transition-colors"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 px-3 py-2 text-dusty-rose hover:bg-dusty-rose/10 rounded-lg transition-colors text-sm"
+              title={t.language}
+            >
+              <Globe size={16} />
+              <span className="font-medium">{currentLanguage.toUpperCase()}</span>
+            </button>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-dusty-rose hover:bg-dusty-rose/10 rounded-lg transition-colors"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -70,7 +84,7 @@ const Navigation = () => {
           >
             <div className="flex items-center justify-between px-6 py-4 border-b">
               <span className="text-lg font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
-                Menu
+                {t.menu}
               </span>
               <button
                 onClick={() => setIsOpen(false)}
@@ -98,6 +112,17 @@ const Navigation = () => {
                   </motion.li>
                 ))}
               </ul>
+
+              {/* Language Toggle in Menu */}
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <button
+                  onClick={toggleLanguage}
+                  className="flex items-center justify-center gap-2 w-full py-3 px-4 text-gray-700 hover:bg-champagne/30 hover:text-dusty-rose rounded-lg transition-all duration-200 font-serif"
+                >
+                  <Globe size={18} />
+                  {t.language}: {currentLanguage === 'en' ? 'English' : '日本語'}
+                </button>
+              </div>
             </div>
           </motion.nav>
         )}
