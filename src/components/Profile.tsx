@@ -1,0 +1,73 @@
+import { motion } from 'framer-motion'
+
+const Profile = () => {
+  return (
+    <section id="profile" className="py-16 px-4 bg-white/50 backdrop-blur-sm">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-3xl font-serif text-gray-800 mb-12 text-center">Profile</h2>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Groom Profile */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white rounded-2xl p-6 shadow-sm text-center"
+          >
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-sage to-dusty-rose flex items-center justify-center text-white text-6xl">
+              👨
+            </div>
+            
+            <div className="mb-4">
+              <span className="text-sm text-gray-500 font-serif block mb-1">Groom</span>
+              <h3 className="text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                Rezi
+              </h3>
+            </div>
+            
+            <p className="text-gray-600 leading-relaxed font-serif">
+              Thank you all for being such wonderful friends and family. 
+              I'm excited to share this special day with everyone! 
+              Looking forward to celebrating with delicious food and great company.
+            </p>
+          </motion.div>
+
+          {/* Bride Profile */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-white rounded-2xl p-6 shadow-sm text-center"
+          >
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-rose-gold to-champagne flex items-center justify-center text-white text-6xl">
+              👩
+            </div>
+            
+            <div className="mb-4">
+              <span className="text-sm text-gray-500 font-serif block mb-1">Bride</span>
+              <h3 className="text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                Miho
+              </h3>
+            </div>
+            
+            <p className="text-gray-600 leading-relaxed font-serif">
+              Thank you for always supporting us and being there for us! 
+              We're so grateful to have you in our lives. 
+              We look forward to continuing this journey together as a married couple.
+            </p>
+          </motion.div>
+        </div>
+      </motion.div>
+    </section>
+  )
+}
+
+export default Profile 

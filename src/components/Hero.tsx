@@ -3,12 +3,12 @@ import { Heart } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className="relative py-20 text-center">
+    <section className="relative pt-20 pb-12 px-4 text-center min-h-screen flex items-center">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="max-w-4xl mx-auto"
+        className="w-full max-w-4xl mx-auto"
       >
         {/* Decorative heart */}
         <motion.div
@@ -25,18 +25,29 @@ const Hero = () => {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-6xl md:text-8xl font-script text-dusty-rose mb-6"
+          className="text-5xl md:text-8xl font-script text-dusty-rose mb-6"
           style={{ fontFamily: 'Dancing Script, cursive' }}
         >
           Rezi & Miho
         </motion.h1>
 
+        {/* Date */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-3xl md:text-4xl font-script text-dusty-rose mb-8"
+          style={{ fontFamily: 'Dancing Script, cursive' }}
+        >
+          2025.10.12
+        </motion.div>
+
         {/* Subtitle */}
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-2xl text-gray-700 mb-8 font-serif"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-lg md:text-xl text-gray-700 mb-8 font-serif"
         >
           Together with their families
         </motion.p>
@@ -45,8 +56,8 @@ const Hero = () => {
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-lg md:text-xl text-gray-600 leading-relaxed font-serif"
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="text-base md:text-lg text-gray-600 leading-relaxed font-serif max-w-2xl mx-auto"
         >
           <p className="mb-4">
             request the pleasure of your company
@@ -60,7 +71,7 @@ const Hero = () => {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
           className="w-32 h-px bg-gradient-to-r from-transparent via-dusty-rose to-transparent mx-auto mt-12"
         />
       </motion.div>
