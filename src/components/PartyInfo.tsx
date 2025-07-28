@@ -35,40 +35,6 @@ const PartyInfo = () => {
           <div className="text-lg text-gray-600">{t.dateValue}</div>
         </motion.div>
 
-        {/* Ceremony */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
-        >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.ceremony} {t.ceremonyTitle}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-4 h-4 text-dusty-rose" />
-                <span className="text-sm text-gray-500">{t.startTime}</span>
-              </div>
-              <div className="text-lg font-semibold">12:00 PM</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-4 h-4 text-dusty-rose" />
-                <span className="text-sm text-gray-500">{t.receptionTime}</span>
-              </div>
-              <div className="text-lg font-semibold">3:30 PM</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-4 h-4 text-dusty-rose" />
-                <span className="text-sm text-gray-500">{t.endTime}</span>
-              </div>
-              <div className="text-lg font-semibold">4:30 PM</div>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Reception */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

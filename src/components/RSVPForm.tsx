@@ -4,10 +4,8 @@ import { Heart, Mail, Phone, User } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const RSVPForm = () => {
-  const { t, currentLanguage } = useLanguage()
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
-    ceremonyAttendance: '',
-    receptionAttendance: '',
     guestType: '',
     firstName: '',
     lastName: '',
@@ -47,86 +45,6 @@ const RSVPForm = () => {
         </div>
 
         <div className="bg-white/70 rounded-2xl p-6 shadow-sm">
-          {/* Ceremony Attendance */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6"
-          >
-            <h3 className="text-lg font-serif text-gray-800 mb-3">{t.ceremonyTitle}</h3>
-            <div className="grid grid-cols-3 gap-2">
-              {['attend', 'decline', 'pending'].map((option) => (
-                <label key={option} className="cursor-pointer">
-                  <input
-                    type="radio"
-                    name="ceremonyAttendance"
-                    value={option}
-                    onChange={handleInputChange}
-                    className="sr-only"
-                  />
-                  <div className={`p-3 rounded-lg border-2 text-center transition-all ${
-                    formData.ceremonyAttendance === option
-                      ? 'border-dusty-rose bg-dusty-rose/10 text-dusty-rose'
-                      : 'border-gray-200 hover:border-dusty-rose/50'
-                  }`}>
-                    <div className="text-sm font-semibold">
-                      {option === 'attend' ? t.attend : option === 'decline' ? t.decline : t.hold}
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      {currentLanguage === 'en' 
-                        ? (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
-                        : (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
-                      }
-                    </div>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Reception Attendance */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-6"
-          >
-            <h3 className="text-lg font-serif text-gray-800 mb-3">{t.receptionTitle}</h3>
-            <div className="grid grid-cols-3 gap-2">
-              {['attend', 'decline', 'pending'].map((option) => (
-                <label key={option} className="cursor-pointer">
-                  <input
-                    type="radio"
-                    name="receptionAttendance"
-                    value={option}
-                    onChange={handleInputChange}
-                    className="sr-only"
-                  />
-                  <div className={`p-3 rounded-lg border-2 text-center transition-all ${
-                    formData.receptionAttendance === option
-                      ? 'border-dusty-rose bg-dusty-rose/10 text-dusty-rose'
-                      : 'border-gray-200 hover:border-dusty-rose/50'
-                  }`}>
-                    <div className="text-sm font-semibold">
-                      {option === 'attend' ? t.attend : option === 'decline' ? t.decline : t.hold}
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      {currentLanguage === 'en' 
-                        ? (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
-                        : (option === 'attend' ? t.attendJa : option === 'decline' ? t.declineJa : t.holdJa)
-                      }
-                    </div>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </motion.div>
-
-          <hr className="my-6 border-gray-200" />
-
           {/* Guest Type */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -171,6 +89,38 @@ const RSVPForm = () => {
             <label className="block text-sm font-serif text-gray-700 mb-2">
               <User className="w-4 h-4 inline mr-1" />
               {t.name} <span className="text-red-500">{t.required}</span>
+            </label>
+            <div className="grid grid-cols-2 gap-3">
+              <input
+                type="text"
+                name="firstName"
+                placeholder={t.firstName}
+                value={formData.firstName}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder={t.lastName}
+                value={formData.lastName}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+              />
+            </div>
+          </motion.div>
+
+           {/* Furigana */}
+           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mb-6"
+          >
+            <label className="block text-sm font-serif text-gray-700 mb-2">
+              <User className="w-4 h-4 inline mr-1" />
+              {t.furigana} <span className="text-red-500">{t.required}</span>
             </label>
             <div className="grid grid-cols-2 gap-3">
               <input

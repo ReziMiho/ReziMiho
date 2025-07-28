@@ -48,9 +48,6 @@ const Details = () => {
           <div className="flex justify-center mb-4">
             <Clock className="w-8 h-8 text-dusty-rose" />
           </div>
-          <h3 className="text-2xl font-serif text-gray-800 mb-2">{t.ceremony}</h3>
-          <p className="text-xl text-gray-600 mb-1">{t.ceremonyTime}</p>
-          <p className="text-lg text-gray-500">{t.receptionFollow}</p>
         </motion.div>
 
         {/* Location */}
@@ -65,18 +62,6 @@ const Details = () => {
               {t.venueAddress}
             </div>
           </div>
-        </motion.div>
-
-        {/* Dress code */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-12 p-6 bg-champagne/30 rounded-lg"
-        >
-          <h4 className="text-lg font-serif text-gray-800 mb-2">{t.dressCode}</h4>
-          <p className="text-gray-600">{t.cocktailAttire}</p>
-          <p className="text-sm text-gray-500 mt-1">
-            {t.dressCodeSuggestion}
-          </p>
         </motion.div>
       </motion.div>
     </section>

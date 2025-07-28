@@ -50,7 +50,6 @@ export interface Translations {
   partyInfoSubtitle: string
   date: string
   dateValue: string
-  ceremony: string
   reception: string
   startTime: string
   receptionTime: string
@@ -64,7 +63,6 @@ export interface Translations {
   rsvpTitle: string
   rsvpSubtitle: string
   respondBy: string
-  ceremonyTitle: string
   receptionTitle: string
   attend: string
   decline: string
@@ -77,6 +75,7 @@ export interface Translations {
   groomGuest: string
   brideGuest: string
   name: string
+  furigana: string
   firstName: string
   lastName: string
   email: string
@@ -92,11 +91,6 @@ export interface Translations {
   // Details Section
   dayOfWeek: string
   venue: string
-  ceremonyTime: string
-  receptionFollow: string
-  dressCode: string
-  cocktailAttire: string
-  dressCodeSuggestion: string
 
   // Footer
   thankYou: string
@@ -163,7 +157,6 @@ export const translations: Record<Language, Translations> = {
     partyInfoSubtitle: 'パーティーのご案内',
     date: 'Date',
     dateValue: 'October 12th, 2025 Sunday',
-    ceremony: 'Ceremony',
     reception: 'Reception',
     startTime: 'Start Time',
     receptionTime: 'Reception',
@@ -177,7 +170,6 @@ export const translations: Record<Language, Translations> = {
     rsvpTitle: 'R S V P',
     rsvpSubtitle: '御出欠について',
     respondBy: 'Please respond by September 15th, 2025',
-    ceremonyTitle: 'Ceremony',
     receptionTitle: 'Reception',
     attend: 'Attend',
     decline: 'Decline',
@@ -190,6 +182,7 @@ export const translations: Record<Language, Translations> = {
     groomGuest: 'Groom Guest',
     brideGuest: 'Bride Guest',
     name: 'Name',
+    furigana: 'Furigana',
     firstName: 'First Name',
     lastName: 'Last Name',
     email: 'Email',
@@ -205,11 +198,7 @@ export const translations: Record<Language, Translations> = {
     // Details Section
     dayOfWeek: 'Sunday',
     venue: 'Venue',
-    ceremonyTime: '4:00 PM',
-    receptionFollow: 'Reception to follow',
-    dressCode: 'Dress Code',
-    cocktailAttire: 'Cocktail Attire',
-    dressCodeSuggestion: 'We suggest garden party elegant',
+
 
     // Footer
     thankYou: 'Thank You',
@@ -275,7 +264,6 @@ export const translations: Record<Language, Translations> = {
     partyInfoSubtitle: 'Party Information',
     date: '開催日',
     dateValue: '2025年10月12日 日曜日',
-    ceremony: '挙式',
     reception: '披露宴',
     startTime: '開始時刻',
     receptionTime: '受付',
@@ -289,7 +277,6 @@ export const translations: Record<Language, Translations> = {
     rsvpTitle: 'R S V P',
     rsvpSubtitle: '御出欠について',
     respondBy: '2025年9月15日までにご返答をお願いいたします',
-    ceremonyTitle: '挙式',
     receptionTitle: '披露宴',
     attend: 'ご出席',
     decline: 'ご欠席',
@@ -302,6 +289,7 @@ export const translations: Record<Language, Translations> = {
     groomGuest: '新郎ゲスト',
     brideGuest: '新婦ゲスト',
     name: 'お名前',
+    furigana: 'フリガナ',
     firstName: '姓',
     lastName: '名',
     email: 'メールアドレス',
@@ -317,11 +305,6 @@ export const translations: Record<Language, Translations> = {
     // Details Section
     dayOfWeek: '日曜日',
     venue: '会場',
-    ceremonyTime: '午後4時',
-    receptionFollow: '披露宴は挙式後に開催',
-    dressCode: 'ドレスコード',
-    cocktailAttire: 'カクテルアタイア',
-    dressCodeSuggestion: 'ガーデンパーティーエレガントをお勧めします',
 
     // Footer
     thankYou: 'ありがとうございます',
