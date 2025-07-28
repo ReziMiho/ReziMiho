@@ -58,6 +58,16 @@ export interface Translations {
   venueName: string
   venueAddress: string
   tel: string
+  familySection: string
+  friendsSection: string
+  commonSection: string
+  gatheringTime: string
+  gatheringPlace: string
+  familyGatheringPlace: string
+  friendsGatheringPlace: string
+  receptionStartTime: string
+  venueLocation: string
+  venueDetail: string
 
   // RSVP Section
   rsvpTitle: string
@@ -165,6 +175,16 @@ export const translations: Record<Language, Translations> = {
     venueName: 'Hotel New Otani Tokyo',
     venueAddress: '4-1 Kioicho, Chiyoda City, Tokyo 102-8578',
     tel: '+813-3265-1111',
+    familySection: 'For Family Members',
+    friendsSection: 'For Friends',
+    commonSection: 'Common Information',
+    gatheringTime: 'Gathering Time',
+    gatheringPlace: 'Gathering Place',
+    familyGatheringPlace: 'The Main Arcade Floor (B1) Family Waiting Room',
+    friendsGatheringPlace: 'Phoenix Hall Reception',
+    receptionStartTime: 'Reception Start Time',
+    venueLocation: 'Venue',
+    venueDetail: 'Phoenix Hall (East) Garden Tower Banquet Hall Floor (5th Floor)',
 
     // RSVP Section
     rsvpTitle: 'R S V P',
@@ -265,13 +285,23 @@ export const translations: Record<Language, Translations> = {
     date: '開催日',
     dateValue: '2025年10月12日 日曜日',
     reception: '披露宴',
-    startTime: '開始時刻',
+    startTime: '集合時間',
     receptionTime: '受付',
     endTime: '終了予定',
     venueInfo: '会場情報',
     venueName: 'ホテル ニューオタニ 東京',
     venueAddress: '〒102-8578 東京都千代田区紀尾井町4-1',
     tel: '03-3265-1111',
+    familySection: '＜ご親族様用＞',
+    friendsSection: '＜ご友人様用＞',
+    commonSection: '＜共通ご案内事項＞',
+    gatheringTime: '集合時間',
+    gatheringPlace: '集合場所',
+    familyGatheringPlace: 'ザ・メインアーケード階(地下1階)親族控室',
+    friendsGatheringPlace: '鳳凰の間受付',
+    receptionStartTime: '披露宴開宴時間',
+    venueLocation: '会　　　場',
+    venueDetail: '鳳凰の間(東)　ガーデンタワー宴会場階(5階)',
 
     // RSVP Section
     rsvpTitle: 'R S V P',

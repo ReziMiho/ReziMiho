@@ -35,62 +35,101 @@ const PartyInfo = () => {
           <div className="text-lg text-gray-600">{t.dateValue}</div>
         </motion.div>
 
-        {/* Reception */}
+        {/* Family Section */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
+        >
+          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.familySection}</h3>
+          <div className="space-y-3">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <Clock className="w-4 h-4 text-dusty-rose" />
+                <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+              </div>
+              <div className="text-lg font-semibold">11：30</div>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <MapPin className="w-4 h-4 text-dusty-rose" />
+                <span className="text-sm text-gray-500">{t.gatheringPlace}</span>
+              </div>
+              <div className="text-gray-700">{t.familyGatheringPlace}</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Friends Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
         >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.reception} {t.receptionTitle}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.friendsSection}</h3>
+          <div className="space-y-3">
             <div>
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-1">
                 <Clock className="w-4 h-4 text-dusty-rose" />
-                <span className="text-sm text-gray-500">{t.startTime}</span>
+                <span className="text-sm text-gray-500">{t.gatheringTime}</span>
               </div>
-              <div className="text-lg font-semibold">5:00 PM</div>
+              <div className="text-lg font-semibold">11：30</div>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-4 h-4 text-dusty-rose" />
-                <span className="text-sm text-gray-500">{t.receptionTime}</span>
+              <div className="flex items-center gap-2 mb-1">
+                <MapPin className="w-4 h-4 text-dusty-rose" />
+                <span className="text-sm text-gray-500">{t.gatheringPlace}</span>
               </div>
-              <div className="text-lg font-semibold">4:30 PM</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-4 h-4 text-dusty-rose" />
-                <span className="text-sm text-gray-500">{t.endTime}</span>
-              </div>
-              <div className="text-lg font-semibold">8:00 PM</div>
+              <div className="text-gray-700">{t.friendsGatheringPlace}</div>
             </div>
           </div>
         </motion.div>
 
-        {/* Venue */}
+        {/* Common Information */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="bg-white rounded-2xl p-6 shadow-sm"
         >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.venueInfo}</h3>
+          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.commonSection}</h3>
           <div className="space-y-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-dusty-rose" />
-                <span className="font-semibold text-gray-800">{t.venueName}</span>
+                <Clock className="w-4 h-4 text-dusty-rose" />
+                <span className="text-sm text-gray-500">{t.receptionStartTime}</span>
               </div>
+              <div className="text-lg font-semibold">12：00</div>
             </div>
-            <div className="text-gray-600 whitespace-pre-line">
-              {t.venueAddress}
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <MapPin className="w-4 h-4 text-dusty-rose" />
+                <span className="text-sm text-gray-500">{t.venueLocation}</span>
+              </div>
+              <div className="text-gray-700">{t.venueDetail}</div>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Phone className="w-4 h-4 text-dusty-rose" />
-              <span>{t.tel}</span>
+          </div>
+          
+          <div className="mt-6 pt-4 border-t border-gray-100">
+            <div className="space-y-2">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className="w-4 h-4 text-dusty-rose" />
+                  <span className="font-semibold text-gray-800">{t.venueName}</span>
+                </div>
+              </div>
+              <div className="text-gray-600 whitespace-pre-line">
+                {t.venueAddress}
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <Phone className="w-4 h-4 text-dusty-rose" />
+                <span>{t.tel}</span>
+              </div>
             </div>
           </div>
         </motion.div>
