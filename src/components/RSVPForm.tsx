@@ -207,7 +207,7 @@ const RSVPForm = () => {
             <input
               type="email"
               name="email"
-              placeholder="your.email@example.com"
+              placeholder="your.email@gmail.com"
               value={formData.email}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
@@ -229,7 +229,7 @@ const RSVPForm = () => {
             <input
               type="tel"
               name="phone"
-              placeholder="(555) 123-4567"
+              placeholder="(+81) 80-7181-1500"
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
@@ -311,18 +311,18 @@ const RSVPForm = () => {
           </p>
           <div className="space-y-2">
             <a
-              href="mailto:reziandmiho@wedding.com"
+              href="mailto:rezi.rusnadi94@gmail.com"
               className="flex items-center justify-center gap-2 text-dusty-rose hover:underline"
             >
               <Mail className="w-4 h-4" />
-              reziandmiho@wedding.com
+              rezi.rusnadi94@gmail.com
             </a>
             <a
-              href="tel:+15551234567"
+              href="tel:+818071811508"
               className="flex items-center justify-center gap-2 text-dusty-rose hover:underline"
             >
               <Phone className="w-4 h-4" />
-              (555) 123-4567
+              +818071811500
             </a>
           </div>
         </motion.div>

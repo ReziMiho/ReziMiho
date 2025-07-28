@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { Heart, Mail, Phone } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const RSVP = () => {
+  const { t } = useLanguage()
+
   return (
     <section className="py-16 text-center">
       <motion.div
@@ -17,11 +20,11 @@ const RSVP = () => {
         </div>
         
         <h2 className="text-4xl font-script text-dusty-rose mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          RSVP
+          {t.rsvpTitle}
         </h2>
         
         <p className="text-lg text-gray-600 mb-8 leading-relaxed font-serif">
-          Please let us know if you can celebrate with us by responding before
+          {t.respondBy}
         </p>
         
         <p className="text-2xl font-semibold text-gray-800 mb-12">
@@ -35,12 +38,12 @@ const RSVP = () => {
             className="bg-white/70 p-6 rounded-lg shadow-sm"
           >
             <Mail className="w-8 h-8 text-dusty-rose mx-auto mb-4" />
-            <h3 className="text-lg font-serif text-gray-800 mb-2">Email</h3>
+            <h3 className="text-lg font-serif text-gray-800 mb-2">{t.email}</h3>
             <a 
-              href="mailto:reziandmiho@wedding.com"
+              href="mailto:rezi.rusnadi9@gmail.com"
               className="text-dusty-rose hover:underline"
             >
-              reziandmiho@wedding.com
+              rezi.rusnadi9@gmail.com
             </a>
           </motion.div>
 
@@ -49,12 +52,12 @@ const RSVP = () => {
             className="bg-white/70 p-6 rounded-lg shadow-sm"
           >
             <Phone className="w-8 h-8 text-dusty-rose mx-auto mb-4" />
-            <h3 className="text-lg font-serif text-gray-800 mb-2">Phone</h3>
+            <h3 className="text-lg font-serif text-gray-800 mb-2">{t.phoneNumber}</h3>
             <a 
-              href="tel:+15551234567"
+              href="tel:+818071811508"
               className="text-dusty-rose hover:underline"
             >
-              (555) 123-4567
+              +818071811500
             </a>
           </motion.div>
         </div>
@@ -68,7 +71,7 @@ const RSVP = () => {
           className="bg-champagne/40 p-6 rounded-lg"
         >
           <p className="text-gray-700 italic font-serif">
-            "We can't wait to celebrate this special day with you!"
+            {t.contactDirectly}
           </p>
         </motion.div>
       </motion.div>

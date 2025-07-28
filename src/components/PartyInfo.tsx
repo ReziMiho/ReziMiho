@@ -50,7 +50,7 @@ const PartyInfo = () => {
                 <Clock className="w-4 h-4 text-dusty-rose" />
                 <span className="text-sm text-gray-500">{t.startTime}</span>
               </div>
-              <div className="text-lg font-semibold">4:00 PM</div>
+              <div className="text-lg font-semibold">12:00 PM</div>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-2">

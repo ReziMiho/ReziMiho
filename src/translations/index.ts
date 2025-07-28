@@ -89,6 +89,15 @@ export interface Translations {
   previewNote: string
   contactDirectly: string
 
+  // Details Section
+  dayOfWeek: string
+  venue: string
+  ceremonyTime: string
+  receptionFollow: string
+  dressCode: string
+  cocktailAttire: string
+  dressCodeSuggestion: string
+
   // Footer
   thankYou: string
   footerMessage: string
@@ -160,9 +169,9 @@ export const translations: Record<Language, Translations> = {
     receptionTime: 'Reception',
     endTime: 'End',
     venueInfo: 'Venue Information',
-    venueName: 'Garden Grove Estate',
-    venueAddress: '123 Rose Garden Lane\nRomantic City, RC 12345',
-    tel: 'TEL: (555) 123-4567',
+    venueName: 'Hotel New Otani Tokyo',
+    venueAddress: '4-1 Kioicho, Chiyoda City, Tokyo 102-8578',
+    tel: '+813-3265-1111',
 
     // RSVP Section
     rsvpTitle: 'R S V P',
@@ -193,6 +202,15 @@ export const translations: Record<Language, Translations> = {
     previewNote: '※This is a preview - responses are not actually sent',
     contactDirectly: 'If plans change, please contact us directly:',
 
+    // Details Section
+    dayOfWeek: 'Sunday',
+    venue: 'Venue',
+    ceremonyTime: '4:00 PM',
+    receptionFollow: 'Reception to follow',
+    dressCode: 'Dress Code',
+    cocktailAttire: 'Cocktail Attire',
+    dressCodeSuggestion: 'We suggest garden party elegant',
+
     // Footer
     thankYou: 'Thank You',
     footerMessage: 'Your presence is the greatest gift we could ask for. We look forward to celebrating love, laughter, and happily ever after with you.',
@@ -218,7 +236,7 @@ export const translations: Record<Language, Translations> = {
     rsvp: '御出欠について',
 
     // Hero Section
-    coupleNames: 'レジ & ミホ',
+    coupleNames: 'Rezi & Miho',
     subtitle: 'ご家族とともに',
     requestPleasure: 'ご招待申し上げます',
     celebrationOfMarriage: '結婚式のお祝いに',
@@ -263,9 +281,9 @@ export const translations: Record<Language, Translations> = {
     receptionTime: '受付',
     endTime: '終了予定',
     venueInfo: '会場情報',
-    venueName: 'ガーデン グローブ エステート',
-    venueAddress: '〒123-4567\n123 Rose Garden Lane\nRomantic City, RC 12345',
-    tel: 'TEL: (555) 123-4567',
+    venueName: 'ホテル ニューオタニ 東京',
+    venueAddress: '〒102-8578 東京都千代田区紀尾井町4-1',
+    tel: '03-3265-1111',
 
     // RSVP Section
     rsvpTitle: 'R S V P',
@@ -295,6 +313,15 @@ export const translations: Record<Language, Translations> = {
     sendRsvp: '確認画面へ',
     previewNote: '※プレビューのため入力内容の送信はできません',
     contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',
+
+    // Details Section
+    dayOfWeek: '日曜日',
+    venue: '会場',
+    ceremonyTime: '午後4時',
+    receptionFollow: '披露宴は挙式後に開催',
+    dressCode: 'ドレスコード',
+    cocktailAttire: 'カクテルアタイア',
+    dressCodeSuggestion: 'ガーデンパーティーエレガントをお勧めします',
 
     // Footer
     thankYou: 'ありがとうございます',
