@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Heart, Calendar, MapPin, Clock } from 'lucide-react'
 import Hero from './Hero'
 import Details from './Details'
 import RSVP from './RSVP'
