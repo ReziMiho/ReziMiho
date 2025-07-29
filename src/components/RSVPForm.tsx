@@ -29,7 +29,13 @@ const RSVPForm = () => {
 
   const validateForm = () => {
     const requiredFields = ['guestType', 'firstName', 'lastName', 'firstNameFurigana', 'lastNameFurigana', 'email']
-    return requiredFields.every(field => formData[field as keyof typeof formData].trim() !== '')
+    const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData] || formData[field as keyof typeof formData].trim() === '')
+
+    if (missingFields.length > 0) {
+      return false
+    }
+
+    return true
   }
 
   const submitRSVP = () => {
@@ -41,56 +47,43 @@ const RSVPForm = () => {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    // Create a hidden iframe to submit the form without leaving the page
-    const iframe = document.createElement('iframe')
-    iframe.name = 'hidden_iframe'
-    iframe.style.display = 'none'
-    document.body.appendChild(iframe)
+              // Create a form and submit it via POST to a popup window
+     const form = document.createElement('form')
+     form.method = 'POST'
+     form.action = 'https://script.google.com/macros/s/AKfycbxmhbghLho8fKJvarCkpfi3_r_3azHich09UphIBe3ypVSSQTadZIyQR3aqErHGqzS9/exec'
+     form.target = '_blank'
+     form.style.display = 'none'
 
-    // Create a hidden form and submit it to the iframe
-    const form = document.createElement('form')
-    form.method = 'POST'
-    form.action = 'https://script.google.com/macros/s/AKfycbw65DHMKVxIG2mR3UcDP5hFJP80f9jXUgTcUdq8tsIvOQ_ZBA_Bi2Z2lcF09p9TPKwAYA/exec'
-    form.target = 'hidden_iframe' // Submit to the hidden iframe
-    form.style.display = 'none'
+     // Add all form data as hidden inputs
+     Object.entries(formData).forEach(([key, value]) => {
+       if (value.trim() !== '') { // Only include non-empty values
+         const input = document.createElement('input')
+         input.type = 'hidden'
+         input.name = key
+         input.value = value
+         form.appendChild(input)
+       }
+     })
 
-    // Add all form data as hidden inputs
-    Object.entries(formData).forEach(([key, value]) => {
-      if (value.trim() !== '') { // Only include non-empty values
-        const input = document.createElement('input')
-        input.type = 'hidden'
-        input.name = key
-        input.value = value
-        form.appendChild(input)
-      }
-    })
-
-    // Add form to document and submit it
-    document.body.appendChild(form)
-    form.submit()
-
-    // Clean up and show success after a short delay
-    setTimeout(() => {
-      setSubmitStatus('success')
-      // Clear form on success
-      setFormData({
-        guestType: '',
-        firstName: '',
-        lastName: '',
-        firstNameFurigana: '',
-        lastNameFurigana: '',
-        email: '',
-        phone: '',
-        address: '',
-        dietary: '',
-        message: ''
-      })
-      setIsSubmitting(false)
-      
-      // Clean up the iframe and form
-      document.body.removeChild(iframe)
-      document.body.removeChild(form)
-    }, 3000) // 3 second delay to ensure submission completes
+     document.body.appendChild(form)
+     form.submit()
+     document.body.removeChild(form)
+     
+     // Show success immediately and clear form
+     setSubmitStatus('success')
+     setFormData({
+       guestType: '',
+       firstName: '',
+       lastName: '',
+       firstNameFurigana: '',
+       lastNameFurigana: '',
+       email: '',
+       phone: '',
+       address: '',
+       dietary: '',
+       message: ''
+     })
+     setIsSubmitting(false)
   }
 
   return (
