@@ -41,11 +41,17 @@ const RSVPForm = () => {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    // Create a hidden form and submit it to avoid CORS issues
+    // Create a hidden iframe to submit the form without leaving the page
+    const iframe = document.createElement('iframe')
+    iframe.name = 'hidden_iframe'
+    iframe.style.display = 'none'
+    document.body.appendChild(iframe)
+
+    // Create a hidden form and submit it to the iframe
     const form = document.createElement('form')
     form.method = 'POST'
     form.action = 'https://script.google.com/macros/s/AKfycbw65DHMKVxIG2mR3UcDP5hFJP80f9jXUgTcUdq8tsIvOQ_ZBA_Bi2Z2lcF09p9TPKwAYA/exec'
-    form.target = '_blank' // Open in new tab so we don't lose the page
+    form.target = 'hidden_iframe' // Submit to the hidden iframe
     form.style.display = 'none'
 
     // Add all form data as hidden inputs
@@ -59,12 +65,11 @@ const RSVPForm = () => {
       }
     })
 
-    // Add form to document, submit it, then remove it
+    // Add form to document and submit it
     document.body.appendChild(form)
     form.submit()
-    document.body.removeChild(form)
 
-    // Simulate success after a short delay
+    // Clean up and show success after a short delay
     setTimeout(() => {
       setSubmitStatus('success')
       // Clear form on success
@@ -81,7 +86,11 @@ const RSVPForm = () => {
         message: ''
       })
       setIsSubmitting(false)
-    }, 2000) // 2 second delay to show submitting state
+      
+      // Clean up the iframe and form
+      document.body.removeChild(iframe)
+      document.body.removeChild(form)
+    }, 3000) // 3 second delay to ensure submission completes
   }
 
   return (
