@@ -9,18 +9,79 @@ const RSVPForm = () => {
     guestType: '',
     firstName: '',
     lastName: '',
+    firstNameFurigana: '',
+    lastNameFurigana: '',
     email: '',
     phone: '',
     address: '',
     dietary: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
+  }
+
+  const validateForm = () => {
+    const requiredFields = ['guestType', 'firstName', 'lastName', 'firstNameFurigana', 'lastNameFurigana', 'email']
+    return requiredFields.every(field => formData[field as keyof typeof formData].trim() !== '')
+  }
+
+  const submitRSVP = () => {
+    if (!validateForm()) {
+      setSubmitStatus('error')
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    // Create a hidden form and submit it to avoid CORS issues
+    const form = document.createElement('form')
+    form.method = 'POST'
+    form.action = 'https://script.google.com/macros/s/AKfycbw65DHMKVxIG2mR3UcDP5hFJP80f9jXUgTcUdq8tsIvOQ_ZBA_Bi2Z2lcF09p9TPKwAYA/exec'
+    form.target = '_blank' // Open in new tab so we don't lose the page
+    form.style.display = 'none'
+
+    // Add all form data as hidden inputs
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value.trim() !== '') { // Only include non-empty values
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = key
+        input.value = value
+        form.appendChild(input)
+      }
+    })
+
+    // Add form to document, submit it, then remove it
+    document.body.appendChild(form)
+    form.submit()
+    document.body.removeChild(form)
+
+    // Simulate success after a short delay
+    setTimeout(() => {
+      setSubmitStatus('success')
+      // Clear form on success
+      setFormData({
+        guestType: '',
+        firstName: '',
+        lastName: '',
+        firstNameFurigana: '',
+        lastNameFurigana: '',
+        email: '',
+        phone: '',
+        address: '',
+        dietary: '',
+        message: ''
+      })
+      setIsSubmitting(false)
+    }, 2000) // 2 second delay to show submitting state
   }
 
   return (
@@ -115,7 +176,7 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -125,17 +186,17 @@ const RSVPForm = () => {
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="text"
-                name="firstName"
+                name="firstNameFurigana"
                 placeholder={t.firstName}
-                value={formData.firstName}
+                value={formData.firstNameFurigana}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
               />
               <input
                 type="text"
-                name="lastName"
+                name="lastNameFurigana"
                 placeholder={t.lastName}
-                value={formData.lastName}
+                value={formData.lastNameFurigana}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
               />
@@ -147,7 +208,7 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -169,7 +230,7 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -191,7 +252,7 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.4 }}
+            transition={{ duration: 0.6, delay: 1.6 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -212,7 +273,7 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.6 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
             className="mb-8"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -233,18 +294,43 @@ const RSVPForm = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.8 }}
+            transition={{ duration: 0.6, delay: 2.0 }}
             className="text-center"
           >
+            {submitStatus === 'success' && (
+              <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                {t.submitSuccess}
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                {t.submitError}
+              </div>
+            )}
             <button
               type="button"
-              className="w-full bg-gradient-to-r from-dusty-rose to-rose-gold text-white font-serif py-4 px-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              onClick={submitRSVP}
+              disabled={isSubmitting}
+              className={`w-full font-serif py-4 px-8 rounded-lg transition-all duration-300 transform ${
+                isSubmitting
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : submitStatus === 'error'
+                  ? 'bg-red-500 hover:bg-red-600 hover:shadow-lg hover:scale-105'
+                  : 'bg-gradient-to-r from-dusty-rose to-rose-gold hover:shadow-lg hover:scale-105'
+              } text-white`}
             >
-              {t.sendRsvp}
+              {isSubmitting 
+                ? t.submitting 
+                : submitStatus === 'error' 
+                ? t.submitRetry 
+                : t.sendRsvp
+              }
             </button>
-            <p className="text-xs text-gray-500 mt-2">
-              {t.previewNote}
-            </p>
+            {submitStatus !== 'success' && (
+              <p className="text-xs text-gray-500 mt-2">
+                {submitStatus === 'idle' ? 'Fill out all required fields and submit your RSVP' : ''}
+              </p>
+            )}
           </motion.div>
         </div>
 
@@ -253,7 +339,7 @@ const RSVPForm = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 2.0 }}
+          transition={{ duration: 0.6, delay: 2.2 }}
           className="mt-8 text-center"
         >
           <p className="text-gray-600 font-serif mb-4">

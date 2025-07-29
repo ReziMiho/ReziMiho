@@ -97,6 +97,10 @@ export interface Translations {
   sendRsvp: string
   previewNote: string
   contactDirectly: string
+  submitting: string
+  submitSuccess: string
+  submitError: string
+  submitRetry: string
 
   // Details Section
   dayOfWeek: string
@@ -214,6 +218,10 @@ export const translations: Record<Language, Translations> = {
     sendRsvp: 'Send RSVP',
     previewNote: '※This is a preview - responses are not actually sent',
     contactDirectly: 'If plans change, please contact us directly:',
+    submitting: 'Submitting...',
+    submitSuccess: 'Thank you! Your RSVP has been submitted successfully.',
+    submitError: 'Sorry, there was an error submitting your RSVP. Please try again.',
+    submitRetry: 'Retry Submission',
 
     // Details Section
     dayOfWeek: 'Sunday',
@@ -331,6 +339,10 @@ export const translations: Record<Language, Translations> = {
     sendRsvp: '確認画面へ',
     previewNote: '※プレビューのため入力内容の送信はできません',
     contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',
+    submitting: '送信中...',
+    submitSuccess: 'ありがとうございます！RSVPの送信が完了しました。',
+    submitError: '申し訳ございません。送信中にエラーが発生しました。もう一度お試しください。',
+    submitRetry: '再送信',
 
     // Details Section
     dayOfWeek: '日曜日',
