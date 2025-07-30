@@ -4,8 +4,9 @@ import { Heart, Mail, Phone, User } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const RSVPForm = () => {
-  const { t } = useLanguage()
+  const { t, currentLanguage } = useLanguage()
   const [formData, setFormData] = useState({
+    lang: currentLanguage,
     guestType: '',
     firstName: '',
     lastName: '',
@@ -47,16 +48,14 @@ const RSVPForm = () => {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-              // Create a form and submit it via POST to a popup window
      const form = document.createElement('form')
      form.method = 'POST'
-     form.action = 'https://script.google.com/macros/s/AKfycbxmhbghLho8fKJvarCkpfi3_r_3azHich09UphIBe3ypVSSQTadZIyQR3aqErHGqzS9/exec'
+     form.action = 'https://script.google.com/macros/s/AKfycbyZTGa9dAGlP1fvSFYlMTPDMR9qjN4aBAL_T_EBhJSf8PzyH722Icly-mLT5Vo9tuDo/exec'
      form.target = '_blank'
      form.style.display = 'none'
 
-     // Add all form data as hidden inputs
      Object.entries(formData).forEach(([key, value]) => {
-       if (value.trim() !== '') { // Only include non-empty values
+       if (value.trim() !== '') {
          const input = document.createElement('input')
          input.type = 'hidden'
          input.name = key
@@ -69,9 +68,9 @@ const RSVPForm = () => {
      form.submit()
      document.body.removeChild(form)
      
-     // Show success immediately and clear form
      setSubmitStatus('success')
      setFormData({
+      lang: currentLanguage,
        guestType: '',
        firstName: '',
        lastName: '',
