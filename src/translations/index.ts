@@ -1,6 +1,13 @@
 export type Language = 'en' | 'ja'
 
 export interface Translations {
+  // Language Selection
+  languageSelection: string
+  selectLanguage: string
+  englishOption: string
+  japaneseOption: string
+  continueButton: string
+
   // Navigation
   menu: string
   countdown: string
@@ -122,6 +129,13 @@ export interface Translations {
 
 export const translations: Record<Language, Translations> = {
   en: {
+    // Language Selection
+    languageSelection: 'Welcome',
+    selectLanguage: 'Please select your preferred language',
+    englishOption: 'English',
+    japaneseOption: '日本語',
+    continueButton: 'Continue',
+
     // Navigation
     menu: 'Menu',
     countdown: 'Countdown',
@@ -243,6 +257,13 @@ export const translations: Record<Language, Translations> = {
   },
 
   ja: {
+    // Language Selection
+    languageSelection: 'ようこそ',
+    selectLanguage: 'ご希望の言語をお選びください',
+    englishOption: 'English',
+    japaneseOption: '日本語',
+    continueButton: '続行',
+
     // Navigation
     menu: 'メニュー',
     countdown: 'カウントダウン',

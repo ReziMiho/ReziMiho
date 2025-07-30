@@ -6,6 +6,8 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void
   t: Translations
   toggleLanguage: () => void
+  hasSelectedLanguage: boolean
+  selectInitialLanguage: (lang: Language) => void
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -16,9 +18,15 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en')
+  const [hasSelectedLanguage, setHasSelectedLanguage] = useState(false)
 
   const setLanguage = (lang: Language) => {
     setCurrentLanguage(lang)
+  }
+
+  const selectInitialLanguage = (lang: Language) => {
+    setCurrentLanguage(lang)
+    setHasSelectedLanguage(true)
   }
 
   const toggleLanguage = () => {
@@ -32,6 +40,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     setLanguage,
     t,
     toggleLanguage,
+    hasSelectedLanguage,
+    selectInitialLanguage,
   }
 
   return (
