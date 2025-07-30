@@ -25,7 +25,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 1.25rem;
+          padding: 1rem;
           position: relative;
         }
         
@@ -62,7 +62,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           background: rgba(255, 237, 213, 0.9);
           backdrop-filter: blur(10px);
           border: 1px solid rgba(251, 191, 36, 0.3);
-          padding: 2rem;
+          padding: 1.5rem;
           border-radius: 1rem;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
           text-align: center;
@@ -97,6 +97,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           font-size: 2.25rem;
           font-weight: 700;
           font-family: 'Yu Mincho', 'Times New Roman', serif;
+          line-height: 1.2;
         }
         
         h2 {
@@ -138,30 +139,35 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           justify-content: center;
           gap: 1rem;
           margin-bottom: 2rem;
+          flex-wrap: wrap;
         }
         
         .btn-primary {
           background: linear-gradient(45deg, #dc2626, #ea580c);
           border: none;
           color: white;
-          padding: 0.75rem 2rem;
+          padding: 0.875rem 2rem;
           border-radius: 9999px;
           cursor: pointer;
           font-weight: 600;
           transition: all 0.3s ease;
           box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+          min-height: 44px;
+          font-size: 1rem;
         }
         
         .btn-secondary {
           background: linear-gradient(45deg, #92400e, #a16207);
           border: none;
           color: white;
-          padding: 0.75rem 2rem;
+          padding: 0.875rem 2rem;
           border-radius: 9999px;
           cursor: pointer;
           font-weight: 600;
           transition: all 0.3s ease;
           box-shadow: 0 4px 15px rgba(146, 64, 14, 0.3);
+          min-height: 44px;
+          font-size: 1rem;
         }
         
         .btn-primary:hover,
@@ -203,6 +209,127 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
         
         .footer .text-orange-800 {
           color: #9a3412;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+          body {
+            padding: 0.75rem;
+          }
+          
+          .container {
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin: 0;
+          }
+          
+          h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+          }
+          
+          h2 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+          }
+          
+          .error-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+          }
+          
+          .error-message {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+          }
+          
+          .error-title {
+            font-size: 1rem;
+            margin-bottom: 0.375rem;
+          }
+          
+          .error-text {
+            font-size: 0.875rem;
+          }
+          
+          .error-japanese {
+            font-size: 0.8125rem;
+          }
+          
+          .buttons {
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+          }
+          
+          .btn-primary,
+          .btn-secondary {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+          }
+          
+          .footer {
+            font-size: 0.8125rem;
+          }
+          
+          .footer .contact-info {
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+          }
+          
+          .footer .contact-title {
+            font-size: 0.875rem;
+            margin-bottom: 0.375rem;
+          }
+          
+          /* Reduce maple leaf animations on mobile for better performance */
+          .maple-leaf {
+            display: none;
+          }
+        }
+
+        @media (max-width: 480px) {
+          body {
+            padding: 0.5rem;
+          }
+          
+          .container {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+          }
+          
+          h1 {
+            font-size: 1.5rem;
+          }
+          
+          .error-icon {
+            font-size: 2.5rem;
+          }
+          
+          .error-message {
+            padding: 0.75rem;
+          }
+          
+          .error-title {
+            font-size: 0.9375rem;
+          }
+          
+          .error-text {
+            font-size: 0.8125rem;
+          }
+          
+          .footer {
+            font-size: 0.75rem;
+          }
+          
+          .footer .contact-info {
+            padding: 0.625rem;
+          }
+          
+          .footer .contact-title {
+            font-size: 0.8125rem;
+          }
         }
       </style>
     </head>

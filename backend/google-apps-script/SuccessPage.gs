@@ -24,7 +24,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.25rem;
+            padding: 1rem;
             position: relative;
           }
           
@@ -61,7 +61,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             background: rgba(255, 237, 213, 0.9);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(251, 191, 36, 0.3);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 1rem;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-align: center;
@@ -102,6 +102,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             font-size: 2.25rem;
             font-weight: 700;
             font-family: 'Yu Mincho', 'Times New Roman', serif;
+            line-height: 1.2;
           }
           
           h2 {
@@ -172,18 +173,21 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
           }
           
           .btn {
             background: linear-gradient(45deg, #dc2626, #ea580c);
             border: none;
             color: white;
-            padding: 0.75rem 2rem;
+            padding: 0.875rem 2rem;
             border-radius: 9999px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            min-height: 44px;
+            font-size: 1rem;
           }
           
           .btn:hover {
@@ -211,6 +215,124 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           .footer .text-amber-800 {
             color: #92400e;
           }
+
+          /* Mobile Optimizations */
+          @media (max-width: 768px) {
+            body {
+              padding: 0.75rem;
+            }
+            
+            .container {
+              padding: 1rem;
+              border-radius: 0.75rem;
+              margin: 0;
+            }
+            
+            h1 {
+              font-size: 1.75rem;
+              margin-bottom: 0.75rem;
+            }
+            
+            h2 {
+              font-size: 1rem;
+              margin-bottom: 1rem;
+            }
+            
+            .success-icon {
+              font-size: 3rem;
+              margin-bottom: 1rem;
+            }
+            
+            .details {
+              padding: 1rem;
+              margin-bottom: 1.5rem;
+            }
+            
+            .details h3 {
+              font-size: 1.125rem;
+              margin-bottom: 0.75rem;
+            }
+            
+            .detail-item {
+              margin: 0.5rem 0;
+              padding-bottom: 0.375rem;
+              display: flex;
+              flex-direction: column;
+              gap: 0.25rem;
+            }
+            
+            .detail-label {
+              min-width: auto;
+              font-size: 0.875rem;
+            }
+            
+            .detail-value {
+              font-size: 0.875rem;
+              word-break: break-word;
+            }
+            
+            .buttons {
+              flex-direction: column;
+              gap: 0.75rem;
+              margin-bottom: 1.5rem;
+            }
+            
+            .btn {
+              width: 100%;
+              padding: 1rem 2rem;
+              font-size: 1rem;
+            }
+            
+            .submission-id {
+              padding: 0.75rem;
+              margin-bottom: 1rem;
+            }
+            
+            .submission-id-title {
+              font-size: 1rem;
+            }
+            
+            .submission-id-japanese {
+              font-size: 0.8125rem;
+            }
+            
+            /* Reduce maple leaf animations on mobile for better performance */
+            .maple-leaf {
+              display: none;
+            }
+          }
+
+          @media (max-width: 480px) {
+            body {
+              padding: 0.5rem;
+            }
+            
+            .container {
+              padding: 0.75rem;
+              border-radius: 0.5rem;
+            }
+            
+            h1 {
+              font-size: 1.5rem;
+            }
+            
+            .success-icon {
+              font-size: 2.5rem;
+            }
+            
+            .details {
+              padding: 0.75rem;
+            }
+            
+            .detail-item {
+              margin: 0.375rem 0;
+            }
+            
+            .detail-label,
+            .detail-value {
+              font-size: 0.8125rem;
+            }
+          }
         </style>
       </head>
       <body>
@@ -223,13 +345,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
         <div class="container">
           <div class="success-icon">🎉</div>
           <h1>${t('success.title')}</h1>
-          ${lang === 'ja' ? `<h2>${t('success.subtitle')}</h2>` : ''}
           <p style="color: #475569; margin-bottom: 2rem;">${t('success.subtitle')}</p>
-          
-          <div class="submission-id">
-            <div class="submission-id-title">${t('success.submissionId')} #${submissionId}</div>
-            ${lang === 'en' ? `<div class="submission-id-japanese">提出ID: #${submissionId}</div>` : ''}
-          </div>
           
           <div class="details">
             <h3>${t('success.detailsHeader')}</h3>
@@ -272,15 +388,9 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             ${data.message ? `
             <div class="detail-item">
               <span class="detail-label">${t('success.message')}</span>
-              <span class="detail-value">${data.message} 🍁</span>
+              <span class="detail-value">${data.message}</span>
             </div>
             ` : ''}
-          </div>
-          
-          <div class="footer">
-            <p class="font-medium">${t('success.footer.changes')}</p>
-            <p>${t('success.footer.confirmation')}</p>
-            <p class="text-amber-800">${t('success.footer.celebration')}</p>
           </div>
         </div>
       </body>
