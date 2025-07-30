@@ -391,5 +391,6 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
   `;
   
   return HtmlService.createHtmlOutput(html)
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
     .setTitle('RSVP Error');
 } 
