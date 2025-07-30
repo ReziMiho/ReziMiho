@@ -9,7 +9,7 @@
 
   color-scheme: light;
   color: #333;
-  background-color: #fafafa;
+  background-color: #fef7ed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,7 +21,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdf7f0 0%, #f7e7ce 100%);
+  /* Autumn gradient: warm cream to golden amber to burnt orange */
+  background: linear-gradient(135deg, #fef7ed 0%, #fbbf24 50%, #ea580c 100%);
 }
 
 #root {
@@ -29,20 +30,20 @@ body {
   min-height: 100vh;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with autumn colors */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #fef7ed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4a5a5;
+  background: #b91c1c;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c49090;
+  background: #991b1b;
 } 

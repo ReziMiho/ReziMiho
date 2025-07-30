@@ -16,13 +16,13 @@ const Footer = () => {
       >
         {/* Hearts decoration */}
         <div className="flex justify-center items-center gap-2 mb-6">
-          <Heart className="w-4 h-4 text-rose-gold fill-current" />
-          <Heart className="w-5 h-5 text-dusty-rose fill-current" />
-          <Heart className="w-4 h-4 text-rose-gold fill-current" />
+          <Heart className="w-4 h-4 text-burnt-orange fill-current" />
+          <Heart className="w-5 h-5 text-maple-red fill-current" />
+          <Heart className="w-4 h-4 text-burnt-orange fill-current" />
         </div>
 
         {/* Thank you message */}
-        <h3 className="text-2xl font-script text-dusty-rose mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
+        <h3 className="text-2xl font-script text-burgundy mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
           {t.thankYou}
         </h3>
         
@@ -34,12 +34,12 @@ const Footer = () => {
         <p className="text-lg font-script text-gray-700" style={{ fontFamily: 'Dancing Script, cursive' }}>
           {t.withLove}
         </p>
-        <p className="text-xl font-script text-dusty-rose mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
+        <p className="text-xl font-script text-warm-brown mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
           {t.coupleNames}
         </p>
 
         {/* Divider */}
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-dusty-rose to-transparent mx-auto mt-8 mb-6" />
+        <div className="w-24 h-px bg-gradient-to-r from-transparent via-maple-red to-transparent mx-auto mt-8 mb-6" />
         
         {/* Date reminder */}
         <p className="text-sm text-gray-500 font-serif">

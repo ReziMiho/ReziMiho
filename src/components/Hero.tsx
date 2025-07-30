@@ -20,7 +20,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 1 }}
           className="flex justify-center mb-8"
         >
-          <Heart className="w-8 h-8 text-rose-gold fill-current" />
+          <Heart className="w-8 h-8 text-maple-red fill-current" />
         </motion.div>
 
         {/* Main title */}
@@ -28,7 +28,7 @@ const Hero = () => {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-8xl font-script text-dusty-rose mb-6"
+          className="text-5xl md:text-8xl font-script text-burgundy mb-6"
           style={{ fontFamily: 'Dancing Script, cursive' }}
         >
           {t.coupleNames}
@@ -39,7 +39,7 @@ const Hero = () => {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-3xl md:text-4xl font-script text-dusty-rose mb-8"
+          className="text-3xl md:text-4xl font-script text-warm-brown mb-8"
           style={{ fontFamily: 'Dancing Script, cursive' }}
         >
           {t.weddingDate}
@@ -75,7 +75,7 @@ const Hero = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 1.4 }}
-          className="w-32 h-px bg-gradient-to-r from-transparent via-dusty-rose to-transparent mx-auto mt-12"
+          className="w-32 h-px bg-gradient-to-r from-transparent via-maple-red to-transparent mx-auto mt-12"
         />
       </motion.div>
     </section>

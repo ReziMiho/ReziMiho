@@ -11,15 +11,14 @@ const RSVP = () => {
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
         className="max-w-2xl mx-auto px-6"
       >
         {/* RSVP Title */}
         <div className="flex justify-center mb-6">
-          <Heart className="w-6 h-6 text-rose-gold fill-current" />
+          <Heart className="w-6 h-6 text-maple-red fill-current" />
         </div>
         
-        <h2 className="text-4xl font-script text-dusty-rose mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
+        <h2 className="text-4xl font-script text-burgundy mb-6" style={{ fontFamily: 'Dancing Script, cursive' }}>
           {t.rsvpTitle}
         </h2>
         
@@ -37,11 +36,11 @@ const RSVP = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white/70 p-6 rounded-lg shadow-sm"
           >
-            <Mail className="w-8 h-8 text-dusty-rose mx-auto mb-4" />
+            <Mail className="w-8 h-8 text-maple-red mx-auto mb-4" />
             <h3 className="text-lg font-serif text-gray-800 mb-2">{t.email}</h3>
             <a 
               href="mailto:rezi.rusnadi9@gmail.com"
-              className="text-dusty-rose hover:underline"
+              className="text-maple-red hover:underline"
             >
               rezi.rusnadi9@gmail.com
             </a>
@@ -51,11 +50,11 @@ const RSVP = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white/70 p-6 rounded-lg shadow-sm"
           >
-            <Phone className="w-8 h-8 text-dusty-rose mx-auto mb-4" />
+            <Phone className="w-8 h-8 text-maple-red mx-auto mb-4" />
             <h3 className="text-lg font-serif text-gray-800 mb-2">{t.phoneNumber}</h3>
             <a 
               href="tel:+818071811508"
-              className="text-dusty-rose hover:underline"
+              className="text-maple-red hover:underline"
             >
               +818071811500
             </a>
@@ -67,8 +66,7 @@ const RSVP = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-champagne/40 p-6 rounded-lg"
+          className="bg-cream/60 p-6 rounded-lg"
         >
           <p className="text-gray-700 italic font-serif">
             {t.contactDirectly}

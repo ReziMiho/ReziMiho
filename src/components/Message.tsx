@@ -64,7 +64,7 @@ const Message = () => {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="mt-8"
         >
-          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-rose-gold to-dusty-rose rounded-full flex items-center justify-center">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-maple-red to-burnt-orange rounded-full flex items-center justify-center">
             <span className="text-white text-4xl">💕</span>
           </div>
         </motion.div>

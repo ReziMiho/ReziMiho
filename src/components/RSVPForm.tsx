@@ -91,13 +91,12 @@ const RSVPForm = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
         className="max-w-2xl mx-auto"
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <Heart className="w-8 h-8 text-rose-gold mx-auto mb-4" />
-          <h2 className="text-4xl font-script text-dusty-rose mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <Heart className="w-8 h-8 text-maple-red mx-auto mb-4" />
+          <h2 className="text-4xl font-script text-burgundy mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
             {t.rsvpTitle}
           </h2>
           <p className="text-gray-600 font-serif mb-4">{t.rsvpSubtitle}</p>
@@ -112,7 +111,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -128,10 +126,10 @@ const RSVPForm = () => {
                     onChange={handleInputChange}
                     className="sr-only"
                   />
-                  <div className={`p-3 rounded-lg border-2 text-center transition-all ${
+                  <div className={`p-3 rounded-lg border-2 text-center ${
                     formData.guestType === type
-                      ? 'border-dusty-rose bg-dusty-rose/10 text-dusty-rose'
-                      : 'border-gray-200 hover:border-dusty-rose/50'
+                      ? 'border-maple-red bg-maple-red/10 text-maple-red'
+                      : 'border-gray-200 hover:border-maple-red/50'
                   }`}>
                     {type === 'groom' ? t.groomGuest : t.brideGuest}
                   </div>
@@ -145,7 +143,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -159,7 +156,7 @@ const RSVPForm = () => {
                 placeholder={t.firstName}
                 value={formData.firstName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
               />
               <input
                 type="text"
@@ -167,7 +164,7 @@ const RSVPForm = () => {
                 placeholder={t.lastName}
                 value={formData.lastName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
               />
             </div>
           </motion.div>
@@ -177,7 +174,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.0 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -191,7 +187,7 @@ const RSVPForm = () => {
                 placeholder={t.firstName}
                 value={formData.firstNameFurigana}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
               />
               <input
                 type="text"
@@ -199,7 +195,7 @@ const RSVPForm = () => {
                 placeholder={t.lastName}
                 value={formData.lastNameFurigana}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
               />
             </div>
           </motion.div>
@@ -209,7 +205,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.2 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -222,7 +217,7 @@ const RSVPForm = () => {
               placeholder="your.email@gmail.com"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
             />
           </motion.div>
 
@@ -231,7 +226,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.4 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -244,7 +238,7 @@ const RSVPForm = () => {
               placeholder="(+81) 80-7181-1500"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
             />
           </motion.div>
 
@@ -253,7 +247,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.6 }}
             className="mb-6"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -265,7 +258,7 @@ const RSVPForm = () => {
               value={formData.dietary}
               onChange={handleInputChange}
               rows={3}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors resize-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red resize-none"
             />
           </motion.div>
 
@@ -274,7 +267,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.8 }}
             className="mb-8"
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
@@ -286,7 +278,7 @@ const RSVPForm = () => {
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-dusty-rose/20 focus:border-dusty-rose transition-colors resize-none"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red resize-none"
             />
           </motion.div>
 
@@ -295,7 +287,6 @@ const RSVPForm = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 2.0 }}
             className="text-center"
           >
             {submitStatus === 'success' && (
@@ -312,12 +303,12 @@ const RSVPForm = () => {
               type="button"
               onClick={submitRSVP}
               disabled={isSubmitting}
-              className={`w-full font-serif py-4 px-8 rounded-lg transition-all duration-300 transform ${
+              className={`w-full font-serif py-4 px-8 rounded-lg duration-300 transform ${
                 isSubmitting
                   ? 'bg-gray-400 cursor-not-allowed'
                   : submitStatus === 'error'
                   ? 'bg-red-500 hover:bg-red-600 hover:shadow-lg hover:scale-105'
-                  : 'bg-gradient-to-r from-dusty-rose to-rose-gold hover:shadow-lg hover:scale-105'
+                  : 'bg-gradient-to-r from-maple-red to-burnt-orange hover:shadow-lg hover:scale-105'
               } text-white`}
             >
               {isSubmitting 
@@ -340,7 +331,6 @@ const RSVPForm = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 2.2 }}
           className="mt-8 text-center"
         >
           <p className="text-gray-600 font-serif mb-4">
@@ -349,14 +339,14 @@ const RSVPForm = () => {
           <div className="space-y-2">
             <a
               href="mailto:rezi.rusnadi94@gmail.com"
-              className="flex items-center justify-center gap-2 text-dusty-rose hover:underline"
+              className="flex items-center justify-center gap-2 text-maple-red hover:underline"
             >
               <Mail className="w-4 h-4" />
               rezi.rusnadi94@gmail.com
             </a>
             <a
               href="tel:+818071811508"
-              className="flex items-center justify-center gap-2 text-dusty-rose hover:underline"
+              className="flex items-center justify-center gap-2 text-maple-red hover:underline"
             >
               <Phone className="w-4 h-4" />
               +818071811500

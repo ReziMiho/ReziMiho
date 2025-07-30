@@ -35,10 +35,10 @@ const Details = () => {
         {/* Date */}
         <motion.div variants={itemVariants} className="mb-12">
           <div className="flex justify-center mb-4">
-            <Calendar className="w-8 h-8 text-dusty-rose" />
+            <Calendar className="w-8 h-8 text-maple-red" />
           </div>
           <h3 className="text-3xl font-serif text-gray-800 mb-2">{t.dayOfWeek}</h3>
-          <p className="text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <p className="text-2xl font-script text-burgundy" style={{ fontFamily: 'Dancing Script, cursive' }}>
             {t.dateValue}
           </p>
         </motion.div>
@@ -46,14 +46,14 @@ const Details = () => {
         {/* Time */}
         <motion.div variants={itemVariants} className="mb-12">
           <div className="flex justify-center mb-4">
-            <Clock className="w-8 h-8 text-dusty-rose" />
+            <Clock className="w-8 h-8 text-burnt-orange" />
           </div>
         </motion.div>
 
         {/* Location */}
         <motion.div variants={itemVariants} className="mb-8">
           <div className="flex justify-center mb-4">
-            <MapPin className="w-8 h-8 text-dusty-rose" />
+            <MapPin className="w-8 h-8 text-copper" />
           </div>
           <h3 className="text-2xl font-serif text-gray-800 mb-4">{t.venue}</h3>
           <div className="text-lg text-gray-600 leading-relaxed">

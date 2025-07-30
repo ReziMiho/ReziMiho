@@ -11,26 +11,17 @@ export default {
         'script': ['Brush Script MT', 'cursive'],
       },
       colors: {
-        'rose-gold': '#E8B4B8',
-        'champagne': '#F7E7CE',
-        'dusty-rose': '#D4A5A5',
-        'sage': '#9CAF88',
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+        // 紅葉 (autumn leaves) color palette
+        'maple-red': '#B91C1C',      // Deep maple red
+        'golden-amber': '#F59E0B',   // Golden amber
+        'burnt-orange': '#EA580C',   // Burnt orange
+        'warm-brown': '#A3681A',     // Rich warm brown
+        'burgundy': '#991B1B',       // Deep burgundy
+        'autumn-gold': '#FBBF24',    // Bright autumn gold
+        'copper': '#D97706',         // Copper/bronze tone
+        'cream': '#FEF7ED',          // Warm cream background
       }
     },
   },
   plugins: [],
-} 
+}

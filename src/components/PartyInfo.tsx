@@ -26,10 +26,10 @@ const PartyInfo = () => {
           className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
         >
           <div className="flex items-center gap-4 mb-4">
-            <Calendar className="w-6 h-6 text-dusty-rose" />
+            <Calendar className="w-6 h-6 text-maple-red" />
             <h3 className="text-xl font-serif text-gray-800">{t.date}</h3>
           </div>
-          <div className="text-2xl font-script text-dusty-rose mb-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <div className="text-2xl font-script text-burgundy mb-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
             {t.weddingDate}
           </div>
           <div className="text-lg text-gray-600">{t.dateValue}</div>
@@ -47,14 +47,14 @@ const PartyInfo = () => {
           <div className="space-y-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-dusty-rose" />
+                <Clock className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">{t.gatheringTime}</span>
               </div>
               <div className="text-lg font-semibold">11：30</div>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-dusty-rose" />
+                <MapPin className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">{t.gatheringPlace}</span>
               </div>
               <div className="text-gray-700">{t.familyGatheringPlace}</div>
@@ -74,14 +74,14 @@ const PartyInfo = () => {
           <div className="space-y-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-dusty-rose" />
+                <Clock className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">{t.gatheringTime}</span>
               </div>
               <div className="text-lg font-semibold">11：30</div>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-dusty-rose" />
+                <MapPin className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">{t.gatheringPlace}</span>
               </div>
               <div className="text-gray-700">{t.friendsGatheringPlace}</div>
@@ -101,14 +101,14 @@ const PartyInfo = () => {
           <div className="space-y-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-dusty-rose" />
+                <Clock className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">{t.receptionStartTime}</span>
               </div>
               <div className="text-lg font-semibold">12：00</div>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-dusty-rose" />
+                <MapPin className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">{t.venueLocation}</span>
               </div>
               <div className="text-gray-700">{t.venueDetail}</div>
@@ -119,7 +119,7 @@ const PartyInfo = () => {
             <div className="space-y-2">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-4 h-4 text-dusty-rose" />
+                  <MapPin className="w-4 h-4 text-burnt-orange" />
                   <span className="font-semibold text-gray-800">{t.venueName}</span>
                 </div>
               </div>
@@ -127,7 +127,7 @@ const PartyInfo = () => {
                 {t.venueAddress}
               </div>
               <div className="flex items-center gap-2 text-gray-600">
-                <Phone className="w-4 h-4 text-dusty-rose" />
+                <Phone className="w-4 h-4 text-burnt-orange" />
                 <span>{t.tel}</span>
               </div>
             </div>

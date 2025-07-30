@@ -36,7 +36,7 @@ const Gallery = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="aspect-square bg-gradient-to-br from-champagne to-rose-gold rounded-2xl shadow-sm cursor-pointer overflow-hidden"
+              className="aspect-square bg-gradient-to-br from-cream to-autumn-gold rounded-2xl shadow-sm cursor-pointer overflow-hidden"
             >
               <div className="w-full h-full flex items-center justify-center text-4xl md:text-6xl">
                 {photo.emoji}

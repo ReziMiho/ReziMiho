@@ -52,7 +52,7 @@ const Countdown = () => {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-6xl font-bold text-dusty-rose mb-2"
+            className="text-6xl font-bold text-maple-red mb-2"
           >
             {timeLeft.days}
           </motion.div>
@@ -65,12 +65,12 @@ const Countdown = () => {
             <span className="text-3xl font-bold text-gray-800">{String(timeLeft.hours).padStart(2, '0')}</span>
             <span className="text-xs text-gray-500">H</span>
           </div>
-          <span className="text-dusty-rose">:</span>
+          <span className="text-burnt-orange">:</span>
           <div className="flex flex-col items-center">
             <span className="text-3xl font-bold text-gray-800">{String(timeLeft.minutes).padStart(2, '0')}</span>
             <span className="text-xs text-gray-500">M</span>
           </div>
-          <span className="text-dusty-rose">:</span>
+          <span className="text-burnt-orange">:</span>
           <div className="flex flex-col items-center">
             <span className="text-3xl font-bold text-gray-800">{String(timeLeft.seconds).padStart(2, '0')}</span>
             <span className="text-xs text-gray-500">S</span>
@@ -87,7 +87,7 @@ const Countdown = () => {
           {t.toOurWedding}
         </motion.div>
         
-        <div className="mt-4 text-2xl font-script text-dusty-rose" style={{ fontFamily: 'Dancing Script, cursive' }}>
+        <div className="mt-4 text-2xl font-script text-warm-brown" style={{ fontFamily: 'Dancing Script, cursive' }}>
           {t.weddingDate}
         </div>
       </motion.div>
