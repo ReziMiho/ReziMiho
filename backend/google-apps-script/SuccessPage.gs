@@ -421,8 +421,8 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
       </body>
       </html>
     `;
-    
-    return HtmlService.createHtmlOutput(html)
-      .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-      .setTitle('RSVP Success');
-  }
+  
+  return HtmlService.createHtmlOutput(html)
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+    .setTitle('RSVP Success');
+}
