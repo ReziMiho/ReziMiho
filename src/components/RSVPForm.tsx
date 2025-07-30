@@ -99,7 +99,6 @@ const RSVPForm = () => {
           <h2 className="text-4xl font-script text-burgundy mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
             {t.rsvpTitle}
           </h2>
-          <p className="text-gray-600 font-serif mb-4">{t.rsvpSubtitle}</p>
           <p className="text-gray-600 leading-relaxed">
             {t.respondBy}
           </p>

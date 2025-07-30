@@ -233,7 +233,7 @@ export const translations: Record<Language, Translations> = {
     previewNote: '※This is a preview - responses are not actually sent',
     contactDirectly: 'If plans change, please contact us directly:',
     submitting: 'Submitting...',
-    submitSuccess: 'Thank you! Your RSVP has been submitted successfully.',
+    submitSuccess: 'Redirecting to confirmation page...',
     submitError: 'Sorry, there was an error submitting your RSVP. Please try again.',
     submitRetry: 'Retry Submission',
 
@@ -361,7 +361,7 @@ export const translations: Record<Language, Translations> = {
     previewNote: '※プレビューのため入力内容の送信はできません',
     contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',
     submitting: '送信中...',
-    submitSuccess: 'ありがとうございます！RSVPの送信が完了しました。',
+    submitSuccess: '確認ページに移動中...',
     submitError: '申し訳ございません。送信中にエラーが発生しました。もう一度お試しください。',
     submitRetry: '再送信',
 
