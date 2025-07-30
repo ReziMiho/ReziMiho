@@ -27,6 +27,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           justify-content: center;
           padding: 1rem;
           position: relative;
+          font-size: 16px;
         }
         
         body::before {
@@ -211,77 +212,84 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           color: #9a3412;
         }
 
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-          body {
-            padding: 0.75rem;
-          }
-          
-          .container {
-            padding: 1rem;
-            border-radius: 0.75rem;
-            margin: 0;
-          }
-          
-          h1 {
-            font-size: 1.75rem;
-            margin-bottom: 0.75rem;
-          }
-          
-          h2 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-          }
-          
-          .error-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-          }
-          
-          .error-message {
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-          }
-          
-          .error-title {
-            font-size: 1rem;
-            margin-bottom: 0.375rem;
-          }
-          
-          .error-text {
-            font-size: 0.875rem;
-          }
-          
-          .error-japanese {
-            font-size: 0.8125rem;
-          }
-          
-          .buttons {
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-          }
-          
-          .btn-primary,
-          .btn-secondary {
-            width: 100%;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-          }
-          
-          .footer {
-            font-size: 0.8125rem;
-          }
-          
-          .footer .contact-info {
-            padding: 0.75rem;
-            margin: 0.75rem 0;
-          }
-          
-          .footer .contact-title {
-            font-size: 0.875rem;
-            margin-bottom: 0.375rem;
-          }
+                 /* Mobile Optimizations */
+         @media (max-width: 768px) {
+           body {
+             padding: 1rem;
+             font-size: 18px;
+           }
+           
+           .container {
+             padding: 2rem;
+             border-radius: 1rem;
+             margin: 0;
+             max-width: 90vw;
+           }
+           
+           h1 {
+             font-size: 2.5rem;
+             margin-bottom: 1rem;
+           }
+           
+           h2 {
+             font-size: 1.25rem;
+             margin-bottom: 1.5rem;
+           }
+           
+           .error-icon {
+             font-size: 5rem;
+             margin-bottom: 1.5rem;
+           }
+           
+           .error-message {
+             padding: 1.5rem;
+             margin-bottom: 2rem;
+           }
+           
+           .error-title {
+             font-size: 1.25rem;
+             margin-bottom: 0.75rem;
+           }
+           
+           .error-text {
+             font-size: 1.125rem;
+           }
+           
+           .error-japanese {
+             font-size: 1rem;
+           }
+           
+           .buttons {
+             flex-direction: column;
+             gap: 1rem;
+             margin-bottom: 2rem;
+           }
+           
+           .btn-primary,
+           .btn-secondary {
+             width: 100%;
+             padding: 1.25rem 2rem;
+             font-size: 1.25rem;
+           }
+           
+           .footer {
+             font-size: 1rem;
+           }
+           
+           .footer .contact-info {
+             padding: 1.25rem;
+             margin: 1rem 0;
+           }
+           
+           .footer .contact-title {
+             font-size: 1.125rem;
+             margin-bottom: 0.5rem;
+           }
+           
+           p {
+             font-size: 1.125rem;
+             line-height: 1.6;
+           }
           
           /* Reduce maple leaf animations on mobile for better performance */
           .maple-leaf {
@@ -289,48 +297,64 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           }
         }
 
-        @media (max-width: 480px) {
-          body {
-            padding: 0.5rem;
-          }
-          
-          .container {
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-          }
-          
-          h1 {
-            font-size: 1.5rem;
-          }
-          
-          .error-icon {
-            font-size: 2.5rem;
-          }
-          
-          .error-message {
-            padding: 0.75rem;
-          }
-          
-          .error-title {
-            font-size: 0.9375rem;
-          }
-          
-          .error-text {
-            font-size: 0.8125rem;
-          }
-          
-          .footer {
-            font-size: 0.75rem;
-          }
-          
-          .footer .contact-info {
-            padding: 0.625rem;
-          }
-          
-          .footer .contact-title {
-            font-size: 0.8125rem;
-          }
-        }
+                 @media (max-width: 480px) {
+           body {
+             padding: 0.75rem;
+             font-size: 16px;
+           }
+           
+           .container {
+             padding: 1.5rem;
+             border-radius: 0.75rem;
+             max-width: 95vw;
+           }
+           
+           h1 {
+             font-size: 2rem;
+           }
+           
+           .error-icon {
+             font-size: 4rem;
+           }
+           
+           .error-message {
+             padding: 1.25rem;
+           }
+           
+           .error-title {
+             font-size: 1.125rem;
+           }
+           
+           .error-text {
+             font-size: 1rem;
+           }
+           
+           .error-japanese {
+             font-size: 0.9375rem;
+           }
+           
+           .footer {
+             font-size: 0.875rem;
+           }
+           
+           .footer .contact-info {
+             padding: 1rem;
+           }
+           
+           .footer .contact-title {
+             font-size: 1rem;
+           }
+           
+           .btn-primary,
+           .btn-secondary {
+             padding: 1rem 1.5rem;
+             font-size: 1.125rem;
+           }
+           
+           p {
+             font-size: 1rem;
+           }
+         }
       </style>
     </head>
     <body>

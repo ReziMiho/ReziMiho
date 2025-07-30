@@ -26,6 +26,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             justify-content: center;
             padding: 1rem;
             position: relative;
+            font-size: 16px;
           }
           
           body::before {
@@ -219,81 +220,89 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           /* Mobile Optimizations */
           @media (max-width: 768px) {
             body {
-              padding: 0.75rem;
+              padding: 1rem;
+              font-size: 18px;
             }
             
             .container {
-              padding: 1rem;
-              border-radius: 0.75rem;
+              padding: 2rem;
+              border-radius: 1rem;
               margin: 0;
+              max-width: 90vw;
             }
             
             h1 {
-              font-size: 1.75rem;
-              margin-bottom: 0.75rem;
+              font-size: 2.5rem;
+              margin-bottom: 1rem;
             }
             
             h2 {
-              font-size: 1rem;
-              margin-bottom: 1rem;
-            }
-            
-            .success-icon {
-              font-size: 3rem;
-              margin-bottom: 1rem;
-            }
-            
-            .details {
-              padding: 1rem;
+              font-size: 1.25rem;
               margin-bottom: 1.5rem;
             }
             
+            .success-icon {
+              font-size: 5rem;
+              margin-bottom: 1.5rem;
+            }
+            
+            .details {
+              padding: 1.5rem;
+              margin-bottom: 2rem;
+            }
+            
             .details h3 {
-              font-size: 1.125rem;
-              margin-bottom: 0.75rem;
+              font-size: 1.5rem;
+              margin-bottom: 1rem;
             }
             
             .detail-item {
-              margin: 0.5rem 0;
-              padding-bottom: 0.375rem;
+              margin: 0.75rem 0;
+              padding-bottom: 0.75rem;
               display: flex;
               flex-direction: column;
-              gap: 0.25rem;
+              gap: 0.5rem;
             }
             
             .detail-label {
               min-width: auto;
-              font-size: 0.875rem;
+              font-size: 1.125rem;
+              font-weight: 700;
             }
             
             .detail-value {
-              font-size: 0.875rem;
+              font-size: 1.125rem;
               word-break: break-word;
             }
             
             .buttons {
               flex-direction: column;
-              gap: 0.75rem;
-              margin-bottom: 1.5rem;
+              gap: 1rem;
+              margin-bottom: 2rem;
             }
             
             .btn {
               width: 100%;
-              padding: 1rem 2rem;
-              font-size: 1rem;
+              padding: 1.25rem 2rem;
+              font-size: 1.25rem;
             }
             
             .submission-id {
-              padding: 0.75rem;
-              margin-bottom: 1rem;
+              padding: 1.25rem;
+              margin-bottom: 1.5rem;
             }
             
             .submission-id-title {
-              font-size: 1rem;
+              font-size: 1.25rem;
             }
             
             .submission-id-japanese {
-              font-size: 0.8125rem;
+              font-size: 1rem;
+            }
+            
+            p {
+              font-size: 1.125rem;
+              line-height: 1.6;
             }
             
             /* Reduce maple leaf animations on mobile for better performance */
@@ -304,33 +313,49 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
 
           @media (max-width: 480px) {
             body {
-              padding: 0.5rem;
+              padding: 0.75rem;
+              font-size: 16px;
             }
             
             .container {
-              padding: 0.75rem;
-              border-radius: 0.5rem;
+              padding: 1.5rem;
+              border-radius: 0.75rem;
+              max-width: 95vw;
             }
             
             h1 {
-              font-size: 1.5rem;
+              font-size: 2rem;
             }
             
             .success-icon {
-              font-size: 2.5rem;
+              font-size: 4rem;
             }
             
             .details {
-              padding: 0.75rem;
+              padding: 1.25rem;
+            }
+            
+            .details h3 {
+              font-size: 1.25rem;
             }
             
             .detail-item {
-              margin: 0.375rem 0;
+              margin: 0.625rem 0;
+              padding-bottom: 0.625rem;
             }
             
             .detail-label,
             .detail-value {
-              font-size: 0.8125rem;
+              font-size: 1rem;
+            }
+            
+            .btn {
+              padding: 1rem 1.5rem;
+              font-size: 1.125rem;
+            }
+            
+            p {
+              font-size: 1rem;
             }
           }
         </style>
