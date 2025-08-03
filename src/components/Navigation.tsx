@@ -10,8 +10,6 @@ const Navigation = () => {
   const navItems = [
     { name: t.countdown, href: '#countdown' },
     { name: t.message, href: '#message' },
-    { name: t.profile, href: '#profile' },
-    { name: t.gallery, href: '#gallery' },
     { name: t.partyInfo, href: '#party-info' },
     { name: t.rsvp, href: '#rsvp' },
   ]
@@ -27,12 +25,12 @@ const Navigation = () => {
   return (
     <>
       {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center justify-between px-4 py-3">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-lg font-script text-burgundy"
+            className="text-lg font-script text-white drop-shadow-lg"
             style={{ fontFamily: 'Dancing Script, cursive' }}
           >
             {t.coupleNames}
@@ -42,7 +40,7 @@ const Navigation = () => {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-1 px-3 py-2 text-warm-brown hover:bg-burnt-orange/10 rounded-lg transition-colors text-sm"
+              className="flex items-center gap-1 px-3 py-2 text-white/90 hover:bg-white/20 rounded-lg transition-colors text-sm drop-shadow-lg backdrop-blur-sm"
               title={t.language}
             >
               <Globe size={16} />
@@ -51,7 +49,7 @@ const Navigation = () => {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-warm-brown hover:bg-burnt-orange/10 rounded-lg transition-colors"
+              className="p-2 text-white/90 hover:bg-white/20 rounded-lg transition-colors drop-shadow-lg backdrop-blur-sm"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -83,12 +81,12 @@ const Navigation = () => {
             className="fixed top-0 right-0 z-50 h-full w-80 bg-white shadow-xl"
           >
             <div className="flex items-center justify-between px-6 py-4 border-b">
-              <span className="text-lg font-script text-burgundy" style={{ fontFamily: 'Dancing Script, cursive' }}>
+              <span className="text-lg font-script text-charcoal" style={{ fontFamily: 'Dancing Script, cursive' }}>
                 {t.menu}
               </span>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 text-warm-brown hover:bg-burnt-orange/10 rounded-lg"
+                className="p-2 text-silver hover:bg-sage/10 rounded-lg"
               >
                 <X size={20} />
               </button>
@@ -105,7 +103,7 @@ const Navigation = () => {
                   >
                     <button
                       onClick={() => scrollToSection(item.href)}
-                      className="block w-full text-left py-3 px-4 text-gray-700 hover:bg-autumn-gold/20 hover:text-maple-red rounded-lg transition-all duration-200 font-serif"
+                      className="block w-full text-left py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
                     >
                       {item.name}
                     </button>
@@ -117,7 +115,7 @@ const Navigation = () => {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <button
                   onClick={toggleLanguage}
-                  className="flex items-center justify-center gap-2 w-full py-3 px-4 text-gray-700 hover:bg-autumn-gold/20 hover:text-maple-red rounded-lg transition-all duration-200 font-serif"
+                  className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
                 >
                   <Globe size={18} />
                   {t.language}: {currentLanguage === 'en' ? 'English' : '日本語'}

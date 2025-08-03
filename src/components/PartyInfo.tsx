@@ -11,18 +11,16 @@ const PartyInfo = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
         className="max-w-3xl mx-auto"
       >
         <h2 className="text-3xl font-serif text-gray-800 mb-2 text-center">{t.partyInfoTitle}</h2>
         <p className="text-center text-gray-600 font-serif mb-12"></p>
         
-        {/* Date */}
+        {/* Date & Place (Hotel New Otani) */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
         >
           <div className="flex items-center gap-4 mb-4">
@@ -68,69 +66,66 @@ const PartyInfo = () => {
           </div>
         </motion.div>
 
-        {/* Family Section */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
-        >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.familySection}</h3>
-          <div className="space-y-3">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">{t.gatheringTime}</span>
-              </div>
-              <div className="text-lg font-semibold">11：30</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">{t.gatheringPlace}</span>
-              </div>
-              <div className="text-gray-700">{t.familyGatheringPlace}</div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Friends Section */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
-        >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.friendsSection}</h3>
-          <div className="space-y-3">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">{t.gatheringTime}</span>
-              </div>
-              <div className="text-lg font-semibold">11：30</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">{t.gatheringPlace}</span>
-              </div>
-              <div className="text-gray-700">{t.friendsGatheringPlace}</div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Common Information */}
+        {/* Gathering Place */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
+        >
+          <h3 className="text-xl font-serif text-gray-800 mb-6">{t.gatheringPlace}</h3>
+          
+          {/* Family Subsection */}
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-800 mb-3">{t.familySection}</h4>
+            <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock className="w-4 h-4 text-burnt-orange" />
+                  <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+                </div>
+                <div className="text-lg font-semibold">11：30</div>
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className="w-4 h-4 text-burnt-orange" />
+                  <span className="text-sm text-gray-500">Location</span>
+                </div>
+                <div className="text-gray-700">{t.familyGatheringPlace}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Friends Subsection */}
+          <div>
+            <h4 className="text-lg font-semibold text-gray-800 mb-3">{t.friendsSection}</h4>
+            <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock className="w-4 h-4 text-burnt-orange" />
+                  <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+                </div>
+                <div className="text-lg font-semibold">11：30</div>
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className="w-4 h-4 text-burnt-orange" />
+                  <span className="text-sm text-gray-500">Location</span>
+                </div>
+                <div className="text-gray-700">{t.friendsGatheringPlace}</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Venue (Room Details) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="bg-white rounded-2xl p-6 shadow-sm"
         >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.commonSection}</h3>
+          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.venueLocation}</h3>
           <div className="space-y-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
@@ -142,7 +137,7 @@ const PartyInfo = () => {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <MapPin className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">{t.venueLocation}</span>
+                <span className="text-sm text-gray-500">Room</span>
               </div>
               <div className="text-gray-700">{t.venueDetail}</div>
             </div>

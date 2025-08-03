@@ -116,24 +116,51 @@ const RSVPForm = () => {
               {t.guestOf} <span className="text-red-500">{t.required}</span>
             </label>
             <div className="grid grid-cols-2 gap-2">
-              {['groom', 'bride'].map((type) => (
-                <label key={type} className="cursor-pointer">
-                  <input
-                    type="radio"
-                    name="guestType"
-                    value={type}
-                    onChange={handleInputChange}
-                    className="sr-only"
-                  />
-                  <div className={`p-3 rounded-lg border-2 text-center ${
-                    formData.guestType === type
-                      ? 'border-maple-red bg-maple-red/10 text-maple-red'
-                      : 'border-gray-200 hover:border-maple-red/50'
-                  }`}>
-                    {type === 'groom' ? t.groomGuest : t.brideGuest}
-                  </div>
-                </label>
-              ))}
+              <label className="cursor-pointer">
+                <input
+                  type="radio"
+                  name="guestType"
+                  value="groom"
+                  checked={formData.guestType === 'groom'}
+                  onChange={handleInputChange}
+                  className="sr-only"
+                />
+                <div className={`p-4 rounded-lg border-3 text-center font-bold text-lg min-h-[60px] flex items-center justify-center relative ${
+                  formData.guestType === 'groom'
+                    ? 'border-red-600 bg-red-600 text-white shadow-xl transform scale-105'
+                    : 'border-gray-300 bg-white text-gray-900 hover:border-red-400 hover:bg-red-50'
+                }`}>
+                  {formData.guestType === 'groom' && (
+                    <span className="absolute top-1 right-2 text-white text-xl">✓</span>
+                  )}
+                  <span>
+                    Groom Guest
+                  </span>
+                </div>
+              </label>
+              
+              <label className="cursor-pointer">
+                <input
+                  type="radio"
+                  name="guestType"
+                  value="bride"
+                  checked={formData.guestType === 'bride'}
+                  onChange={handleInputChange}
+                  className="sr-only"
+                />
+                <div className={`p-4 rounded-lg border-3 text-center font-bold text-lg min-h-[60px] flex items-center justify-center relative ${
+                  formData.guestType === 'bride'
+                    ? 'border-red-600 bg-red-600 text-white shadow-xl transform scale-105'
+                    : 'border-gray-300 bg-white text-gray-900 hover:border-red-400 hover:bg-red-50'
+                }`}>
+                  {formData.guestType === 'bride' && (
+                    <span className="absolute top-1 right-2 text-white text-xl">✓</span>
+                  )}
+                  <span>
+                    Bride Guest
+                  </span>
+                </div>
+              </label>
             </div>
           </motion.div>
 
@@ -302,13 +329,13 @@ const RSVPForm = () => {
               type="button"
               onClick={submitRSVP}
               disabled={isSubmitting}
-              className={`w-full font-serif py-4 px-8 rounded-lg duration-300 transform ${
+              className={`w-full font-serif py-4 px-8 rounded-lg duration-300 transform text-white font-semibold text-lg shadow-lg ${
                 isSubmitting
                   ? 'bg-gray-400 cursor-not-allowed'
                   : submitStatus === 'error'
-                  ? 'bg-red-500 hover:bg-red-600 hover:shadow-lg hover:scale-105'
-                  : 'bg-gradient-to-r from-maple-red to-burnt-orange hover:shadow-lg hover:scale-105'
-              } text-white`}
+                  ? 'bg-red-600 hover:bg-red-700 hover:shadow-xl hover:scale-105'
+                  : 'bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 hover:shadow-xl hover:scale-105'
+              }`}
             >
               {isSubmitting 
                 ? t.submitting 
@@ -318,40 +345,12 @@ const RSVPForm = () => {
               }
             </button>
             {submitStatus !== 'success' && (
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-sm text-gray-700 mt-3 font-medium">
                 {submitStatus === 'idle' ? 'Fill out all required fields and submit your RSVP' : ''}
               </p>
             )}
           </motion.div>
         </div>
-
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-8 text-center"
-        >
-          <p className="text-gray-600 font-serif mb-4">
-            {t.contactDirectly}
-          </p>
-          <div className="space-y-2">
-            <a
-              href="mailto:rezi.rusnadi94@gmail.com"
-              className="flex items-center justify-center gap-2 text-maple-red hover:underline"
-            >
-              <Mail className="w-4 h-4" />
-              rezi.rusnadi94@gmail.com
-            </a>
-            <a
-              href="tel:+818071811508"
-              className="flex items-center justify-center gap-2 text-maple-red hover:underline"
-            >
-              <Phone className="w-4 h-4" />
-              +818071811500
-            </a>
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   )

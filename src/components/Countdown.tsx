@@ -40,7 +40,6 @@ const Countdown = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
         className="max-w-md mx-auto text-center"
       >
         <h2 className="text-3xl font-serif text-gray-800 mb-8">{t.countdownTitle}</h2>
@@ -51,7 +50,6 @@ const Countdown = () => {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-6xl font-bold text-maple-red mb-2"
           >
             {timeLeft.days}
@@ -81,7 +79,6 @@ const Countdown = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg text-gray-600 font-serif"
         >
           {t.toOurWedding}

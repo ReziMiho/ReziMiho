@@ -11,7 +11,6 @@ const Footer = () => {
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
         className="max-w-xl mx-auto px-6"
       >
         {/* Hearts decoration */}
@@ -25,26 +24,6 @@ const Footer = () => {
         <h3 className="text-2xl font-script text-burgundy mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>
           {t.thankYou}
         </h3>
-        
-        <p className="text-gray-600 leading-relaxed font-serif mb-8">
-          {t.footerMessage}
-        </p>
-
-        {/* Couple names */}
-        <p className="text-lg font-script text-gray-700" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          {t.withLove}
-        </p>
-        <p className="text-xl font-script text-warm-brown mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
-          {t.coupleNames}
-        </p>
-
-        {/* Divider */}
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-maple-red to-transparent mx-auto mt-8 mb-6" />
-        
-        {/* Date reminder */}
-        <p className="text-sm text-gray-500 font-serif">
-          {t.dateReminder}
-        </p>
       </motion.div>
     </footer>
   )

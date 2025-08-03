@@ -8,18 +8,20 @@ export default {
     extend: {
       fontFamily: {
         'serif': ['Georgia', 'Times New Roman', 'serif'],
-        'script': ['Brush Script MT', 'cursive'],
+        'script': ['Dancing Script', 'cursive'],
       },
       colors: {
-        // 紅葉 (autumn leaves) color palette
-        'maple-red': '#B91C1C',      // Deep maple red
-        'golden-amber': '#F59E0B',   // Golden amber
-        'burnt-orange': '#EA580C',   // Burnt orange
-        'warm-brown': '#A3681A',     // Rich warm brown
-        'burgundy': '#991B1B',       // Deep burgundy
-        'autumn-gold': '#FBBF24',    // Bright autumn gold
-        'copper': '#D97706',         // Copper/bronze tone
-        'cream': '#FEF7ED',          // Warm cream background
+        // Wedding elegance color palette inspired by the couple's photo
+        'charcoal': '#2D3748',          // Deep charcoal from tuxedo
+        'stone': '#E2E8F0',             // Stone/beige from architecture
+        'blush': '#F7FAFC',             // Soft blush pink from bouquet
+        'blush-pink': '#FBB6CE',        // Deeper blush pink
+        'sage': '#68D391',              // Sage green from bouquet foliage
+        'sage-muted': '#9AE6B4',        // Muted sage green
+        'pearl': '#F7FAFC',             // Pearl white from dress
+        'silver': '#A0AEC0',            // Silver gray from bow tie
+        'cream': '#FFFAF0',             // Warm cream background
+        'champagne': '#FAF089',         // Champagne gold accent
       }
     },
   },

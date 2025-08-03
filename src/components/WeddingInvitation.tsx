@@ -3,15 +3,13 @@ import Navigation from './Navigation'
 import Hero from './Hero'
 import Countdown from './Countdown'
 import Message from './Message'
-import Profile from './Profile'
-import Gallery from './Gallery'
 import PartyInfo from './PartyInfo'
 import RSVPForm from './RSVPForm'
 import Footer from './Footer'
 
 const WeddingInvitation = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream via-autumn-gold/20 to-burnt-orange/30">
+    <div className="min-h-screen bg-gradient-to-br from-cream via-pearl to-stone">
       <Navigation />
       <motion.div
         initial={{ opacity: 0 }}
@@ -22,8 +20,6 @@ const WeddingInvitation = () => {
         <Hero />
         <Countdown />
         <Message />
-        <Profile />
-        <Gallery />
         <PartyInfo />
         <RSVPForm />
         <Footer />

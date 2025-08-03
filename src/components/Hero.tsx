@@ -1,83 +1,143 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useState, useEffect } from 'react'
 
 const Hero = () => {
   const { t } = useLanguage()
+  const [currentSlide, setCurrentSlide] = useState(0)
+  
+  const photos = [
+    '/wedding-photo-1.jpg',
+    '/wedding-photo-2.jpg', 
+    '/wedding-photo-3.jpg'
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % photos.length)
+    }, 5000)
+    
+    return () => clearInterval(timer)
+  }, [photos.length])
 
   return (
-    <section className="relative pt-20 pb-12 px-4 text-center min-h-screen flex items-center">
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="w-full max-w-4xl mx-auto"
-      >
-        {/* Decorative heart */}
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* Slideshow background */}
+      <div className="absolute inset-0">
+        <AnimatePresence>
+          <motion.img
+            key={currentSlide}
+            src={photos[currentSlide]}
+            alt={`Rezi & Miho Wedding Photo ${currentSlide + 1}`}
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              if (e.currentTarget.parentElement) {
+                e.currentTarget.parentElement.style.background = 'linear-gradient(135deg, #FFFAF0 0%, #F7FAFC 50%, #E2E8F0 100%)';
+              }
+            }}
+          />
+        </AnimatePresence>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/10"></div>
+      </div>
+
+      {/* Content overlay */}
+      <div className="relative z-10 h-full flex items-center justify-center px-4">
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="flex justify-center mb-8"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center text-white max-w-4xl mx-auto"
         >
-          <Heart className="w-8 h-8 text-maple-red fill-current" />
+          {/* Date in top left corner */}
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="absolute top-8 left-8 text-2xl md:text-3xl font-bold drop-shadow-lg"
+            style={{ color: '#FF6B4A' }}
+          >
+          </motion.div>
+
+          {/* Decorative heart */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            className="flex justify-center mb-8"
+          >
+            <Heart className="w-8 h-8 text-white fill-current drop-shadow-lg" />
+          </motion.div>
+
+          {/* Main Japanese/English title with decorative lines */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-8"
+          >
+
+            {/* English subtitle */}
+            <div className="text-2xl md:text-3xl font-script text-champagne italic" style={{ fontFamily: 'Dancing Script, cursive' }}>
+              Wedding Invitation
+            </div>
+          </motion.div>
+
+          {/* Couple names */}
+          <motion.h1
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-script text-white mb-6 drop-shadow-lg"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            {t.coupleNames}
+          </motion.h1>
+
+          {/* Date */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-2xl md:text-3xl font-script text-champagne mb-8 drop-shadow-lg"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            {t.weddingDate}
+          </motion.div>
+
+          {/* Subtitle and invitation text */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="text-lg md:text-xl text-white/90 mb-8 font-serif drop-shadow-lg"
+          >
+            <p className="mb-4">
+              {t.subtitle}
+            </p>
+            <p className="mb-4">
+              {t.requestPleasure}
+            </p>
+            <p>
+              {t.celebrationOfMarriage}
+            </p>
+          </motion.div>
+
+          {/* Decorative divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+            className="w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto"
+          />
         </motion.div>
-
-        {/* Main title */}
-        <motion.h1
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-8xl font-script text-burgundy mb-6"
-          style={{ fontFamily: 'Dancing Script, cursive' }}
-        >
-          {t.coupleNames}
-        </motion.h1>
-
-        {/* Date */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-3xl md:text-4xl font-script text-warm-brown mb-8"
-          style={{ fontFamily: 'Dancing Script, cursive' }}
-        >
-          {t.weddingDate}
-        </motion.div>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-lg md:text-xl text-gray-700 mb-8 font-serif"
-        >
-          {t.subtitle}
-        </motion.p>
-
-        {/* Main message */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-          className="text-base md:text-lg text-gray-600 leading-relaxed font-serif max-w-2xl mx-auto"
-        >
-          <p className="mb-4">
-            {t.requestPleasure}
-          </p>
-          <p className="mb-4">
-            {t.celebrationOfMarriage}
-          </p>
-        </motion.div>
-
-        {/* Decorative divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="w-32 h-px bg-gradient-to-r from-transparent via-maple-red to-transparent mx-auto mt-12"
-        />
-      </motion.div>
+      </div>
     </section>
   )
 }

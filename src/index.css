@@ -8,8 +8,8 @@
   font-weight: 400;
 
   color-scheme: light;
-  color: #333;
-  background-color: #fef7ed;
+  color: #2D3748;
+  background-color: #FFFAF0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,8 +21,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  /* Autumn gradient: warm cream to golden amber to burnt orange */
-  background: linear-gradient(135deg, #fef7ed 0%, #fbbf24 50%, #ea580c 100%);
+  /* Wedding elegance gradient: cream to soft blush to sage */
+  background: linear-gradient(135deg, #FFFAF0 0%, #F7FAFC 50%, #E2E8F0 100%);
 }
 
 #root {
@@ -30,20 +30,20 @@ body {
   min-height: 100vh;
 }
 
-/* Custom scrollbar with autumn colors */
+/* Custom scrollbar with wedding colors */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fef7ed;
+  background: #FFFAF0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b91c1c;
+  background: #A0AEC0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #991b1b;
+  background: #68D391;
 } 
