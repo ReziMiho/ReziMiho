@@ -10,7 +10,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RSVP Submitted Successfully</title>
         <style>
-          /* 紅葉 Autumn Theme for Wedding RSVP Success Page */
+          /* Wedding Elegance Theme for Wedding RSVP Success Page */
           * {
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           
           body {
             font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #dc2626 0%, #ea580c 25%, #d97706 50%, #ca8a04 75%, #65a30d 100%);
+            background: linear-gradient(135deg, #FFFAF0 0%, #F7FAFC 25%, #E2E8F0 50%, #A0AEC0 75%, #2D3748 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -41,17 +41,17 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             pointer-events: none;
           }
           
-          .maple-leaf {
+          .floating-heart {
             position: absolute;
-            color: rgba(255, 255, 255, 0.1);
+            color: rgba(251, 187, 206, 0.3);
             font-size: 2rem;
             animation: float 6s ease-in-out infinite;
           }
           
-          .maple-leaf:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-          .maple-leaf:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
-          .maple-leaf:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
-          .maple-leaf:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1s; }
+          .floating-heart:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+          .floating-heart:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+          .floating-heart:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+          .floating-heart:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1s; }
           
           @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -59,12 +59,12 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           }
           
           .container {
-            background: rgba(255, 237, 213, 0.9);
+            background: rgba(255, 250, 240, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            border: 1px solid rgba(251, 187, 206, 0.3);
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(45, 55, 72, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             text-align: center;
             max-width: 32rem;
             width: 100%;
@@ -84,7 +84,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           
           .success-icon {
             font-size: 4rem;
-            background: linear-gradient(45deg, #dc2626, #ea580c);
+            background: linear-gradient(45deg, #68D391, #9AE6B4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -98,7 +98,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           }
           
           h1 {
-            color: #991b1b;
+            color: #2D3748;
             margin-bottom: 1rem;
             font-size: 2.25rem;
             font-weight: 700;
@@ -107,36 +107,36 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           }
           
           h2 {
-            color: #9a3412;
+            color: #4A5568;
             margin-bottom: 1.5rem;
             font-size: 1.125rem;
             font-weight: 500;
           }
           
           .submission-id {
-            background: #fef2f2;
-            border: 1px solid #fca5a5;
-            border-left: 4px solid #fca5a5;
+            background: #F7FAFC;
+            border: 1px solid #9AE6B4;
+            border-left: 4px solid #68D391;
             padding: 1rem;
             border-radius: 0.5rem;
             margin-bottom: 1.5rem;
           }
           
           .submission-id-title {
-            color: #991b1b;
+            color: #2D3748;
             font-weight: 700;
             font-size: 1.125rem;
           }
           
           .submission-id-japanese {
-            color: #b91c1c;
+            color: #4A5568;
             font-size: 0.875rem;
             margin-top: 0.25rem;
           }
           
           .details {
-            background: #fffbeb;
-            border: 1px solid #fcd34d;
+            background: #FFFAF0;
+            border: 1px solid #FAF089;
             padding: 1.5rem;
             border-radius: 0.5rem;
             margin-bottom: 2rem;
@@ -144,7 +144,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           }
           
           .details h3 {
-            color: #92400e;
+            color: #2D3748;
             font-weight: 700;
             font-size: 1.25rem;
             margin-bottom: 1rem;
@@ -155,18 +155,18 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           .detail-item {
             margin: 0.75rem 0;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid #fcd34d;
+            border-bottom: 1px solid #FAF089;
           }
           
           .detail-label {
             font-weight: 700;
-            color: #92400e;
+            color: #4A5568;
             display: inline-block;
             min-width: 8rem;
           }
           
           .detail-value {
-            color: #334155;
+            color: #2D3748;
           }
           
           .buttons {
@@ -178,22 +178,22 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
           }
           
           .btn {
-            background: linear-gradient(45deg, #dc2626, #ea580c);
+            background: linear-gradient(45deg, #68D391, #9AE6B4);
             border: none;
-            color: white;
+            color: #2D3748;
             padding: 0.875rem 2rem;
             border-radius: 9999px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 4px 15px rgba(104, 211, 145, 0.3);
             min-height: 44px;
             font-size: 1rem;
           }
           
           .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            box-shadow: 0 8px 25px rgba(104, 211, 145, 0.4);
           }
           
           .footer {
@@ -213,8 +213,8 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
             font-size: 0.75rem;
           }
           
-          .footer .text-amber-800 {
-            color: #92400e;
+          .footer .text-champagne {
+            color: #B7791F;
           }
 
           /* Mobile Optimizations */
@@ -305,8 +305,8 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
               line-height: 1.6;
             }
             
-            /* Reduce maple leaf animations on mobile for better performance */
-            .maple-leaf {
+            /* Reduce floating elements on mobile for better performance */
+            .floating-heart {
               display: none;
             }
           }
@@ -361,16 +361,16 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
         </style>
       </head>
       <body>
-        <!-- Floating Maple Leaves -->
-        <div class="maple-leaf">🍁</div>
-        <div class="maple-leaf">🍂</div>
-        <div class="maple-leaf">🍁</div>
-        <div class="maple-leaf">🍂</div>
+        <!-- Floating Hearts -->
+        <div class="floating-heart">💖</div>
+        <div class="floating-heart">💕</div>
+        <div class="floating-heart">💖</div>
+        <div class="floating-heart">💕</div>
   
         <div class="container">
           <div class="success-icon">🎉</div>
           <h1>${t('success.title')}</h1>
-          <p style="color: #475569; margin-bottom: 2rem;">${t('success.subtitle')}</p>
+          <p style="color: #4A5568; margin-bottom: 2rem;">${t('success.subtitle')}</p>
           
           <div class="details">
             <h3>${t('success.detailsHeader')}</h3>
