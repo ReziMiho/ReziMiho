@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 import { useRole } from '../contexts/RoleContext'
 
 const PartyInfo = () => {
-  const { t } = useLanguage()
+  const { t, currentLanguage } = useLanguage()
   const { currentRole } = useRole()
 
   return (
@@ -125,7 +125,7 @@ const PartyInfo = () => {
                   </div>
                   <div className="text-gray-700">
                     <a 
-                      href="https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"
+                      href={currentLanguage === 'en' ? "https://www.newotani.co.jp/en/tokyo/banquet/hall/hooh/" : "https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
@@ -162,7 +162,7 @@ const PartyInfo = () => {
               </div>
                 <div className="text-gray-700">
                   <a 
-                    href="https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"
+                    href={currentLanguage === 'en' ? "https://www.newotani.co.jp/en/tokyo/banquet/hall/hooh/" : "https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
