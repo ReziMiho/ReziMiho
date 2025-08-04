@@ -38,6 +38,7 @@ export interface Translations {
   messageParagraph2: string
   messageParagraph3: string
   messageParagraph4: string
+  messageParagraph5: string
 
   // Profile Section
   profileTitle: string
@@ -152,7 +153,7 @@ export const translations: Record<Language, Translations> = {
     celebrationOfMarriage: 'at the celebration of their marriage',
 
     // Countdown Section
-    countdownTitle: 'Count Down',
+    countdownTitle: 'Countdown',
     days: 'days',
     hours: 'hours',
     minutes: 'minutes',
@@ -166,6 +167,7 @@ export const translations: Record<Language, Translations> = {
     messageParagraph2: 'We are delighted to invite you to celebrate our wedding day with us. Your presence would make our special day even more meaningful and joyful.',
     messageParagraph3: 'We look forward to sharing this wonderful moment with the people we love most, creating memories that will last a lifetime.',
     messageParagraph4: 'Thank you for being such an important part of our journey together.',
+    messageParagraph5: 'We look forward to celebrating with you.',
 
     // Profile Section
     profileTitle: 'Profile',
@@ -266,7 +268,7 @@ export const translations: Record<Language, Translations> = {
 
     // Navigation
     menu: 'メニュー',
-    countdown: 'カウントダウン',
+    countdown: 'Countdown',
     message: 'ご挨拶',
     profile: '新郎新婦',
     gallery: 'アルバム',
@@ -280,7 +282,7 @@ export const translations: Record<Language, Translations> = {
     celebrationOfMarriage: '結婚式のお祝いに',
 
     // Countdown Section
-    countdownTitle: 'カウントダウン',
+    countdownTitle: 'Countdown',
     days: '日',
     hours: '時間',
     minutes: '分',
@@ -290,10 +292,11 @@ export const translations: Record<Language, Translations> = {
 
     // Message Section
     messageTitle: 'ご挨拶',
-    messageParagraph1: '親愛なる友人・ご家族の皆様へ',
-    messageParagraph2: '私たちの結婚式にご参加いただき、この特別な日を一緒にお祝いしていただけることを心より嬉しく思います。皆様のご参加により、この日がより意味深く、喜びに満ちたものになります。',
-    messageParagraph3: '最も大切な人たちとこの素晴らしい瞬間を共有し、一生の思い出を作ることを楽しみにしています。',
-    messageParagraph4: '私たちの人生の旅路において、このように大切な存在でいてくださり、ありがとうございます。',
+    messageParagraph1: '皆さまいかがお過ごしでしょうか',
+    messageParagraph2: 'このたび私たちは結婚式を挙げることになりました。',
+    messageParagraph3: 'つきましてはご挨拶をかねてささやかなパーティーを催したいと思います。',
+    messageParagraph4: 'ご多用中誠に恐縮ではございますが、ご出席をお願いいたします。',
+    messageParagraph5: 'ぜひご出席いただきたくご案内申し上げます。',
 
     // Profile Section
     profileTitle: '新郎新婦',

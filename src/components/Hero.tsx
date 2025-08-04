@@ -111,24 +111,6 @@ const Hero = () => {
             {t.weddingDate}
           </motion.div>
 
-          {/* Subtitle and invitation text */}
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            className="text-lg md:text-xl text-white/90 mb-8 font-serif drop-shadow-lg"
-          >
-            <p className="mb-4">
-              {t.subtitle}
-            </p>
-            <p className="mb-4">
-              {t.requestPleasure}
-            </p>
-            <p>
-              {t.celebrationOfMarriage}
-            </p>
-          </motion.div>
-
           {/* Decorative divider */}
           <motion.div
             initial={{ scaleX: 0 }}
