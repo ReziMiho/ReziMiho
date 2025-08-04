@@ -312,16 +312,16 @@ export const translations: Record<Language, Translations> = {
     hours: '時間',
     minutes: '分',
     seconds: '秒',
-    toOurWedding: '結婚式まで',
+    toOurWedding: '結婚披露宴まで',
     weddingDate: '2025年10月12日（日）',
 
     // Message Section
     messageTitle: 'ご挨拶',
-    messageParagraph1: '皆さまいかがお過ごしでしょうか',
-    messageParagraph2: 'このたび私たちは結婚式を挙げることになりました。',
-    messageParagraph3: 'つきましてはご挨拶をかねてささやかなパーティーを催したいと思います。',
-    messageParagraph4: 'ご多用中誠に恐縮ではございますが、ご出席をお願いいたします。',
-    messageParagraph5: 'ぜひご出席いただきたくご案内申し上げます。',
+    messageParagraph1: '皆さまいかがお過ごしでしょうか。',
+    messageParagraph2: 'このたび私たちは結婚に際し、感謝の気持ちを込めて披露宴を開催することとなりました。',
+    messageParagraph3: '',
+    messageParagraph4: '',
+    messageParagraph5: 'ご多用中誠に恐縮ではございますが、ご出席を賜れましたら幸いです。',
 
     // Profile Section
     profileTitle: '新郎新婦',
