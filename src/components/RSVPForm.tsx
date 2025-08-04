@@ -229,7 +229,7 @@ const RSVPForm = () => {
           >
             <label className="block text-sm font-serif text-gray-700 mb-2">
               <Mail className="w-4 h-4 inline mr-1" />
-              {t.email} <span className="text-red-500">{t.required}</span>
+              {t.email}
             </label>
             <input
               type="email"
