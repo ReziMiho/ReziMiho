@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Globe } from 'lucide-react'
+import { Menu, X, Globe, Users } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useRole } from '../contexts/RoleContext'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { t, currentLanguage, toggleLanguage } = useLanguage()
+  const { currentRole, setRole } = useRole()
 
   const navItems = [
     { name: t.countdown, href: '#countdown' },
@@ -20,6 +22,11 @@ const Navigation = () => {
       element.scrollIntoView({ behavior: 'smooth' })
     }
     setIsOpen(false)
+  }
+
+  const toggleRole = () => {
+    const newRole = currentRole === 'family' ? 'friends' : 'family'
+    setRole(newRole)
   }
 
   return (
@@ -111,8 +118,8 @@ const Navigation = () => {
                 ))}
               </ul>
 
-              {/* Language Toggle in Menu */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
+              {/* Language and Role Toggle in Menu */}
+              <div className="mt-8 pt-6 border-t border-gray-200 space-y-3">
                 <button
                   onClick={toggleLanguage}
                   className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
@@ -120,6 +127,16 @@ const Navigation = () => {
                   <Globe size={18} />
                   {t.language}: {currentLanguage === 'en' ? 'English' : '日本語'}
                 </button>
+
+                {currentRole && (
+                  <button
+                    onClick={toggleRole}
+                    className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
+                  >
+                    <Users size={18} />
+                    {currentRole === 'family' ? t.familyOption : t.friendsOption}
+                  </button>
+                )}
               </div>
             </div>
           </motion.nav>

@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion'
-import { Heart, Globe } from 'lucide-react'
+import { Users, UserCheck } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useRole } from '../contexts/RoleContext'
+import { Role } from '../translations'
 
-const LanguageSelection = () => {
-  const { selectInitialLanguage } = useLanguage()
+const RoleSelection = () => {
+  const { t } = useLanguage()
+  const { selectInitialRole } = useRole()
 
-  const handleLanguageSelect = (language: 'en' | 'ja') => {
-    selectInitialLanguage(language)
+  const handleRoleSelect = (role: Role) => {
+    selectInitialRole(role)
   }
 
   return (
@@ -25,8 +28,8 @@ const LanguageSelection = () => {
           className="flex justify-center mb-8"
         >
           <div className="relative">
-            <Heart className="w-12 h-12 text-maple-red fill-current" />
-            <Globe className="w-6 h-6 text-burnt-orange absolute -top-1 -right-1" />
+            <Users className="w-12 h-12 text-maple-red fill-current" />
+            <UserCheck className="w-6 h-6 text-burnt-orange absolute -top-1 -right-1" />
           </div>
         </motion.div>
 
@@ -41,20 +44,18 @@ const LanguageSelection = () => {
           Rezi & Miho
         </motion.h1>
 
-        {/* Welcome message */}
+        {/* Role selection message */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-8"
         >
-          <h2 className="text-2xl font-serif text-gray-800 mb-2">Welcome</h2>
-          <h2 className="text-2xl font-serif text-gray-800 mb-6">ようこそ</h2>
-          <p className="text-gray-600 font-serif mb-2">Please select your preferred language</p>
-          <p className="text-gray-600 font-serif">ご希望の言語をお選びください</p>
+          <h2 className="text-2xl font-serif text-gray-800 mb-2">{t.roleSelection}</h2>
+          <p className="text-gray-600 font-serif">{t.selectRole}</p>
         </motion.div>
 
-        {/* Language Options */}
+        {/* Role Options */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,23 +63,25 @@ const LanguageSelection = () => {
           className="space-y-4"
         >
           <button
-            onClick={() => handleLanguageSelect('en')}
+            onClick={() => handleRoleSelect('family')}
             className="w-full p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border-2 border-transparent hover:border-maple-red hover:bg-white transition-all duration-300 transform hover:scale-105"
           >
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl">🇺🇸</span>
-              <span className="text-lg font-serif text-gray-800">English</span>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="text-2xl">👨‍👩‍👧‍👦</span>
+              <span className="text-lg font-serif text-gray-800">{t.familyOption}</span>
             </div>
+            <p className="text-sm text-gray-600">{t.familyDescription}</p>
           </button>
 
           <button
-            onClick={() => handleLanguageSelect('ja')}
+            onClick={() => handleRoleSelect('friends')}
             className="w-full p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border-2 border-transparent hover:border-maple-red hover:bg-white transition-all duration-300 transform hover:scale-105"
           >
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl">🇯🇵</span>
-              <span className="text-lg font-serif text-gray-800">日本語</span>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="text-2xl">👥</span>
+              <span className="text-lg font-serif text-gray-800">{t.friendsOption}</span>
             </div>
+            <p className="text-sm text-gray-600">{t.friendsDescription}</p>
           </button>
         </motion.div>
       </motion.div>
@@ -86,4 +89,4 @@ const LanguageSelection = () => {
   )
 }
 
-export default LanguageSelection 
+export default RoleSelection 

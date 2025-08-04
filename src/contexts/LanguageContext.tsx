@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { Language, Translations, translations } from '../translations'
 
 interface LanguageContextType {
@@ -20,17 +20,30 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en')
   const [hasSelectedLanguage, setHasSelectedLanguage] = useState(false)
 
+  // Load language from localStorage on mount
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('wedding-language') as Language | null
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ja')) {
+      setCurrentLanguage(savedLanguage)
+      setHasSelectedLanguage(true)
+    }
+  }, [])
+
   const setLanguage = (lang: Language) => {
     setCurrentLanguage(lang)
+    localStorage.setItem('wedding-language', lang)
   }
 
   const selectInitialLanguage = (lang: Language) => {
     setCurrentLanguage(lang)
     setHasSelectedLanguage(true)
+    localStorage.setItem('wedding-language', lang)
   }
 
   const toggleLanguage = () => {
-    setCurrentLanguage(prev => prev === 'en' ? 'ja' : 'en')
+    const newLang = currentLanguage === 'en' ? 'ja' : 'en'
+    setCurrentLanguage(newLang)
+    localStorage.setItem('wedding-language', newLang)
   }
 
   const t = translations[currentLanguage]

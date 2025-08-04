@@ -1,4 +1,5 @@
 export type Language = 'en' | 'ja'
+export type Role = 'family' | 'friends'
 
 export interface Translations {
   // Language Selection
@@ -7,6 +8,14 @@ export interface Translations {
   englishOption: string
   japaneseOption: string
   continueButton: string
+
+  // Role Selection
+  roleSelection: string
+  selectRole: string
+  familyOption: string
+  friendsOption: string
+  familyDescription: string
+  friendsDescription: string
 
   // Navigation
   menu: string
@@ -137,6 +146,14 @@ export const translations: Record<Language, Translations> = {
     japaneseOption: '日本語',
     continueButton: 'Continue',
 
+    // Role Selection
+    roleSelection: 'Role Selection',
+    selectRole: 'Please select your role',
+    familyOption: 'Family',
+    friendsOption: 'Friends',
+    familyDescription: 'For family members and close friends',
+    friendsDescription: 'For friends and acquaintances',
+
     // Navigation
     menu: 'Menu',
     countdown: 'Countdown',
@@ -201,10 +218,10 @@ export const translations: Record<Language, Translations> = {
     gatheringTime: 'Gathering Time',
     gatheringPlace: 'Gathering Place',
     familyGatheringPlace: 'The Main Arcade Floor (B1) Family Waiting Room',
-    friendsGatheringPlace: 'Phoenix Hall Reception',
+    friendsGatheringPlace: 'Hō Hall Reception',
     receptionStartTime: 'Reception Start Time',
     venueLocation: 'Venue',
-    venueDetail: 'Phoenix Hall (East) Garden Tower Banquet Hall Floor (5th Floor)',
+    venueDetail: 'Hō (East) Garden Tower Banquet Hall Floor (5th Floor)',
 
     // RSVP Section
     rsvpTitle: 'R S V P',
@@ -265,6 +282,14 @@ export const translations: Record<Language, Translations> = {
     englishOption: 'English',
     japaneseOption: '日本語',
     continueButton: '続行',
+
+    // Role Selection
+    roleSelection: '役割選択',
+    selectRole: 'ご希望の役割をお選びください',
+    familyOption: '家族',
+    friendsOption: '友人',
+    familyDescription: 'ご家族様と親しい方々へ',
+    friendsDescription: 'ご友人様と知り合いの方々へ',
 
     // Navigation
     menu: 'メニュー',

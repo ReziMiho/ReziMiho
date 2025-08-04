@@ -282,7 +282,7 @@ const RSVPForm = () => {
                     href="https://caneat.jp/33/event/db02ddae?532393"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                    className="inline-block w-full text-center bg-gray-400 hover:bg-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
                   >
                     食事制限フォームへ →
                   </a>

@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { Calendar, Clock, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useRole } from '../contexts/RoleContext'
 
 const PartyInfo = () => {
   const { t } = useLanguage()
+  const { currentRole } = useRole()
 
   return (
     <section id="party-info" className="py-16 px-4 bg-white/50 backdrop-blur-sm">
@@ -66,7 +68,7 @@ const PartyInfo = () => {
           </div>
         </motion.div>
 
-        {/* Gathering Place */}
+        {/* Gathering Place - Conditional rendering based on role */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,56 +77,67 @@ const PartyInfo = () => {
         >
           <h3 className="text-xl font-serif text-gray-800 mb-6">{t.gatheringPlace}</h3>
           
-          {/* Family Subsection */}
-          <div className="mb-6">
-            <h4 className="text-lg font-semibold text-gray-800 mb-3">{t.familySection}</h4>
-            <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Clock className="w-4 h-4 text-burnt-orange" />
-                  <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+          {/* Family Subsection - Show only if role is family */}
+          {currentRole === 'family' && (
+            <div className="mb-6">
+              <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Clock className="w-4 h-4 text-burnt-orange" />
+                    <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+                  </div>
+                  <div className="text-lg font-semibold">11：30</div>
                 </div>
-                <div className="text-lg font-semibold">11：30</div>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-4 h-4 text-burnt-orange" />
-                  <span className="text-sm text-gray-500">Location</span>
-                </div>
-                <div className="text-gray-700">
-                  <a 
-                    href="https://www.newotani.co.jp/tokyo/banquet/hall/anteroom/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
-                  >
-                    {t.familyGatheringPlace}
-                  </a>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="w-4 h-4 text-burnt-orange" />
+                    <span className="text-sm text-gray-500">Location</span>
+                  </div>
+                  <div className="text-gray-700">
+                    <a 
+                      href="https://www.newotani.co.jp/tokyo/banquet/hall/anteroom/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
+                    >
+                      {t.familyGatheringPlace}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
-          {/* Friends Subsection */}
-          <div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-3">{t.friendsSection}</h4>
-            <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Clock className="w-4 h-4 text-burnt-orange" />
-                  <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+          {/* Friends Subsection - Show only if role is friends */}
+          {currentRole === 'friends' && (
+            <div>
+              <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Clock className="w-4 h-4 text-burnt-orange" />
+                    <span className="text-sm text-gray-500">{t.gatheringTime}</span>
+                  </div>
+                  <div className="text-lg font-semibold">11：30</div>
                 </div>
-                <div className="text-lg font-semibold">11：30</div>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-4 h-4 text-burnt-orange" />
-                  <span className="text-sm text-gray-500">Location</span>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="w-4 h-4 text-burnt-orange" />
+                    <span className="text-sm text-gray-500">Location</span>
+                  </div>
+                  <div className="text-gray-700">
+                    <a 
+                      href="https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
+                    >
+                      {t.friendsGatheringPlace}
+                    </a>
+                  </div>
                 </div>
-                <div className="text-gray-700">{t.friendsGatheringPlace}</div>
               </div>
             </div>
-          </div>
+          )}
         </motion.div>
 
         {/* Venue (Room Details) */}
@@ -135,7 +148,7 @@ const PartyInfo = () => {
           className="bg-white rounded-2xl p-6 shadow-sm"
         >
           <h3 className="text-xl font-serif text-gray-800 mb-4">{t.venueLocation}</h3>
-          <div className="space-y-3">
+          <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <Clock className="w-4 h-4 text-burnt-orange" />
@@ -148,7 +161,16 @@ const PartyInfo = () => {
                 <MapPin className="w-4 h-4 text-burnt-orange" />
                 <span className="text-sm text-gray-500">Room</span>
               </div>
-              <div className="text-gray-700">{t.venueDetail}</div>
+                <div className="text-gray-700">
+                  <a 
+                    href="https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
+                  >
+                    {t.venueDetail}
+                  </a>
+                </div>
             </div>
           </div>
         </motion.div>
