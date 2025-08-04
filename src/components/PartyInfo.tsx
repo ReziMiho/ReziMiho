@@ -29,7 +29,7 @@ const PartyInfo = () => {
             <Calendar className="w-6 h-6 text-maple-red" />
             <h3 className="text-xl font-serif text-gray-800">{t.date}</h3>
           </div>
-          <div className="text-2xl font-script text-burgundy mb-2" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          <div className="text-2xl font-script text-burgundy mb-2" style={{ fontFamily: 'MS ゴシック, MS Gothic, monospace' }}>
             {t.weddingDate}
           </div>
           <div className="text-lg text-gray-600">{t.dateValue}</div>

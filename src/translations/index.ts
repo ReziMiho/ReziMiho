@@ -151,7 +151,7 @@ export const translations: Record<Language, Translations> = {
     selectRole: 'Please select your role',
     familyOption: 'Family',
     friendsOption: 'Friends',
-    familyDescription: 'For family members and close friends',
+    familyDescription: 'For family members',
     friendsDescription: 'For friends and acquaintances',
 
     // Navigation
@@ -224,7 +224,7 @@ export const translations: Record<Language, Translations> = {
     venueDetail: 'Hō (East) Garden Tower Banquet Hall Floor (5th Floor)',
 
     // RSVP Section
-    rsvpTitle: 'R S V P',
+    rsvpTitle: 'JOIN US',
     rsvpSubtitle: '御出欠について',
     respondBy: 'Please respond by September 15th, 2025',
     receptionTitle: 'Reception',
@@ -288,8 +288,8 @@ export const translations: Record<Language, Translations> = {
     selectRole: 'ご希望の役割をお選びください',
     familyOption: '家族',
     friendsOption: '友人',
-    familyDescription: 'ご家族様と親しい方々へ',
-    friendsDescription: 'ご友人様と知り合いの方々へ',
+    familyDescription: 'ご親族の皆様へ',
+    friendsDescription: 'ご友人と知り合いの皆様へ',
 
     // Navigation
     menu: 'メニュー',
@@ -361,7 +361,7 @@ export const translations: Record<Language, Translations> = {
     venueDetail: '鳳凰の間(東)ガーデンタワー宴会場階(5階)',
 
     // RSVP Section
-    rsvpTitle: 'R S V P',
+    rsvpTitle: 'JOIN US',
     rsvpSubtitle: '御出欠について',
     respondBy: '2025年9月15日までにご返答をお願いいたします',
     receptionTitle: '披露宴',
@@ -382,9 +382,9 @@ export const translations: Record<Language, Translations> = {
     email: 'メールアドレス',
     phoneNumber: '電話番号',
     dietaryRequirements: 'アレルギーについて',
-    dietaryPlaceholder: 'アレルギーや食事制限がございましたらお知らせください...',
+    dietaryPlaceholder: 'アレルギーなど食べられないものがございましたら、専用フォームでご回答ください。',
     messageLabel: 'メッセージ',
-    messagePlaceholder: 'お祝いのメッセージやご感想をお聞かせください...',
+    messagePlaceholder: 'ご自由にお書きください',
     sendRsvp: '確認画面へ',
     previewNote: '※プレビューのため入力内容の送信はできません',
     contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',

@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['Georgia', 'Times New Roman', 'serif'],
-        'script': ['Dancing Script', 'cursive'],
+        'serif': ['MS ゴシック', 'MS Gothic', 'monospace'],
+        'script': ['MS ゴシック', 'MS Gothic', 'monospace'],
       },
       colors: {
         // Wedding elegance color palette inspired by the couple's photo

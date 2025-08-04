@@ -51,8 +51,6 @@ const RoleSelection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-8"
         >
-          <h2 className="text-2xl font-serif text-gray-800 mb-2">{t.roleSelection}</h2>
-          <p className="text-gray-600 font-serif">{t.selectRole}</p>
         </motion.div>
 
         {/* Role Options */}

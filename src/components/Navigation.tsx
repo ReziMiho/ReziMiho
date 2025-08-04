@@ -47,7 +47,7 @@ const Navigation = () => {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-1 px-3 py-2 text-white/90 hover:bg-white/20 rounded-lg transition-colors text-sm drop-shadow-lg backdrop-blur-sm"
+              className="flex items-center gap-1 px-3 py-2 text-white/90 rounded-lg transition-colors text-sm drop-shadow-lg backdrop-blur-sm"
               title={t.language}
             >
               <Globe size={16} />

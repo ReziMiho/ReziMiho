@@ -276,7 +276,7 @@ const RSVPForm = () => {
               <div className="space-y-3">
                 <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
                   <p className="text-sm text-gray-700 mb-3">
-                    アレルギーや食事制限については、専用フォームでご回答ください。
+                    {t.dietaryPlaceholder}
                   </p>
                   <a
                     href="https://caneat.jp/33/event/db02ddae?532393"
