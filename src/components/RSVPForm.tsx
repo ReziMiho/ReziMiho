@@ -278,14 +278,32 @@ const RSVPForm = () => {
             <label className="block text-sm font-serif text-gray-700 mb-2">
               {t.dietaryRequirements}
             </label>
-            <textarea
-              name="dietary"
-              placeholder={t.dietaryPlaceholder}
-              value={formData.dietary}
-              onChange={handleInputChange}
-              rows={3}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red resize-none"
-            />
+            {currentLanguage === 'ja' ? (
+              <div className="space-y-3">
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <p className="text-sm text-gray-700 mb-3">
+                    アレルギーや食事制限については、専用フォームでご回答ください。
+                  </p>
+                  <a
+                    href="https://caneat.jp/33/event/db02ddae?532393"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                  >
+                    食事制限フォームへ →
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <textarea
+                name="dietary"
+                placeholder={t.dietaryPlaceholder}
+                value={formData.dietary}
+                onChange={handleInputChange}
+                rows={3}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red resize-none"
+              />
+            )}
           </motion.div>
 
           {/* Message */}
