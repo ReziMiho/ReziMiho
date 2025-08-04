@@ -5,7 +5,7 @@ const Message = () => {
   const { t } = useLanguage()
 
   return (
-    <section id="message" className="py-6 px-4">
+    <section id="message" className="py-12 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -13,15 +13,15 @@ const Message = () => {
         transition={{ duration: 0.8 }}
         className="max-w-2xl mx-auto text-center"
       >
-        <h2 className="text-[14px] font-serif text-gray-800 mb-2">{t.messageTitle}</h2>
+        <h2 className="text-xl font-serif text-gray-800 mb-6">{t.messageTitle}</h2>
         
-        <div className="bg-white/70 rounded-2xl p-2 shadow-sm">
+        <div className="bg-white/70 rounded-2xl p-6 shadow-sm">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-gray-600 leading-relaxed font-serif text-[10px] mb-0.5 whitespace-nowrap"
+            className="text-gray-600 leading-relaxed font-serif text-base mb-3"
           >
             {t.messageParagraph1}
           </motion.p>
@@ -31,7 +31,7 @@ const Message = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-gray-600 leading-relaxed font-serif text-[10px] mb-0.5 whitespace-nowrap"
+            className="text-gray-600 leading-relaxed font-serif text-base mb-3"
           >
             {t.messageParagraph2}
           </motion.p>
@@ -41,7 +41,7 @@ const Message = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-gray-600 leading-relaxed font-serif text-[10px] mb-0.5 whitespace-nowrap"
+            className="text-gray-600 leading-relaxed font-serif text-base mb-3"
           >
             {t.messageParagraph3}
           </motion.p>
@@ -51,7 +51,7 @@ const Message = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-gray-600 leading-relaxed font-serif text-[10px] mb-0.5 whitespace-nowrap"
+            className="text-gray-600 leading-relaxed font-serif text-base mb-3"
           >
             {t.messageParagraph4}
           </motion.p>
@@ -61,7 +61,7 @@ const Message = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-gray-600 leading-relaxed font-serif text-[10px] whitespace-nowrap"
+            className="text-gray-600 leading-relaxed font-serif text-base"
           >
             {t.messageParagraph5}
           </motion.p>

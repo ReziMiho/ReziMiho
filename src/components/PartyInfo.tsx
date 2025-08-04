@@ -91,7 +91,16 @@ const PartyInfo = () => {
                   <MapPin className="w-4 h-4 text-burnt-orange" />
                   <span className="text-sm text-gray-500">Location</span>
                 </div>
-                <div className="text-gray-700">{t.familyGatheringPlace}</div>
+                <div className="text-gray-700">
+                  <a 
+                    href="https://www.newotani.co.jp/tokyo/banquet/hall/anteroom/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
+                  >
+                    {t.familyGatheringPlace}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

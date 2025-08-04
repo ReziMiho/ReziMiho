@@ -29,7 +29,7 @@ const RSVPForm = () => {
   }
 
   const validateForm = () => {
-    const requiredFields = ['guestType', 'firstName', 'lastName', 'firstNameFurigana', 'lastNameFurigana', 'email']
+    const requiredFields = ['guestType', 'firstName', 'lastName', 'firstNameFurigana', 'lastNameFurigana']
     const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData] || formData[field as keyof typeof formData].trim() === '')
 
     if (missingFields.length > 0) {
@@ -125,16 +125,13 @@ const RSVPForm = () => {
                   onChange={handleInputChange}
                   className="sr-only"
                 />
-                <div className={`p-4 rounded-lg border-3 text-center font-bold text-lg min-h-[60px] flex items-center justify-center relative ${
+                <div className={`p-4 rounded-lg border-3 text-center text-lg min-h-[60px] flex items-center justify-center relative ${
                   formData.guestType === 'groom'
-                    ? 'border-red-600 bg-red-600 text-white shadow-xl transform scale-105'
-                    : 'border-gray-300 bg-white text-gray-900 hover:border-red-400 hover:bg-red-50'
+                    ? 'bg-gray-500 text-white shadow-xl transform scale-105'
+                    : 'border-gray-300 bg-white text-gray-900'
                 }`}>
-                  {formData.guestType === 'groom' && (
-                    <span className="absolute top-1 right-2 text-white text-xl">✓</span>
-                  )}
                   <span>
-                    Groom Guest
+                    {t.groomGuest}
                   </span>
                 </div>
               </label>
@@ -148,16 +145,13 @@ const RSVPForm = () => {
                   onChange={handleInputChange}
                   className="sr-only"
                 />
-                <div className={`p-4 rounded-lg border-3 text-center font-bold text-lg min-h-[60px] flex items-center justify-center relative ${
+                <div className={`p-4 rounded-lg border-3 text-center text-lg min-h-[60px] flex items-center justify-center relative ${
                   formData.guestType === 'bride'
-                    ? 'border-red-600 bg-red-600 text-white shadow-xl transform scale-105'
-                    : 'border-gray-300 bg-white text-gray-900 hover:border-red-400 hover:bg-red-50'
+                    ? 'bg-gray-500 text-white shadow-xl transform scale-105'
+                    : 'border-gray-300 bg-white text-gray-900'
                 }`}>
-                  {formData.guestType === 'bride' && (
-                    <span className="absolute top-1 right-2 text-white text-xl">✓</span>
-                  )}
                   <span>
-                    Bride Guest
+                    {t.brideGuest}
                   </span>
                 </div>
               </label>
@@ -280,7 +274,7 @@ const RSVPForm = () => {
             </label>
             {currentLanguage === 'ja' ? (
               <div className="space-y-3">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
                   <p className="text-sm text-gray-700 mb-3">
                     アレルギーや食事制限については、専用フォームでご回答ください。
                   </p>
@@ -288,7 +282,7 @@ const RSVPForm = () => {
                     href="https://caneat.jp/33/event/db02ddae?532393"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                    className="inline-block w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
                   >
                     食事制限フォームへ →
                   </a>
@@ -351,8 +345,8 @@ const RSVPForm = () => {
                 isSubmitting
                   ? 'bg-gray-400 cursor-not-allowed'
                   : submitStatus === 'error'
-                  ? 'bg-red-600 hover:bg-red-700 hover:shadow-xl hover:scale-105'
-                  : 'bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 hover:shadow-xl hover:scale-105'
+                  ? 'bg-gray-600 hover:bg-gray-700 hover:shadow-xl hover:scale-105'
+                  : 'bg-gradient-to-r from-gray-600 to-gray-600 hover:from-gray-700 hover:to-gray-700 hover:shadow-xl hover:scale-105'
               }`}
             >
               {isSubmitting 
@@ -362,11 +356,6 @@ const RSVPForm = () => {
                 : t.sendRsvp
               }
             </button>
-            {submitStatus !== 'success' && (
-              <p className="text-sm text-gray-700 mt-3 font-medium">
-                {submitStatus === 'idle' ? 'Fill out all required fields and submit your RSVP' : ''}
-              </p>
-            )}
           </motion.div>
         </div>
       </motion.div>
