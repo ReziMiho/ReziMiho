@@ -32,7 +32,6 @@ const PartyInfo = () => {
           <div className="text-2xl font-script text-burgundy mb-2" style={{ fontFamily: 'MS ゴシック, MS Gothic, monospace' }}>
             {t.weddingDate}
           </div>
-          <div className="text-lg text-gray-600">{t.dateValue}</div>
 
           <div className="mt-6 pt-4 border-t border-gray-100">
             <div className="space-y-4">

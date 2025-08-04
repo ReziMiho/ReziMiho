@@ -176,7 +176,7 @@ export const translations: Record<Language, Translations> = {
     minutes: 'minutes',
     seconds: 'seconds',
     toOurWedding: 'to our Wedding',
-    weddingDate: '2025.10.12',
+    weddingDate: '2025.10.12 (Sun)',
 
     // Message Section
     messageTitle: 'Message',
@@ -313,7 +313,7 @@ export const translations: Record<Language, Translations> = {
     minutes: '分',
     seconds: '秒',
     toOurWedding: '結婚式まで',
-    weddingDate: '2025年10月12日',
+    weddingDate: '2025年10月12日（日）',
 
     // Message Section
     messageTitle: 'ご挨拶',
@@ -363,7 +363,7 @@ export const translations: Record<Language, Translations> = {
     // RSVP Section
     rsvpTitle: 'JOIN US',
     rsvpSubtitle: '御出欠について',
-    respondBy: '2025年9月15日までにご返答をお願いいたします',
+    respondBy: '9月15日迄にご返答をお願いいたします。',
     receptionTitle: '披露宴',
     attend: 'ご出席',
     decline: 'ご欠席',
