@@ -20,7 +20,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
         
         body {
           font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Segoe UI', sans-serif;
-          background: linear-gradient(135deg, #E2E8F0 0%, #A0AEC0 25%, #718096 50%, #4A5568 75%, #2D3748 100%);
+          background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 25%, #6b7280 50%, #4b5563 75%, #2D3748 100%);
           min-height: 100vh;
           display: flex;
           align-items: center;
@@ -43,9 +43,9 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
         }
         
         .container {
-          background: rgba(255, 250, 240, 0.95);
+          background: rgba(209, 213, 219, 0.95);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(160, 174, 192, 0.3);
+          border: 1px solid rgba(156, 163, 175, 0.3);
           padding: 1.5rem;
           border-radius: 1rem;
           box-shadow: 0 25px 50px -12px rgba(45, 55, 72, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -55,16 +55,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
           animation: slideUp 0.6s ease-out;
         }
         
-        .error-icon {
-          font-size: 4rem;
-          background: linear-gradient(45deg, #F56565, #FC8181);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 1.5rem;
-        }
-        
-        h3 {
+        h1 {
           color: #2D3748;
           margin-bottom: 1rem;
           font-size: 2.25rem;
@@ -74,8 +65,8 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
         }
         
         .error-message {
-          background: #FEF5E7;
-          border: 1px solid #F6AD55;
+          background: #f3f4f6;
+          border: 1px solid #9ca3af;
           border-left: 4px solid #F56565;
           padding: 1.5rem;
           border-radius: 0.5rem;
@@ -163,14 +154,9 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
             max-width: 90vw;
           }
           
-          h3 {
+          h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-          }
-          
-          .error-icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
           }
           
           .error-message {
@@ -217,12 +203,8 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
             max-width: 95vw;
           }
           
-          h3 {
+          h1 {
             font-size: 2rem;
-          }
-          
-          .error-icon {
-            font-size: 4rem;
           }
           
           .error-message {
@@ -251,8 +233,7 @@ function createErrorPage(errorMessage, acceptLanguage = '') {
     </head>
     <body>
       <div class="container">
-        <div class="error-icon">❌</div>
-        <h3>${t('error.title')}</h3>
+        <h1>${t('error.title')}</h1>
         
         <div class="error-message">
           <div class="error-text">${translatedError}</div>
