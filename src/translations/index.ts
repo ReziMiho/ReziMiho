@@ -147,7 +147,7 @@ export const translations: Record<Language, Translations> = {
     sendRsvp: 'Send RSVP',
     submitting: 'Submitting...',
     submitSuccess: 'Redirecting to confirmation page...',
-    submitError: 'Sorry, there was an error submitting your RSVP. Please try again.',
+    submitError: 'Sorry, there was an error submitting your RSVP. Please check the required fields and try again.',
     submitRetry: 'Retry Submission',
 
     // Footer
@@ -221,10 +221,10 @@ export const translations: Record<Language, Translations> = {
     dietaryPlaceholder: 'アレルギーなど食べられないものがございましたら、専用フォームでご回答ください。',
     messageLabel: 'メッセージ',
     messagePlaceholder: 'ご自由にお書きください',
-    sendRsvp: '確認',
+    sendRsvp: '送信',
     submitting: '送信中...',
     submitSuccess: '確認ページに移動中...',
-    submitError: '申し訳ございません。送信中にエラーが発生しました。もう一度お試しください。',
+    submitError: '申し訳ございません。送信中にエラーが発生しました。必須項目をご確認の上、もう一度お試しください。',
     submitRetry: '再送信',
 
     // Footer

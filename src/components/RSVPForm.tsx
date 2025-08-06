@@ -236,7 +236,7 @@ const RSVPForm = () => {
             <input
               type="email"
               name="email"
-              placeholder="your.email@gmail.com"
+              placeholder="yamada.taro@gmail.com"
               value={formData.email}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
