@@ -2,16 +2,7 @@ export type Language = 'en' | 'ja'
 export type Role = 'family' | 'friends'
 
 export interface Translations {
-  // Language Selection
-  languageSelection: string
-  selectLanguage: string
-  englishOption: string
-  japaneseOption: string
-  continueButton: string
-
   // Role Selection
-  roleSelection: string
-  selectRole: string
   familyOption: string
   friendsOption: string
   familyDescription: string
@@ -21,23 +12,15 @@ export interface Translations {
   menu: string
   countdown: string
   message: string
-  profile: string
-  gallery: string
   partyInfo: string
   rsvp: string
 
   // Hero Section
   coupleNames: string
-  subtitle: string
-  requestPleasure: string
-  celebrationOfMarriage: string
 
   // Countdown Section
   countdownTitle: string
   days: string
-  hours: string
-  minutes: string
-  seconds: string
   toOurWedding: string
   weddingDate: string
 
@@ -49,29 +32,9 @@ export interface Translations {
   messageParagraph4: string
   messageParagraph5: string
 
-  // Profile Section
-  profileTitle: string
-  groom: string
-  bride: string
-  groomName: string
-  brideName: string
-  groomMessage: string
-  brideMessage: string
-
-  // Gallery Section
-  galleryTitle: string
-  morePhotos: string
-
   // Party Info Section
   partyInfoTitle: string
-  partyInfoSubtitle: string
   date: string
-  dateValue: string
-  reception: string
-  startTime: string
-  receptionTime: string
-  endTime: string
-  venueInfo: string
   venueName: string
   venueAddress: string
   tel: string
@@ -88,15 +51,7 @@ export interface Translations {
 
   // RSVP Section
   rsvpTitle: string
-  rsvpSubtitle: string
   respondBy: string
-  receptionTitle: string
-  attend: string
-  decline: string
-  hold: string
-  attendJa: string
-  declineJa: string
-  holdJa: string
   guestOf: string
   required: string
   groomGuest: string
@@ -112,43 +67,20 @@ export interface Translations {
   messageLabel: string
   messagePlaceholder: string
   sendRsvp: string
-  previewNote: string
-  contactDirectly: string
   submitting: string
   submitSuccess: string
   submitError: string
   submitRetry: string
 
-  // Details Section
-  dayOfWeek: string
-  venue: string
-
   // Footer
   thankYou: string
-  footerMessage: string
-  withLove: string
-  dateReminder: string
 
   // Common
-  loading: string
-  submit: string
-  cancel: string
-  close: string
   language: string
 }
 
 export const translations: Record<Language, Translations> = {
   en: {
-    // Language Selection
-    languageSelection: 'Welcome',
-    selectLanguage: 'Please select your preferred language',
-    englishOption: 'English',
-    japaneseOption: '日本語',
-    continueButton: 'Continue',
-
-    // Role Selection
-    roleSelection: 'Role Selection',
-    selectRole: 'Please select your role',
     familyOption: 'Family',
     friendsOption: 'Friends',
     familyDescription: 'For family members',
@@ -158,57 +90,29 @@ export const translations: Record<Language, Translations> = {
     menu: 'Menu',
     countdown: 'Countdown',
     message: 'Message',
-    profile: 'Profile',
-    gallery: 'Gallery',
     partyInfo: 'Party Info',
     rsvp: 'RSVP',
 
     // Hero Section
     coupleNames: 'Rezi & Miho',
-    subtitle: 'Together with their families',
-    requestPleasure: 'request the pleasure of your company',
-    celebrationOfMarriage: 'at the celebration of their marriage',
 
     // Countdown Section
     countdownTitle: 'Countdown',
     days: 'days',
-    hours: 'hours',
-    minutes: 'minutes',
-    seconds: 'seconds',
     toOurWedding: 'to our Wedding',
     weddingDate: '2025.10.12 (Sun)',
 
     // Message Section
     messageTitle: 'Message',
     messageParagraph1: 'We are pleased to announce that',
-    messageParagraph2: 'In celebration of our marriage we will be holding a wedding reception to express our heartfelt gratitude.',
+    messageParagraph2: 'in celebration of our marriage we will be holding a wedding reception to express our heartfelt gratitude',
     messageParagraph3: '',
     messageParagraph4: '',
-    messageParagraph5: 'We understand that everyone is very busy, but it would mean a lot to us if you could attend.',
-
-    // Profile Section
-    profileTitle: 'Profile',
-    groom: 'Groom',
-    bride: 'Bride',
-    groomName: 'Rezi',
-    brideName: 'Miho',
-    groomMessage: 'Thank you all for being such wonderful friends and family. I\'m excited to share this special day with everyone! Looking forward to celebrating with delicious food and great company.',
-    brideMessage: 'Thank you for always supporting us and being there for us! We\'re so grateful to have you in our lives. We look forward to continuing this journey together as a married couple.',
-
-    // Gallery Section
-    galleryTitle: 'Album',
-    morePhotos: 'More photos will be shared after our special day! 📸',
+    messageParagraph5: 'we understand that everyone is very busy, but it would mean a lot to us if you could attend',
 
     // Party Info Section
     partyInfoTitle: 'Party Information',
-    partyInfoSubtitle: 'パーティーのご案内',
     date: 'Date',
-    dateValue: 'October 12th, 2025 Sunday',
-    reception: 'Reception',
-    startTime: 'Start Time',
-    receptionTime: 'Reception',
-    endTime: 'End',
-    venueInfo: 'Venue Information',
     venueName: 'Hotel New Otani Tokyo',
     venueAddress: '4-1 Kioicho, Chiyoda City, Tokyo 102-8578',
     tel: '+813-3265-1111',
@@ -225,15 +129,7 @@ export const translations: Record<Language, Translations> = {
 
     // RSVP Section
     rsvpTitle: 'JOIN US',
-    rsvpSubtitle: '御出欠について',
     respondBy: 'Please respond by September 15th, 2025',
-    receptionTitle: 'Reception',
-    attend: 'Attend',
-    decline: 'Decline',
-    hold: 'Hold',
-    attendJa: 'ご出席',
-    declineJa: 'ご欠席',
-    holdJa: '保留',
     guestOf: 'Guest of',
     required: '*',
     groomGuest: 'Groom Guest',
@@ -249,43 +145,19 @@ export const translations: Record<Language, Translations> = {
     messageLabel: 'Message',
     messagePlaceholder: 'Share your excitement or any special message...',
     sendRsvp: 'Send RSVP',
-    previewNote: '※This is a preview - responses are not actually sent',
-    contactDirectly: 'If plans change, please contact us directly:',
     submitting: 'Submitting...',
     submitSuccess: 'Redirecting to confirmation page...',
     submitError: 'Sorry, there was an error submitting your RSVP. Please try again.',
     submitRetry: 'Retry Submission',
 
-    // Details Section
-    dayOfWeek: 'Sunday',
-    venue: 'Venue',
-
-
     // Footer
     thankYou: 'Thank You',
-    footerMessage: 'Your presence is the greatest gift we could ask for. We look forward to celebrating love, laughter, and happily ever after with you.',
-    withLove: 'With love,',
-    dateReminder: 'October 12th, 2025 • Garden Grove Estate',
 
     // Common
-    loading: 'Loading...',
-    submit: 'Submit',
-    cancel: 'Cancel',
-    close: 'Close',
     language: 'Language',
   },
 
   ja: {
-    // Language Selection
-    languageSelection: 'ようこそ',
-    selectLanguage: 'ご希望の言語をお選びください',
-    englishOption: 'English',
-    japaneseOption: '日本語',
-    continueButton: '続行',
-
-    // Role Selection
-    roleSelection: '役割選択',
-    selectRole: 'ご希望の役割をお選びください',
     familyOption: '家族',
     friendsOption: '友人',
     familyDescription: 'ご親族の皆様へ',
@@ -295,57 +167,29 @@ export const translations: Record<Language, Translations> = {
     menu: 'メニュー',
     countdown: 'Countdown',
     message: 'ご挨拶',
-    profile: '新郎新婦',
-    gallery: 'アルバム',
     partyInfo: 'パーティーのご案内',
     rsvp: '御出欠について',
 
     // Hero Section
     coupleNames: 'Rezi & Miho',
-    subtitle: 'ご家族とともに',
-    requestPleasure: 'ご招待申し上げます',
-    celebrationOfMarriage: '結婚式のお祝いに',
 
     // Countdown Section
     countdownTitle: 'Countdown',
     days: '日',
-    hours: '時間',
-    minutes: '分',
-    seconds: '秒',
     toOurWedding: '結婚披露宴まで',
     weddingDate: '2025年10月12日（日）',
 
     // Message Section
     messageTitle: 'ご挨拶',
-    messageParagraph1: '皆さまいかがお過ごしでしょうか。',
-    messageParagraph2: 'このたび私たちは結婚に際し、感謝の気持ちを込めて披露宴を開催することとなりました。',
+    messageParagraph1: '皆さまいかがお過ごしでしょうか',
+    messageParagraph2: 'このたび私たちは結婚に際し 感謝の気持ちを込めて披露宴を開催することとなりました',
     messageParagraph3: '',
     messageParagraph4: '',
-    messageParagraph5: 'ご多用中誠に恐縮ではございますが、ご出席を賜れましたら幸いです。',
-
-    // Profile Section
-    profileTitle: '新郎新婦',
-    groom: '新郎',
-    bride: '新婦',
-    groomName: 'レジ',
-    brideName: 'ミホ',
-    groomMessage: 'いつも素晴らしい友人・家族でいてくださり、ありがとうございます。皆様とこの特別な日を共有できることを楽しみにしています！美味しい料理と素晴らしい仲間とのお祝いを心待ちにしています。',
-    brideMessage: 'いつも私たちを支えてくださり、そばにいてくださって本当にありがとうございます！皆様が私たちの人生にいてくださることに心から感謝しています。夫婦として共にこの旅路を続けていくことを楽しみにしています。',
-
-    // Gallery Section
-    galleryTitle: 'アルバム',
-    morePhotos: '特別な日の後に、より多くの写真を共有させていただきます！📸',
+    messageParagraph5: 'ご多用中誠に恐縮ではございますが ご出席を賜れましたら幸いです',
 
     // Party Info Section
     partyInfoTitle: '披露宴のご案内',
-    partyInfoSubtitle: 'Party Information',
     date: '開催日',
-    dateValue: '2025年10月12日 日曜日',
-    reception: '披露宴',
-    startTime: '集合時間',
-    receptionTime: '受付',
-    endTime: '終了予定',
-    venueInfo: '会場情報',
     venueName: 'ホテル ニューオータニ （東京）',
     venueAddress: '〒102-8578 東京都千代田区紀尾井町4-1',
     tel: '03-3265-1111',
@@ -362,15 +206,7 @@ export const translations: Record<Language, Translations> = {
 
     // RSVP Section
     rsvpTitle: 'JOIN US',
-    rsvpSubtitle: '御出欠について',
     respondBy: '9月15日迄にご返答をお願いいたします。',
-    receptionTitle: '披露宴',
-    attend: 'ご出席',
-    decline: 'ご欠席',
-    hold: '保留',
-    attendJa: 'Attend',
-    declineJa: 'Decline',
-    holdJa: 'Hold',
     guestOf: 'いずれかをお選びください',
     required: '*は必須項目です',
     groomGuest: '新郎ゲスト',
@@ -386,28 +222,15 @@ export const translations: Record<Language, Translations> = {
     messageLabel: 'メッセージ',
     messagePlaceholder: 'ご自由にお書きください',
     sendRsvp: '確認',
-    previewNote: '※プレビューのため入力内容の送信はできません',
-    contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',
     submitting: '送信中...',
     submitSuccess: '確認ページに移動中...',
     submitError: '申し訳ございません。送信中にエラーが発生しました。もう一度お試しください。',
     submitRetry: '再送信',
 
-    // Details Section
-    dayOfWeek: '日曜日',
-    venue: '会場',
-
     // Footer
     thankYou: 'ありがとうございます',
-    footerMessage: '皆様のご参加が私たちにとって最高の贈り物です。愛と笑い、そして永遠の幸せを皆様と分かち合えることを楽しみにしています。',
-    withLove: '愛を込めて',
-    dateReminder: '2025年10月12日 • ガーデン グローブ エステート',
 
     // Common
-    loading: '読み込み中...',
-    submit: '送信',
-    cancel: 'キャンセル',
-    close: '閉じる',
     language: '言語',
   },
 } 
