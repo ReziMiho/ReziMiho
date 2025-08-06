@@ -180,11 +180,11 @@ export const translations: Record<Language, Translations> = {
 
     // Message Section
     messageTitle: 'Message',
-    messageParagraph1: 'Dear friends and family,',
-    messageParagraph2: 'We are delighted to invite you to celebrate our wedding day with us. Your presence would make our special day even more meaningful and joyful.',
-    messageParagraph3: 'We look forward to sharing this wonderful moment with the people we love most, creating memories that will last a lifetime.',
-    messageParagraph4: 'Thank you for being such an important part of our journey together.',
-    messageParagraph5: 'We look forward to celebrating with you.',
+    messageParagraph1: 'We are pleased to announce that',
+    messageParagraph2: 'In celebration of our marriage we will be holding a wedding reception to express our heartfelt gratitude.',
+    messageParagraph3: '',
+    messageParagraph4: '',
+    messageParagraph5: 'We understand that everyone is very busy, but it would mean a lot to us if you could attend.',
 
     // Profile Section
     profileTitle: 'Profile',

@@ -189,36 +189,38 @@ const RSVPForm = () => {
             </div>
           </motion.div>
 
-           {/* Furigana */}
-           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-6"
-          >
-            <label className="block text-sm font-serif text-gray-700 mb-2">
-              <User className="w-4 h-4 inline mr-1" />
-              {t.furigana} <span className="text-red-500">{t.required}</span>
-            </label>
-            <div className="grid grid-cols-2 gap-3">
-              <input
-                type="text"
-                name="firstNameFurigana"
-                placeholder={t.firstName}
-                value={formData.firstNameFurigana}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
-              />
-              <input
-                type="text"
-                name="lastNameFurigana"
-                placeholder={t.lastName}
-                value={formData.lastNameFurigana}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
-              />
-            </div>
-          </motion.div>
+          {/* Furigana - Only show for Japanese */}
+          {currentLanguage === 'ja' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <label className="block text-sm font-serif text-gray-700 mb-2">
+                <User className="w-4 h-4 inline mr-1" />
+                {t.furigana} <span className="text-red-500">{t.required}</span>
+              </label>
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  name="firstNameFurigana"
+                  placeholder={t.firstName}
+                  value={formData.firstNameFurigana}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
+                />
+                <input
+                  type="text"
+                  name="lastNameFurigana"
+                  placeholder={t.lastName}
+                  value={formData.lastNameFurigana}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"
+                />
+              </div>
+            </motion.div>
+          )}
 
           {/* Email */}
           <motion.div
@@ -255,7 +257,7 @@ const RSVPForm = () => {
             <input
               type="tel"
               name="phone"
-              placeholder="(+81) 80-7181-1500"
+              placeholder="(+81) 80-7181-1508"
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"

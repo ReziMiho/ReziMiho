@@ -56,7 +56,7 @@ const Navigation = () => {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white/90 hover:bg-white/20 rounded-lg transition-colors drop-shadow-lg backdrop-blur-sm"
+              className="p-2 text-white/90 hover:bg-gray-300 rounded-lg transition-colors drop-shadow-lg backdrop-blur-sm"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -93,7 +93,7 @@ const Navigation = () => {
               </span>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 text-silver hover:bg-sage/10 rounded-lg"
+                className="p-2 text-silver hover:bg-gray-300 rounded-lg"
               >
                 <X size={20} />
               </button>
@@ -110,7 +110,7 @@ const Navigation = () => {
                   >
                     <button
                       onClick={() => scrollToSection(item.href)}
-                      className="block w-full text-left py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
+                      className="block w-full text-left py-3 px-4 text-charcoal hover:bg-gray-300 rounded-lg transition-all duration-200 font-serif"
                     >
                       {item.name}
                     </button>
@@ -122,7 +122,7 @@ const Navigation = () => {
               <div className="mt-8 pt-6 border-t border-gray-200 space-y-3">
                 <button
                   onClick={toggleLanguage}
-                  className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
+                  className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-gray-300 rounded-lg transition-all duration-200 font-serif"
                 >
                   <Globe size={18} />
                   {t.language}: {currentLanguage === 'en' ? 'English' : '日本語'}
@@ -131,7 +131,7 @@ const Navigation = () => {
                 {currentRole && (
                   <button
                     onClick={toggleRole}
-                    className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-blush-pink/20 hover:text-sage rounded-lg transition-all duration-200 font-serif"
+                    className="flex items-center justify-center gap-2 w-full py-3 px-4 text-charcoal hover:bg-gray-300 rounded-lg transition-all duration-200 font-serif"
                   >
                     <Users size={18} />
                     {currentRole === 'family' ? t.familyOption : t.friendsOption}
