@@ -202,7 +202,7 @@ const RSVPForm = () => {
             >
               <label className="block text-sm font-serif text-gray-700 mb-2">
                 <User className="w-4 h-4 inline mr-1" />
-                {t.furigana} <span className="text-red-500">{t.required}</span>
+                {t.furigana}
               </label>
               <div className="grid grid-cols-2 gap-3">
                 <input
