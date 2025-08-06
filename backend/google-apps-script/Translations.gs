@@ -53,11 +53,11 @@ function getTranslations() {
     
     ja: {
       success: {
-        title: "RSVP送信完了！",
+        title: "送信完了！",
         subtitle: "ご出席の確認をいただき、ありがとうございます",
-        updateTitle: "RSVP更新完了！",
-        updateSubtitle: "RSVPの情報が正常に更新されました。",
-        updateNotice: "以前のRSVPが新しい情報で更新されました。",
+        updateTitle: "更新完了！",
+        updateSubtitle: "情報が正常に更新されました。",
+        updateNotice: "新しい情報で更新されました。",
         submissionId: "提出ID:",
         detailsHeader: "ご詳細",
         guestOf: "ゲスト:",

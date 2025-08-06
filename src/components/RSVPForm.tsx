@@ -53,7 +53,7 @@ const RSVPForm = () => {
 
      const form = document.createElement('form')
      form.method = 'POST'
-     form.action = 'https://script.google.com/macros/s/AKfycbyndLEyOMO2eS6Ny4diR2RNzi99jupbu15KzViS2OGpERcp0dPTrQfjnXHin4ORFZam/exec'
+     form.action = 'https://script.google.com/macros/s/AKfycbw92OjDdtk5LX8uSEbIKGpatStS77VCh44eX2nJmtzgbpLzemE9F2PBmsn_GaXRYix8/exec'
      form.target = '_blank'
      form.style.display = 'none'
 
@@ -202,7 +202,7 @@ const RSVPForm = () => {
             >
               <label className="block text-sm font-serif text-gray-700 mb-2">
                 <User className="w-4 h-4 inline mr-1" />
-                {t.furigana}
+                {t.furigana} <span className="text-red-500">{t.required}</span>
               </label>
               <div className="grid grid-cols-2 gap-3">
                 <input

@@ -378,12 +378,6 @@ function createSuccessPage(submissionId, data, acceptLanguage = '', updated = fa
           <h1>${pageTitle}</h1>
           <p style="color: #4A5568; margin-bottom: 2rem;">${pageSubtitle}</p>
           
-          ${updated ? `
-          <div style="background: #FEF5E7; border: 1px solid #F6AD55; border-left: 4px solid #ED8936; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-            <p style="color: #C05621; font-weight: 600; margin: 0;">${t('success.updateNotice') || 'Your previous RSVP has been updated with the new information.'}</p>
-          </div>
-          ` : ''}
-          
           <div class="details">
             <h3>${t('success.detailsHeader')}</h3>
             <div class="detail-item">
