@@ -51,7 +51,6 @@ export interface Translations {
 
   // Venue Access Information
   venueAccessHelp: string
-  venueAccessHelpDetail: string
   newOtaniAccessSite: string
 
   // RSVP Section
@@ -108,15 +107,15 @@ export const translations: Record<Language, Translations> = {
     weddingDate: '2025.10.12 (Sun)',
 
     // Message Section
-    messageTitle: 'Message',
-    messageParagraph1: 'We are pleased to announce that',
-    messageParagraph2: 'in celebration of our marriage we will be holding a wedding reception to express our heartfelt gratitude',
+    messageTitle: 'Join Us for Our Wedding Reception',
+    messageParagraph1: 'Together with our families',
+    messageParagraph2: 'We joyfully invite you to join us in celebrating our marriage',
     messageParagraph3: '',
     messageParagraph4: '',
-    messageParagraph5: 'we understand that everyone is very busy, but it would mean a lot to us if you could attend',
+    messageParagraph5: 'Your presence would be the greatest gift, and we look forward to celebrating with you',
 
     // Party Info Section
-    partyInfoTitle: 'Party Information',
+    partyInfoTitle: 'Wedding Reception Information',
     date: 'Date',
     venueName: 'Hotel New Otani Tokyo',
     venueAddress: '4-1 Kioicho, Chiyoda City, Tokyo 102-8578',
@@ -124,15 +123,14 @@ export const translations: Record<Language, Translations> = {
     familySection: 'For Family Members',
     friendsSection: 'For Friends',
     commonSection: 'Common Information',
-    gatheringTime: 'Gathering Time',
-    gatheringPlace: 'Gathering Place',
+    gatheringTime: 'Waiting Room Opening Time',
+    gatheringPlace: 'Waiting Room',
     familyGatheringPlace: 'The Main Arcade Floor (B1) Family Waiting Room',
     friendsGatheringPlace: 'Hō Hall Reception',
     receptionStartTime: 'Reception Start Time',
     venueLocation: 'Venue',
     venueDetail: 'Hō (East) Garden Tower Banquet Hall Floor (5th Floor)',
     venueAccessHelp: 'Hotel Floor Map',
-    venueAccessHelpDetail: 'Please use the following link for the hotel floor map.',
     newOtaniAccessSite: 'New Otani Digital Map',
 
     // RSVP Section
@@ -213,7 +211,6 @@ export const translations: Record<Language, Translations> = {
     venueDetail: '鳳凰の間(東)ガーデンタワー宴会場階(5階)',
 
     venueAccessHelp: '会場案内',
-    venueAccessHelpDetail: 'ホテル館内図として以下リンクをご活用くださいませ',
     newOtaniAccessSite: 'ニューオータニ 館内案内デジタルマップ',
 
     // RSVP Section

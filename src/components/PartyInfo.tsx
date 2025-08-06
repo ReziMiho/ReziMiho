@@ -90,7 +90,7 @@ const PartyInfo = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <MapPin className="w-4 h-4 text-burnt-orange" />
-                    <span className="text-sm text-gray-500">Location</span>
+                    <span className="text-sm text-gray-500">Room</span>
                   </div>
                   <div className="text-gray-700">
                     <a 
@@ -121,7 +121,7 @@ const PartyInfo = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <MapPin className="w-4 h-4 text-burnt-orange" />
-                    <span className="text-sm text-gray-500">Location</span>
+                    <span className="text-sm text-gray-500">Room</span>
                   </div>
                   <div className="text-gray-700">
                     <a 
@@ -144,7 +144,7 @@ const PartyInfo = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-6 shadow-sm"
+          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
         >
           <h3 className="text-xl font-serif text-gray-800 mb-4">{t.venueLocation}</h3>
           <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
@@ -174,7 +174,6 @@ const PartyInfo = () => {
           </div>
         </motion.div>
 
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -184,11 +183,6 @@ const PartyInfo = () => {
           <h3 className="text-xl font-serif text-gray-800 mb-6">{t.venueAccessHelp}</h3>
           <div>
             <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm text-gray-500">{t.venueAccessHelpDetail}</span>
-                </div>
-              </div>
               <div>
                 <div className="text-gray-700">
                   <a
