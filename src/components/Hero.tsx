@@ -6,12 +6,33 @@ import { useState, useEffect } from 'react'
 const Hero = () => {
   const { t } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   
-  const photos = [
-    '/wedding-photo-1.jpg',
-    '/wedding-photo-2.jpg', 
-    '/wedding-photo-3.jpg'
+  const desktopPhotos = [
+    '/wedding-photo-desktop-1.jpeg',
+    '/wedding-photo-desktop-2.jpeg', 
+    '/wedding-photo-desktop-3.jpeg'
   ]
+
+  const mobilePhotos = [
+    '/wedding-photo-mobile-1.jpeg',
+    '/wedding-photo-mobile-2.jpeg',
+    '/wedding-photo-mobile-3.jpeg'
+  ]
+
+  const photos = isMobile ? mobilePhotos : desktopPhotos
+
+  // Detect screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768) // md breakpoint
+    }
+
+    checkScreenSize()
+    window.addEventListener('resize', checkScreenSize)
+    
+    return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
