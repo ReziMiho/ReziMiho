@@ -7,6 +7,7 @@ function saveToSpreadsheet(data) {
     const rowData = [
       timestamp.toISOString(),
       data.guestType,
+      data.roleType,
       data.firstName,
       data.lastName,
       data.firstNameFurigana || '',

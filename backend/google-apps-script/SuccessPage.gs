@@ -397,13 +397,15 @@ function createSuccessPage(submissionId, data, acceptLanguage = '', updated = fa
             ${data.firstNameFurigana ? `
             <div class="detail-item">
               <span class="detail-label">${t('success.furigana')}</span>
-              <span class="detail-value">${data.firstNameFurigana} ${data.lastNameFurigana}</span>
+              <span class="detail-value">${data.firstNameFurigana} ${data.lastNameFurigana ? data.lastNameFurigana : ''}</span>
             </div>
             ` : ''}
+            ${data.email ? `
             <div class="detail-item">
               <span class="detail-label">${t('success.email')}</span>
               <span class="detail-value">${data.email}</span>
             </div>
+            ` : ''}
             ${data.phone ? `
             <div class="detail-item">
               <span class="detail-label">${t('success.phone')}</span>

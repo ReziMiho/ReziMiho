@@ -2,19 +2,22 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Heart, Mail, Phone, User } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useRole } from '../contexts/RoleContext'
 
 const RSVPForm = () => {
   const { t, currentLanguage } = useLanguage()
+  const { currentRole } = useRole()
+
   const [formData, setFormData] = useState({
     lang: currentLanguage,
     guestType: '',
+    roleType: currentRole || 'friends',
     firstName: '',
     lastName: '',
     firstNameFurigana: '',
     lastNameFurigana: '',
     email: '',
     phone: '',
-    address: '',
     dietary: '',
     message: ''
   })
@@ -29,7 +32,7 @@ const RSVPForm = () => {
   }
 
   const validateForm = () => {
-    const requiredFields = ['guestType', 'firstName', 'lastName', 'firstNameFurigana', 'lastNameFurigana']
+    const requiredFields = ['guestType', 'firstName', 'lastName']
     const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData] || formData[field as keyof typeof formData].trim() === '')
 
     if (missingFields.length > 0) {
@@ -50,7 +53,7 @@ const RSVPForm = () => {
 
      const form = document.createElement('form')
      form.method = 'POST'
-     form.action = 'https://script.google.com/macros/s/AKfycbzyIECUIwiUnGRbhckPeRk2INdTi37mPwGtjH2fp_C63DXqKgLO-wtyo-v_X9_Wz9-t/exec'
+     form.action = 'https://script.google.com/macros/s/AKfycbzcrY2l0ybx4p9VgVs3tYJnSj1lNNz1vSXAjA7W2GKri3UayLrSMRV4d6NUpcdRGTWJ/exec'
      form.target = '_blank'
      form.style.display = 'none'
 
@@ -72,13 +75,13 @@ const RSVPForm = () => {
      setFormData({
       lang: currentLanguage,
        guestType: '',
+       roleType: currentRole || 'friends',
        firstName: '',
        lastName: '',
        firstNameFurigana: '',
        lastNameFurigana: '',
        email: '',
        phone: '',
-       address: '',
        dietary: '',
        message: ''
      })
