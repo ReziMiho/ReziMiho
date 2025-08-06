@@ -47,7 +47,7 @@ const Navigation = () => {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-1 px-3 py-2 text-white/90 rounded-lg transition-colors text-sm drop-shadow-lg backdrop-blur-sm"
+              className="flex items-center gap-1 px-3 py-2 text-white/50 bg-gray-500/50 hover:bg-gray-600 rounded-lg transition-colors text-sm drop-shadow-lg backdrop-blur-sm"
               title={t.language}
             >
               <Globe size={16} />
@@ -56,7 +56,7 @@ const Navigation = () => {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white/90 hover:bg-gray-300 rounded-lg transition-colors drop-shadow-lg backdrop-blur-sm"
+              className="p-2 text-white/50 bg-gray-500/50 hover:bg-gray-600 rounded-lg transition-colors drop-shadow-lg backdrop-blur-sm"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

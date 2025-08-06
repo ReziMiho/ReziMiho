@@ -385,7 +385,7 @@ export const translations: Record<Language, Translations> = {
     dietaryPlaceholder: 'アレルギーなど食べられないものがございましたら、専用フォームでご回答ください。',
     messageLabel: 'メッセージ',
     messagePlaceholder: 'ご自由にお書きください',
-    sendRsvp: '確認画面へ',
+    sendRsvp: '確認',
     previewNote: '※プレビューのため入力内容の送信はできません',
     contactDirectly: 'ご都合が変わりましたら直接ご連絡ください：',
     submitting: '送信中...',

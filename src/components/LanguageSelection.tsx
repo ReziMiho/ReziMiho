@@ -10,7 +10,7 @@ const LanguageSelection = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream via-autumn-gold/20 to-burnt-orange/30 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-300 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}

@@ -9,7 +9,7 @@ import Footer from './Footer'
 
 const WeddingInvitation = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream via-pearl to-stone">
+    <div className="min-h-screen bg-gray-300">
       <Navigation />
       <motion.div
         initial={{ opacity: 0 }}
