@@ -173,6 +173,37 @@ const PartyInfo = () => {
             </div>
           </div>
         </motion.div>
+
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
+        >
+          <h3 className="text-xl font-serif text-gray-800 mb-6">{t.venueAccessHelp}</h3>
+          <div>
+            <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm text-gray-500">{t.venueAccessHelpDetail}</span>
+                </div>
+              </div>
+              <div>
+                <div className="text-gray-700">
+                  <a
+                    href="https://www.newotani.co.jp/tokyo/access/#c177988"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
+                  >
+                    {t.newOtaniAccessSite}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   )

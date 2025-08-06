@@ -49,6 +49,11 @@ export interface Translations {
   venueLocation: string
   venueDetail: string
 
+  // Venue Access Information
+  venueAccessHelp: string
+  venueAccessHelpDetail: string
+  newOtaniAccessSite: string
+
   // RSVP Section
   rsvpTitle: string
   respondBy: string
@@ -126,6 +131,9 @@ export const translations: Record<Language, Translations> = {
     receptionStartTime: 'Reception Start Time',
     venueLocation: 'Venue',
     venueDetail: 'Hō (East) Garden Tower Banquet Hall Floor (5th Floor)',
+    venueAccessHelp: 'Hotel Floor Map',
+    venueAccessHelpDetail: 'Please use the following link for the hotel floor map.',
+    newOtaniAccessSite: 'New Otani Digital Map',
 
     // RSVP Section
     rsvpTitle: 'JOIN US',
@@ -182,10 +190,10 @@ export const translations: Record<Language, Translations> = {
     // Message Section
     messageTitle: 'ご挨拶',
     messageParagraph1: '皆さまいかがお過ごしでしょうか',
-    messageParagraph2: 'このたび私たちは結婚に際し 感謝の気持ちを込めて披露宴を開催することとなりました',
+    messageParagraph2: 'このたび私たちは結婚に際し　感謝の気持ちを込めて披露宴を開催することとなりました',
     messageParagraph3: '',
     messageParagraph4: '',
-    messageParagraph5: 'ご多用中誠に恐縮ではございますが ご出席を賜れましたら幸いです',
+    messageParagraph5: 'ご多用中誠に恐縮ではございますが　ご出席を賜れましたら幸いです',
 
     // Party Info Section
     partyInfoTitle: '披露宴のご案内',
@@ -203,6 +211,10 @@ export const translations: Record<Language, Translations> = {
     receptionStartTime: '披露宴開宴時間',
     venueLocation: '会場',
     venueDetail: '鳳凰の間(東)ガーデンタワー宴会場階(5階)',
+
+    venueAccessHelp: '会場案内',
+    venueAccessHelpDetail: 'ホテル館内図として以下リンクをご活用くださいませ',
+    newOtaniAccessSite: 'ニューオータニ 館内案内デジタルマップ',
 
     // RSVP Section
     rsvpTitle: 'JOIN US',

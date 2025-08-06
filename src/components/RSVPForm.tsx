@@ -53,7 +53,7 @@ const RSVPForm = () => {
 
      const form = document.createElement('form')
      form.method = 'POST'
-     form.action = 'https://script.google.com/macros/s/AKfycbzcrY2l0ybx4p9VgVs3tYJnSj1lNNz1vSXAjA7W2GKri3UayLrSMRV4d6NUpcdRGTWJ/exec'
+     form.action = 'https://script.google.com/macros/s/AKfycbxSG9XmeS36WAJg_xOUsCaAAiChcFToeIkXq3Pu2URWhHeG0oIILPP-2HRisqOp-GVw/exec'
      form.target = '_blank'
      form.style.display = 'none'
 
