@@ -1,14 +1,20 @@
 // Create a beautiful success page with language support
-function createSuccessPage(submissionId, data, acceptLanguage = '') {
+function createSuccessPage(submissionId, data, acceptLanguage = '', updated = false) {
     const lang = detectLanguage(acceptLanguage);
     const t = (key) => getTranslation(key, lang);
+    
+    // Choose appropriate titles and messages based on whether this was an update or new submission
+    const pageTitle = updated ? t('success.updateTitle') || 'RSVP Updated Successfully' : t('success.title');
+    const pageSubtitle = updated ? t('success.updateSubtitle') || 'Your RSVP information has been successfully updated.' : t('success.subtitle');
+    const successIcon = updated ? '✅' : '🎉';
+    
     const html = `
       <!DOCTYPE html>
       <html lang="en">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RSVP Submitted Successfully</title>
+        <title>${updated ? 'RSVP Updated Successfully' : 'RSVP Submitted Successfully'}</title>
         <style>
           /* Wedding Elegance Theme for Wedding RSVP Success Page */
           * {
@@ -368,9 +374,15 @@ function createSuccessPage(submissionId, data, acceptLanguage = '') {
         <div class="floating-heart">💕</div>
   
         <div class="container">
-          <div class="success-icon">🎉</div>
-          <h1>${t('success.title')}</h1>
-          <p style="color: #4A5568; margin-bottom: 2rem;">${t('success.subtitle')}</p>
+          <div class="success-icon">${successIcon}</div>
+          <h1>${pageTitle}</h1>
+          <p style="color: #4A5568; margin-bottom: 2rem;">${pageSubtitle}</p>
+          
+          ${updated ? `
+          <div style="background: #FEF5E7; border: 1px solid #F6AD55; border-left: 4px solid #ED8936; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+            <p style="color: #C05621; font-weight: 600; margin: 0;">${t('success.updateNotice') || 'Your previous RSVP has been updated with the new information.'}</p>
+          </div>
+          ` : ''}
           
           <div class="details">
             <h3>${t('success.detailsHeader')}</h3>

@@ -12,7 +12,7 @@ function doPost(e) {
     console.log('Save result:', result);
     
     if (result.success) {
-      return createSuccessPage(result.id, params, acceptLanguage);
+      return createSuccessPage(result.id, params, acceptLanguage, result.updated);
     } else {
       return createErrorPage(result.message, acceptLanguage);
     }

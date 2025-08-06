@@ -44,16 +44,6 @@ const Navigation = () => {
           </motion.div>
           
           <div className="flex items-center gap-2">
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-1 px-3 py-2 text-white/50 bg-gray-500/50 hover:bg-gray-600 rounded-lg transition-colors text-sm drop-shadow-lg backdrop-blur-sm"
-              title={t.language}
-            >
-              <Globe size={16} />
-              <span className="font-medium">{currentLanguage.toUpperCase()}</span>
-            </button>
-
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-white/50 bg-gray-500/50 hover:bg-gray-600 rounded-lg transition-colors drop-shadow-lg backdrop-blur-sm"
