@@ -58,8 +58,8 @@ function validateDuplicate(data) {
     }
     
     
-    const firstNameRange = sheet.getRange(2, 3, lastRow - 1, 1);
-    const lastNameRange = sheet.getRange(2, 4, lastRow - 1, 1);
+    const firstNameRange = sheet.getRange(2, 4, lastRow - 1, 1);
+    const lastNameRange = sheet.getRange(2, 5, lastRow - 1, 1);
     
     const firstNameValues = firstNameRange.getValues().flat();
     const lastNameValues = lastNameRange.getValues().flat();

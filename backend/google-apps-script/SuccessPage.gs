@@ -6,7 +6,7 @@ function createSuccessPage(submissionId, data, acceptLanguage = '', updated = fa
     // Choose appropriate titles and messages based on whether this was an update or new submission
     const pageTitle = updated ? t('success.updateTitle') || 'RSVP Updated Successfully' : t('success.title');
     const pageSubtitle = updated ? t('success.updateSubtitle') || 'Your RSVP information has been successfully updated.' : t('success.subtitle');
-    const successIcon = updated ? '✅' : '🎉';
+    const successIcon = '🎉';
     
     const html = `
       <!DOCTYPE html>
