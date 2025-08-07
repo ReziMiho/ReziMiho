@@ -20,19 +20,6 @@ const RoleSelection = () => {
         transition={{ duration: 0.8 }}
         className="max-w-md mx-auto px-6 text-center"
       >
-        {/* Welcome decoration */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-8"
-        >
-          <div className="relative">
-            <Users className="w-12 h-12 text-maple-red fill-current" />
-            <UserCheck className="w-6 h-6 text-burnt-orange absolute -top-1 -right-1" />
-          </div>
-        </motion.div>
-
         {/* Couple names */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

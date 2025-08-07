@@ -33,15 +33,7 @@ const Navigation = () => {
     <>
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="flex items-center justify-between px-4 py-3">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-lg font-script text-white drop-shadow-lg"
-            style={{ fontFamily: 'Dancing Script, cursive' }}
-          >
-            {t.coupleNames}
-          </motion.div>
+        <div className="flex items-center justify-end px-4 py-3">
           
           <div className="flex items-center gap-2">
             <button

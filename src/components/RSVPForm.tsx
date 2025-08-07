@@ -260,7 +260,7 @@ const RSVPForm = () => {
             <input
               type="tel"
               name="phone"
-              placeholder="(+81) 80-7181-1508"
+              placeholder="+818071811508"
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-maple-red/20 focus:border-maple-red"

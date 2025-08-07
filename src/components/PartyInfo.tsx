@@ -94,7 +94,7 @@ const PartyInfo = () => {
                   </div>
                   <div className="text-gray-700">
                     <a 
-                      href="https://www.newotani.co.jp/tokyo/banquet/hall/anteroom/"
+                      href={currentLanguage === 'en' ? "https://www.newotani.co.jp/en/tokyo/banquet/hall/anteroom/" : "https://www.newotani.co.jp/tokyo/banquet/hall/anteroom/"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
@@ -106,6 +106,7 @@ const PartyInfo = () => {
               </div>
             </div>
           )}
+          
 
           {/* Friends Subsection - Show only if role is friends */}
           {currentRole === 'friends' && (
