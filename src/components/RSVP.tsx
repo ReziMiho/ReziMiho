@@ -25,10 +25,6 @@ const RSVP = () => {
         <p className="text-lg text-gray-600 mb-8 leading-relaxed font-serif">
           {t.respondBy}
         </p>
-        
-        <p className="text-2xl font-semibold text-gray-800 mb-12">
-          September 15th, 2025
-        </p>
       </motion.div>
     </section>
   )

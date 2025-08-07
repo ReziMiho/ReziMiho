@@ -135,7 +135,7 @@ export const translations: Record<Language, Translations> = {
 
     // RSVP Section
     rsvpTitle: 'JOIN US',
-    respondBy: 'Please respond by September 15th, 2025',
+    respondBy: 'Please respond by September 12th, 2025',
     guestOf: 'Guest of',
     required: '*',
     groomGuest: 'Groom',
@@ -215,7 +215,7 @@ export const translations: Record<Language, Translations> = {
 
     // RSVP Section
     rsvpTitle: 'JOIN US',
-    respondBy: '9月15日迄にご返答をお願いいたします。',
+    respondBy: '9月12日迄にご返答をお願いいたします。',
     guestOf: 'いずれかをお選びください',
     required: '*は必須項目です',
     groomGuest: '新郎ゲスト',
