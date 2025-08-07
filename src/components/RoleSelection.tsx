@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Users, UserCheck } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useRole } from '../contexts/RoleContext'
 import { Role } from '../translations'
