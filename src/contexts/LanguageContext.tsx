@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo, useCallback } from 'react'
 import { Language, Translations, translations } from '../translations'
 
 interface LanguageContextType {
@@ -29,33 +29,35 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     }
   }, [])
 
-  const setLanguage = (lang: Language) => {
+  const setLanguage = useCallback((lang: Language) => {
     setCurrentLanguage(lang)
     localStorage.setItem('wedding-language', lang)
-  }
+  }, [])
 
-  const selectInitialLanguage = (lang: Language) => {
+  const selectInitialLanguage = useCallback((lang: Language) => {
     setCurrentLanguage(lang)
     setHasSelectedLanguage(true)
     localStorage.setItem('wedding-language', lang)
-  }
+  }, [])
 
-  const toggleLanguage = () => {
-    const newLang = currentLanguage === 'en' ? 'ja' : 'en'
-    setCurrentLanguage(newLang)
-    localStorage.setItem('wedding-language', newLang)
-  }
+  const toggleLanguage = useCallback(() => {
+    setCurrentLanguage(prev => {
+      const newLang: Language = prev === 'en' ? 'ja' : 'en'
+      localStorage.setItem('wedding-language', newLang)
+      return newLang
+    })
+  }, [])
 
-  const t = translations[currentLanguage]
+  const t = useMemo(() => translations[currentLanguage], [currentLanguage])
 
-  const value: LanguageContextType = {
+  const value: LanguageContextType = useMemo(() => ({
     currentLanguage,
     setLanguage,
     t,
     toggleLanguage,
     hasSelectedLanguage,
     selectInitialLanguage,
-  }
+  }), [currentLanguage, setLanguage, t, toggleLanguage, hasSelectedLanguage, selectInitialLanguage])
 
   return (
     <LanguageContext.Provider value={value}>

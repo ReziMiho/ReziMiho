@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion'
 import Navigation from './Navigation'
 import Hero from './Hero'
-import Countdown from './Countdown'
-import Message from './Message'
-import PartyInfo from './PartyInfo'
-import RSVPForm from './RSVPForm'
-import Footer from './Footer'
+import { Suspense, lazy } from 'react'
+
+const Countdown = lazy(() => import('./Countdown'))
+const Message = lazy(() => import('./Message'))
+const PartyInfo = lazy(() => import('./PartyInfo'))
+const RSVPForm = lazy(() => import('./RSVPForm'))
+const Footer = lazy(() => import('./Footer'))
 
 const WeddingInvitation = () => {
   return (
@@ -18,11 +20,13 @@ const WeddingInvitation = () => {
         className="relative"
       >
         <Hero />
-        <Countdown />
-        <Message />
-        <PartyInfo />
-        <RSVPForm />
-        <Footer />
+        <Suspense fallback={<div className="p-8 text-center text-gray-600">Loading…</div>}>
+          <Countdown />
+          <Message />
+          <PartyInfo />
+          <RSVPForm />
+          <Footer />
+        </Suspense>
       </motion.div>
     </div>
   )

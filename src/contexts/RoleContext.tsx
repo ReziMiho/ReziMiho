@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo, useCallback } from 'react'
 import { Role } from '../translations'
 
 interface RoleContextType {
@@ -27,23 +27,23 @@ export const RoleProvider: React.FC<RoleProviderProps> = ({ children }) => {
     }
   }, [])
 
-  const setRole = (role: Role) => {
+  const setRole = useCallback((role: Role) => {
     setCurrentRole(role)
     localStorage.setItem('wedding-role', role)
-  }
+  }, [])
 
-  const selectInitialRole = (role: Role) => {
+  const selectInitialRole = useCallback((role: Role) => {
     setCurrentRole(role)
     setHasSelectedRole(true)
     localStorage.setItem('wedding-role', role)
-  }
+  }, [])
 
-  const value: RoleContextType = {
+  const value: RoleContextType = useMemo(() => ({
     currentRole,
     setRole,
     hasSelectedRole,
     selectInitialRole,
-  }
+  }), [currentRole, setRole, hasSelectedRole, selectInitialRole])
 
   return (
     <RoleContext.Provider value={value}>

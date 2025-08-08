@@ -2,10 +2,32 @@ import { motion } from 'framer-motion'
 import { Calendar, Clock, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useRole } from '../contexts/RoleContext'
+import { useEffect, useRef, useState } from 'react'
 
 const PartyInfo = () => {
   const { t, currentLanguage } = useLanguage()
   const { currentRole } = useRole()
+
+  const [showMap, setShowMap] = useState(false)
+  const mapContainerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowMap(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' }
+    )
+
+    if (mapContainerRef.current) {
+      observer.observe(mapContainerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section id="party-info" className="py-16 px-4 bg-white/50 backdrop-blur-sm">
@@ -43,17 +65,21 @@ const PartyInfo = () => {
               </div>
               
               {/* Google Map Embed */}
-              <div className="w-full h-64 rounded-lg overflow-hidden shadow-sm">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6481.779212226009!2d139.73241097601903!3d35.67972013005668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c7c3e56d51b%3A0xa74d2d0a91dee7f0!2sNew%20Otani%20Garden%20Tower%2C%204%20Kioich%C5%8D%2C%20Chiyoda%20City%2C%20Tokyo%20102-0094!5e0!3m2!1sen!2sjp!4v1753873423746!5m2!1sen!2sjp"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Wedding Venue Location"
-                />
+              <div ref={mapContainerRef} className="w-full h-64 rounded-lg overflow-hidden shadow-sm">
+                {showMap ? (
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6481.779212226009!2d139.73241097601903!3d35.67972013005668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c7c3e56d51b%3A0xa74d2d0a91dee7f0!2sNew%20Otani%20Garden%20Tower%2C%204%20Kioich%C5%8D%2C%20Chiyoda%20City%2C%20Tokyo%20102-0094!5e0!3m2!1sen!2sjp!4v1753873423746!5m2!1sen!2sjp"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Wedding Venue Location"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-200 animate-pulse" />
+                )}
               </div>
               
               <div className="text-gray-600 whitespace-pre-line text-sm">

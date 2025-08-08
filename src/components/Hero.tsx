@@ -3,42 +3,47 @@ import { Heart } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useState, useEffect } from 'react'
 
+const DESKTOP_PHOTOS = [
+  '/wedding-photo-desktop-1.jpg',
+  '/wedding-photo-desktop-2.jpg',
+  '/wedding-photo-desktop-3.jpg',
+]
+
+const MOBILE_PHOTOS = [
+  '/wedding-photo-mobile-1.jpg',
+  '/wedding-photo-mobile-2.jpg',
+  '/wedding-photo-mobile-3.jpg',
+]
+
 const Hero = () => {
   const { t } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
-  
-  const desktopPhotos = [
-    '/wedding-photo-desktop-1.jpg',
-    '/wedding-photo-desktop-2.jpg', 
-    '/wedding-photo-desktop-3.jpg'
-  ]
 
-  const mobilePhotos = [
-    '/wedding-photo-mobile-1.jpg',
-    '/wedding-photo-mobile-2.jpg',
-    '/wedding-photo-mobile-3.jpg'
-  ]
+  const photos = isMobile ? MOBILE_PHOTOS : DESKTOP_PHOTOS
 
-  const photos = isMobile ? mobilePhotos : desktopPhotos
-
-  // Detect screen size
+  // Detect screen size (matchMedia to avoid frequent resize updates)
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768) // md breakpoint
-    }
-
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-    
-    return () => window.removeEventListener('resize', checkScreenSize)
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+    const update = () => setIsMobile(mediaQuery.matches)
+    update()
+    mediaQuery.addEventListener('change', update)
+    return () => mediaQuery.removeEventListener('change', update)
   }, [])
+
+  // Prefetch slideshow images for smoother transitions
+  useEffect(() => {
+    photos.forEach(src => {
+      const img = new Image()
+      img.decoding = 'async'
+      img.src = src
+    })
+  }, [photos])
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % photos.length)
     }, 5000)
-    
     return () => clearInterval(timer)
   }, [photos.length])
 
@@ -55,7 +60,10 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            decoding="async"
+            loading="eager"
+            sizes="100vw"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
               if (e.currentTarget.parentElement) {
