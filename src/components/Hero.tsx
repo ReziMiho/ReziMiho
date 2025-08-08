@@ -9,15 +9,15 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false)
   
   const desktopPhotos = [
-    '/wedding-photo-desktop-1.jpeg',
-    '/wedding-photo-desktop-2.jpeg', 
-    '/wedding-photo-desktop-3.jpeg'
+    '/wedding-photo-desktop-1.jpg',
+    '/wedding-photo-desktop-2.jpg', 
+    '/wedding-photo-desktop-3.jpg'
   ]
 
   const mobilePhotos = [
-    '/wedding-photo-mobile-1.jpeg',
-    '/wedding-photo-mobile-2.jpeg',
-    '/wedding-photo-mobile-3.jpeg'
+    '/wedding-photo-mobile-1.jpg',
+    '/wedding-photo-mobile-2.jpg',
+    '/wedding-photo-mobile-3.jpg'
   ]
 
   const photos = isMobile ? mobilePhotos : desktopPhotos
