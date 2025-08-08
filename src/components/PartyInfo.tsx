@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Calendar, Clock, MapPin, Phone } from 'lucide-react'
+import { Building, Calendar, Clock, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useRole } from '../contexts/RoleContext'
 import { useEffect, useRef, useState } from 'react'
@@ -49,7 +49,7 @@ const PartyInfo = () => {
         >
           <div className="flex items-center gap-4 mb-4">
             <Calendar className="w-6 h-6 text-maple-red" />
-            <h3 className="text-xl font-serif text-gray-800">{t.date}</h3>
+            <h3 className="text-xl font-serif text-gray-800">{t.when}</h3>
           </div>
           <div className="text-2xl font-script text-burgundy mb-2" style={{ fontFamily: 'MS ゴシック, MS Gothic, monospace' }}>
             {t.weddingDate}
@@ -58,10 +58,18 @@ const PartyInfo = () => {
           <div className="mt-6 pt-4 border-t border-gray-100">
             <div className="space-y-4">
               <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="w-4 h-4 text-burnt-orange" />
-                  <span className="font-semibold text-gray-800">{t.venueName}</span>
+                <div className="flex items-center gap-4 mb-4">
+                  <Building className="w-6 h-6 text-maple-red" />
+                  <h3 className="text-xl font-serif text-gray-800">{t.where}</h3>
                 </div>
+                  <a
+                    href={currentLanguage === 'en' ? "https://www.newotani.co.jp/en/tokyo/banquet/hall/hooh/" : "https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
+                  >
+                    {t.venueDetail}
+                  </a>
               </div>
               
               {/* Google Map Embed */}
@@ -164,41 +172,6 @@ const PartyInfo = () => {
               </div>
             </div>
           )}
-        </motion.div>
-
-        {/* Venue (Room Details) */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-2xl p-6 mb-6 shadow-sm"
-        >
-          <h3 className="text-xl font-serif text-gray-800 mb-4">{t.venueLocation}</h3>
-          <div className="space-y-3 pl-4 border-l-3 border-maple-red/20">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">{t.receptionStartTime}</span>
-              </div>
-              <div className="text-lg font-semibold">12：00</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <MapPin className="w-4 h-4 text-burnt-orange" />
-                <span className="text-sm text-gray-500">Room</span>
-              </div>
-                <div className="text-gray-700">
-                  <a 
-                    href={currentLanguage === 'en' ? "https://www.newotani.co.jp/en/tokyo/banquet/hall/hooh/" : "https://www.newotani.co.jp/tokyo/banquet/hall/hooh/"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-burgundy hover:text-maple-red underline transition-colors duration-200"
-                  >
-                    {t.venueDetail}
-                  </a>
-                </div>
-            </div>
-          </div>
         </motion.div>
 
         <motion.div

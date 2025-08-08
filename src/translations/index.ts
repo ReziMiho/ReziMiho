@@ -34,7 +34,8 @@ export interface Translations {
 
   // Party Info Section
   partyInfoTitle: string
-  date: string
+  when: string
+  where: string
   venueName: string
   venueAddress: string
   tel: string
@@ -104,7 +105,7 @@ export const translations: Record<Language, Translations> = {
     countdownTitle: 'Countdown',
     days: 'days',
     toOurWedding: 'to our Wedding',
-    weddingDate: '2025.10.12 (Sun)',
+    weddingDate: '2025.10.12 (Sun) - 12:00 PM',
 
     // Message Section
     messageTitle: 'Join Us for Our Wedding Reception',
@@ -116,8 +117,9 @@ export const translations: Record<Language, Translations> = {
 
     // Party Info Section
     partyInfoTitle: 'Wedding Reception Information',
-    date: 'Date',
-    venueName: 'Hotel New Otani Tokyo',
+    when: 'When?',
+    where: 'Where?',
+    venueName: 'Hō (East), Garden Tower, Hotel New Otani Tokyo',
     venueAddress: '4-1 Kioicho, Chiyoda City, Tokyo 102-8578',
     tel: '+813-3265-1111',
     familySection: 'For Family Members',
@@ -129,7 +131,7 @@ export const translations: Record<Language, Translations> = {
     friendsGatheringPlace: 'Hō Reception, Garden Tower',
     receptionStartTime: 'Reception Start Time',
     venueLocation: 'Venue',
-    venueDetail: 'Hō (East), Garden Tower',
+    venueDetail: 'Hō (East), Garden Tower, Hotel New Otani Tokyo',
     venueAccessHelp: 'Hotel Floor Map',
     newOtaniAccessSite: 'New Otani Digital Map',
 
@@ -183,7 +185,7 @@ export const translations: Record<Language, Translations> = {
     countdownTitle: 'Countdown',
     days: '日',
     toOurWedding: '結婚披露宴まで',
-    weddingDate: '2025年10月12日（日）',
+    weddingDate: '2025年10月12日（日）12:00',
 
     // Message Section
     messageTitle: 'ご挨拶',
@@ -195,7 +197,8 @@ export const translations: Record<Language, Translations> = {
 
     // Party Info Section
     partyInfoTitle: '披露宴のご案内',
-    date: '開催日',
+    when: '開催日',
+    where: '会場',
     venueName: 'ホテル ニューオータニ （東京）',
     venueAddress: '〒102-8578 東京都千代田区紀尾井町4-1',
     tel: '03-3265-1111',
@@ -208,7 +211,7 @@ export const translations: Record<Language, Translations> = {
     friendsGatheringPlace: '鳳凰の間受付',
     receptionStartTime: '披露宴開宴時間',
     venueLocation: '会場',
-    venueDetail: '鳳凰の間(東)ガーデンタワー宴会場階(5階)',
+    venueDetail: '鳳凰の間(東)　ガーデンタワー宴会場階　ホテル ニューオータニ （東京）',
 
     venueAccessHelp: '会場案内',
     newOtaniAccessSite: 'ニューオータニ 館内案内デジタルマップ',
