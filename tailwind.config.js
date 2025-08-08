@@ -7,8 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['MS ゴシック', 'MS Gothic', 'monospace'],
-        'script': ['MS ゴシック', 'MS Gothic', 'monospace'],
+        'serif': ['Lora', 'MS ゴシック', 'MS Gothic', 'serif'],
+        'script': ['Dancing Script', 'cursive'],
+        'sans': ['Lora', 'MS ゴシック', 'MS Gothic', 'sans-serif'],
+        'japanese': ['MS ゴシック', 'MS Gothic', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'sans-serif'],
       },
       colors: {
         // Wedding elegance color palette inspired by the couple's photo

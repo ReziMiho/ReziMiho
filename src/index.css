@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'MS ゴシック', 'MS Gothic', monospace;
+  font-family: 'Lora', 'MS ゴシック', 'MS Gothic', serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -46,4 +46,19 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #68D391;
+}
+
+/* Language-specific font handling */
+[data-language="en"], [data-language="en"] * {
+  font-family: 'Lora', serif !important;
+}
+
+[data-language="ja"], [data-language="ja"] * {
+  font-family: 'MS ゴシック', 'MS Gothic', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif !important;
+}
+
+/* Preserve script fonts for decorative text */
+[data-language="en"] .font-script,
+[data-language="ja"] .font-script {
+  font-family: 'Dancing Script', cursive !important;
 } 

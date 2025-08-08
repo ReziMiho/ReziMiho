@@ -6,11 +6,12 @@ import RoleSelection from './components/RoleSelection'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const AppContent = () => {
-  const { hasSelectedLanguage } = useLanguage()
+  const { hasSelectedLanguage, currentLanguage } = useLanguage()
   const { hasSelectedRole } = useRole()
 
   return (
-    <AnimatePresence mode="wait">
+    <div data-language={currentLanguage}>
+      <AnimatePresence mode="wait">
       {!hasSelectedLanguage ? (
         <motion.div
           key="language-selection"
@@ -41,7 +42,8 @@ const AppContent = () => {
           <WeddingInvitation />
         </motion.div>
       )}
-    </AnimatePresence>
+      </AnimatePresence>
+    </div>
   )
 }
 
